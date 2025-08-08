@@ -17,10 +17,11 @@
         "padding_bottom": 28
       }
     },
-    "page_1_section_ma664g": {
+    "page_1_section_h6MRe8": {
       "type": "page-1-section",
       "name": "Warranty Section",
       "settings": {
+        "image": "shopify://shop_images/image_2.png",
         "image_alt": "Warranty section image",
         "kicker": "OUR EXCLUSIVE",
         "heading": "WARRANTY",
@@ -29,10 +30,52 @@
         "button_label": "Learn More",
         "button_link": ""
       }
+    },
+    "collection_list_6wqxJw": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_taG7RW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_TLAUNp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_iYaCri": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_taG7RW",
+        "featured_collection_TLAUNp",
+        "featured_collection_iYaCri"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "page_1_section_ma664g"
+    "page_1_section_h6MRe8",
+    "collection_list_6wqxJw"
   ]
 }

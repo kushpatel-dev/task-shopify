@@ -17,10 +17,12 @@
         "padding_bottom": 28
       }
     },
-    "page_1_section_ma664g": {
+    "page_1_section_h6MRe8": {
       "type": "page-1-section",
+      "disabled": true,
       "name": "Warranty Section",
       "settings": {
+        "image": "shopify://shop_images/image_2.png",
         "image_alt": "Warranty section image",
         "kicker": "OUR EXCLUSIVE",
         "heading": "WARRANTY",
@@ -33,6 +35,6 @@
   },
   "order": [
     "main",
-    "page_1_section_ma664g"
+    "page_1_section_h6MRe8"
   ]
 }
