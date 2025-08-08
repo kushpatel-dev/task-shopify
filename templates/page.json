@@ -11,13 +11,29 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "page_1_section_h6MRe8": {
+      "type": "page-1-section",
+      "name": "Warranty Section",
+      "settings": {
+        "image": "shopify://shop_images/image_2.png",
+        "image_alt": "Warranty section image",
+        "kicker": "OUR EXCLUSIVE",
+        "heading": "WARRANTY",
+        "text": "<p>We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses.</p>",
+        "note": "*Some exclusions apply",
+        "button_label": "Learn More",
+        "button_link": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "page_1_section_h6MRe8"
   ]
 }
