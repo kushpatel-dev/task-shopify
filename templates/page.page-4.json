@@ -16,9 +16,68 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "page_4_section_4xCaCA": {
+      "type": "page-4-section",
+      "blocks": {
+        "logo_DYkUH6": {
+          "type": "logo",
+          "settings": {
+            "partner_name": "Partner",
+            "logo": "shopify://shop_images/Container_2.png",
+            "logo_alt": "Partner logo"
+          }
+        },
+        "logo_x6fq3E": {
+          "type": "logo",
+          "settings": {
+            "partner_name": "Partner",
+            "logo": "shopify://shop_images/Container_3.png",
+            "logo_alt": "Partner logo"
+          }
+        },
+        "logo_38wdGE": {
+          "type": "logo",
+          "settings": {
+            "partner_name": "Partner",
+            "logo": "shopify://shop_images/Container_4.png",
+            "logo_alt": "Partner logo"
+          }
+        },
+        "logo_7LH884": {
+          "type": "logo",
+          "settings": {
+            "partner_name": "Partner",
+            "logo_alt": "Partner logo"
+          }
+        },
+        "logo_EnKkK9": {
+          "type": "logo",
+          "settings": {
+            "partner_name": "Partner",
+            "logo_alt": "Partner logo"
+          }
+        }
+      },
+      "block_order": [
+        "logo_DYkUH6",
+        "logo_x6fq3E",
+        "logo_38wdGE",
+        "logo_7LH884",
+        "logo_EnKkK9"
+      ],
+      "name": "Partners Marquee",
+      "settings": {
+        "label": "OUR PARTNERS",
+        "heading": "Top Collaborators",
+        "heading_shadow": false,
+        "marquee_speed": 32,
+        "marquee_speed_2": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "page_4_section_4xCaCA"
   ]
 }
