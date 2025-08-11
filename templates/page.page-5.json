@@ -79,10 +79,43 @@
         "section_subtitle": "OUR PROCESS",
         "subtitle_color": "#a1887f"
       }
+    },
+    "page_5_sec_RTGaTj": {
+      "type": "page-5-sec",
+      "blocks": {
+        "process_step_zDB3Yc": {
+          "type": "process_step",
+          "settings": {
+            "number": "01",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
+            "icon": "shopify://shop_images/Background_Border.png"
+          }
+        },
+        "process_step_76BKQ9": {
+          "type": "process_step",
+          "settings": {
+            "number": "02",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
+            "icon": "shopify://shop_images/Background_Border.png"
+          }
+        }
+      },
+      "block_order": [
+        "process_step_zDB3Yc",
+        "process_step_76BKQ9"
+      ],
+      "name": "Project Timeline",
+      "settings": {
+        "top_label": "OUR PROCESS",
+        "heading": "Project Implementation Process"
+      }
     }
   },
   "order": [
     "main",
-    "page_5_section_6rmVMA"
+    "page_5_section_6rmVMA",
+    "page_5_sec_RTGaTj"
   ]
 }
