@@ -48,6 +48,7 @@
           "type": "logo",
           "settings": {
             "partner_name": "Partner",
+            "logo": "shopify://shop_images/Container_5.png",
             "logo_alt": "Partner logo"
           }
         },
@@ -55,6 +56,15 @@
           "type": "logo",
           "settings": {
             "partner_name": "Partner",
+            "logo": "shopify://shop_images/Contaffiner.png",
+            "logo_alt": "Partner logo"
+          }
+        },
+        "logo_d6Ec6z": {
+          "type": "logo",
+          "settings": {
+            "partner_name": "Partner",
+            "logo": "shopify://shop_images/Container.png",
             "logo_alt": "Partner logo"
           }
         }
@@ -64,7 +74,8 @@
         "logo_x6fq3E",
         "logo_38wdGE",
         "logo_7LH884",
-        "logo_EnKkK9"
+        "logo_EnKkK9",
+        "logo_d6Ec6z"
       ],
       "name": "Partners Marquee",
       "settings": {

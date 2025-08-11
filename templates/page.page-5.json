@@ -17,65 +17,72 @@
         "padding_bottom": 28
       }
     },
-    "page_1_section_h6MRe8": {
-      "type": "page-1-section",
-      "name": "Warranty Section",
-      "settings": {
-        "image": "shopify://shop_images/image_2.png",
-        "image_alt": "Warranty section image",
-        "kicker": "OUR EXCLUSIVE",
-        "heading": "WARRANTY",
-        "text": "<p>We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses.</p>",
-        "note": "*Some exclusions apply",
-        "button_label": "Learn More",
-        "button_link": ""
-      }
-    },
-    "collection_list_jtefdj": {
-      "type": "collection-list",
+    "page_5_section_6rmVMA": {
+      "type": "page-5-section",
       "blocks": {
-        "featured_collection_XFjjrp": {
-          "type": "featured_collection",
+        "process_step_LMXixC": {
+          "type": "process_step",
           "settings": {
-            "collection": ""
+            "number": "01",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
+            "icon": "shopify://shop_images/Background_Border.png"
           }
         },
-        "featured_collection_yE9dQb": {
-          "type": "featured_collection",
+        "process_step_T7JA4T": {
+          "type": "process_step",
           "settings": {
-            "collection": ""
+            "number": "01",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
+            "icon": "shopify://shop_images/Background_Border.png"
           }
         },
-        "featured_collection_acchP9": {
-          "type": "featured_collection",
+        "process_step_HpRFYP": {
+          "type": "process_step",
           "settings": {
-            "collection": ""
+            "number": "01",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
+            "icon": "shopify://shop_images/Background_Border.png"
+          }
+        },
+        "process_step_UEgLTU": {
+          "type": "process_step",
+          "settings": {
+            "number": "01",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
+            "icon": "shopify://shop_images/Background_Border.png"
+          }
+        },
+        "process_step_LRnQbY": {
+          "type": "process_step",
+          "settings": {
+            "number": "01",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
+            "icon": "shopify://shop_images/Background_Border.png"
           }
         }
       },
       "block_order": [
-        "featured_collection_XFjjrp",
-        "featured_collection_yE9dQb",
-        "featured_collection_acchP9"
+        "process_step_LMXixC",
+        "process_step_T7JA4T",
+        "process_step_HpRFYP",
+        "process_step_UEgLTU",
+        "process_step_LRnQbY"
       ],
-      "name": "t:sections.collection-list.presets.name",
+      "name": "Logo Showcase",
       "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "section_title": "Project Implementation Process",
+        "section_subtitle": "OUR PROCESS",
+        "subtitle_color": "#a1887f"
       }
     }
   },
   "order": [
     "main",
-    "page_1_section_h6MRe8",
-    "collection_list_jtefdj"
+    "page_5_section_6rmVMA"
   ]
 }

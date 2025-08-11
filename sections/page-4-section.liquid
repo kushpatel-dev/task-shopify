@@ -2,13 +2,13 @@
   <div class="max-w-full mx-auto px-4 md:px-8 flex flex-col items-center">
 
     {% if section.settings.label %}
-      <div class="mb-2 tracking-[0.22em] uppercase text-xs font-bold text-[#A68B61] text-center">
+      <div class="mb-2 tracking-[0.22em] uppercase text-xs md:text-[16px] font-bold text-[#A68B61] text-center">
         {{ section.settings.label }}
       </div>
     {% endif %}
 
     {% if section.settings.heading %}
-      <h2 class="mb-8 text-3xl md:text-4xl lg:text-5xl font-extrabold text-black text-center" style="{% if section.settings.heading_shadow %}text-shadow:0 2px 16px #eee;{% endif %}">
+      <h2 class="mb-8 text-3xl md:text-4xl lg:!text-[40px] font-extrabold text-black text-center" style="{% if section.settings.heading_shadow %}text-shadow:0 2px 16px #eee;{% endif %}">
         {{ section.settings.heading }}
       </h2>
     {% endif %}

@@ -1,0 +1,195 @@
+{% schema %}
+  {
+    "name": "Project Process",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "Project Implementation Process"
+      }, {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle",
+        "default": "OUR PROCESS"
+      }, {
+        "type": "color",
+        "id": "subtitle_color",
+        "label": "Subtitle Color",
+        "default": "#a1887f"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "process_step",
+        "name": "Process Step",
+        "settings": [
+          {
+            "type": "text",
+            "id": "number",
+            "label": "Step Number",
+            "default": "01"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Step Title",
+            "default": "Initial Consultation"
+          }, {
+            "type": "textarea",
+            "id": "description",
+            "label": "Step Description",
+            "default": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+          }, {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Step Icon"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Project Process",
+        "blocks": [
+          {
+            "type": "process_step",
+            "settings": {
+              "number": "01",
+              "title": "Initial Consultation",
+              "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            }
+          },
+          {
+            "type": "process_step",
+            "settings": {
+              "number": "02",
+              "title": "Schematic Design",
+              "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            }
+          },
+          {
+            "type": "process_step",
+            "settings": {
+              "number": "03",
+              "title": "Design Approval",
+              "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            }
+          },
+          {
+            "type": "process_step",
+            "settings": {
+              "number": "04",
+              "title": "Purchase & Installation",
+              "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            }
+          }, {
+            "type": "process_step",
+            "settings": {
+              "number": "05",
+              "title": "Project HandOver",
+              "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+{% comment %}  {% endcomment %}
+<style>
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .process-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #8B7E74;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .process-number {
+    font-size: 1.5rem;
+    color: #027A48;
+    margin-bottom: 0.5rem;
+  }
+  .process-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1A202C;
+  }
+  .process-description {
+    font-size: 0.875rem;
+    color: #718096;
+    max-width: 200px;
+  }
+  .timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .timeline-line {
+    position: absolute;
+    height: 2px;
+    background-color: #D1D5DB;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  @media (max-width: 1023px) {
+    .timeline {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .timeline-line {
+      display: none;
+    }
+  }
+</style>
+
+<section class="bg-white max-w-full overflow-hidden font-sans py-15 sm:py-28">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center">
+      <h3 class="text-sm font-semibold tracking-widest uppercase" style="color: {{ section.settings.subtitle_color }}">
+        {{ section.settings.section_subtitle }}
+      </h3>
+      <h2 class="mt-4 text-4xl md:text-5xl font-bold text-black">
+        {{ section.settings.section_title }}
+      </h2>
+    </div>
+
+    <div class="mt-24">
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        {% for block in section.blocks %}
+          <div class="process-step">
+            <div class="process-icon">
+              {% if block.settings.icon %}
+                <img
+                  height=""
+                  width=""
+                  src="{{ block.settings.icon | img_url: '60x60' }}"
+                  alt="{{ block.settings.title }}"
+                  class="w-full h-full object-contain">
+              {% endif %}
+            </div>
+            <div class="process-number">{{ block.settings.number }}</div>
+            <h3 class="process-title">{{ block.settings.title }}</h3>
+            <p class="process-description">{{ block.settings.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
