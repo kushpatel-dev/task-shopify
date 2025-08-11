@@ -1,32 +1,32 @@
 <section class="bg-white py-10 px-4 md:px-12">
   <div class="max-w-8xl mx-auto flex flex-col md:flex-row items-center gap-2.5">
-    <!-- Responsive Image Sizing -->
-    <div class="">
-      <img height="" width=""
+    <div>
+      <img
+        height=""
+        width=""
         src="{{ section.settings.image | img_url: 'master' }}"
         alt="{{ section.settings.image_alt | escape }}"
-        class="w-full h-[300px] md:w-[400px] md:h-[340px] lg:w-[550px] lg:h-[440px] xl:w-[750px] xl:h-[640px] opacity-100"
-        loading="lazy"
-      >
+        class="w-full h-[300px] md:w-[400px] md:h-[380px] lg:w-[550px] lg:h-[440px] xl:w-[900px] xl:h-[700px] opacity-100"
+        loading="lazy">
     </div>
     <!-- Text Content ... (unchanged) -->
-    <div class="flex-1 flex flex-col items-start mt-6 md:mt-0">
-      <h3 class="ctm-text-size-h3 tracking-wide font-medium mb-1" style="color:{{ section.settings.text_color }};">
+    <div class="xl:max-w-[500px] flex-1 flex flex-col items-start mt-6 md:mt-0 xl:mx-[30px]">
+      <h3 class="ctm-text-size-h3" style="color:{{ section.settings.text_color }};">
         {{ section.settings.heading | escape }}
       </h3>
-      <h2 class="ctm-text-size-h2 mb-5 uppercase font-serif font-bold text-[48px] leading-[1] tracking-[0.5em]" style="color:{{ section.settings.text_color }};">
+      <h2 class="ctm-text-size-h2" style="color:{{ section.settings.text_color }};">
         {{ section.settings.warranty_text | escape }}
       </h2>
-      <p class="text-base mb-4 leading-relaxed whitespace-pre-line" style="color:{{ section.settings.text_color }};">
+      <p class="ctm-text-size-p " style="color:{{ section.settings.text_color }};">
         {{ section.settings.body | escape }}
       </p>
       {% if section.settings.note != blank %}
-        <p class="italic font-semibold mb-6 text-sm" style="color:{{ section.settings.text_color }};">
+        <p class="italic font-bold mb-6 text-[16px]" style="color:{{ section.settings.text_color }};">
           {{ section.settings.note | escape }}
         </p>
       {% endif %}
       {% if section.settings.button_text != blank and section.settings.button_link != blank %}
-        <a href="{{ section.settings.button_link }}" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium text-base rounded-lg px-6 py-3 transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+        <a href="{{ section.settings.button_link }}" class="ctm-text-size-a">
           {{ section.settings.button_text | escape }}
         </a>
       {% endif %}
@@ -36,66 +36,61 @@
 
 
 {% schema %}
-{
-  "name": "Warranty Section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "image_alt",
-      "label": "Image Alt Text",
-      "default": "People selecting eyeglass frames"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Small Heading",
-      "default": "OUR EXCLUSIVE"
-    },
-    {
-      "type": "text",
-      "id": "warranty_text",
-      "label": "Title / Highlighted Text",
-      "default": "WARRANTY"
-    },
-    {
-      "type": "textarea",
-      "id": "body",
-      "label": "Body Text",
-      "default": "We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses."
-    },
-    {
-      "type": "text",
-      "id": "note",
-      "label": "Note / Exclusion Text (italic)",
-      "default": "*Some exclusions apply"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "Learn More"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#174532"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Warranty Section"
-    }
-  ]
-}
+  {
+    "name": "Warranty Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "image_alt",
+        "label": "Image Alt Text",
+        "default": "People selecting eyeglass frames"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Small Heading",
+        "default": "OUR EXCLUSIVE"
+      },
+      {
+        "type": "text",
+        "id": "warranty_text",
+        "label": "Title / Highlighted Text",
+        "default": "WARRANTY"
+      }, {
+        "type": "textarea",
+        "id": "body",
+        "label": "Body Text",
+        "default": "We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses."
+      }, {
+        "type": "text",
+        "id": "note",
+        "label": "Note / Exclusion Text (italic)",
+        "default": "*Some exclusions apply"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Learn More"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#174532"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Warranty Section"
+      }
+    ]
+  }
 {% endschema %}

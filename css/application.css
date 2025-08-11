@@ -4,10 +4,40 @@ header.header {
   @apply bg-gray-100 text-white p-4;
 }
 
+/* page 1 */
 .ctm-text-size-h3 {
-  @apply text-2xl md:text-3xl lg:text-[32px];
+  @apply text-[16px] md:text-3xl lg:text-[32px] font-light tracking-wide mb-1;
 }
 
 .ctm-text-size-h2 {
-  @apply text-3xl md:text-4xl lg:text-[48px];
+  @apply text-[18px] md:text-4xl lg:text-[40px] xl:text-[48px] mb-5 uppercase font-serif font-bold leading-[1] tracking-[1px];
+}
+
+.ctm-text-size-p{
+  @apply text-[12px] lg:text-[16px] mb-4 leading-relaxed whitespace-pre-line;
+}
+.ctm-text-size-a{
+  @apply inline-block bg-[#009B6F] hover:bg-green-900 text-white font-medium text-[14px] lg:px-[30px] lg:py-[10px] xl:px-[35px] xl:py-[15px] transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+}
+
+/* page 2 */
+
+.ctm-p2-h2{
+  @apply text-[#144634] text-[18px] md:text-4xl lg:text-[40px] xl:text-[48px] font-bold mb-2 font-serif leading-tight;
+}
+.ctm-p2-h3{
+@apply uppercase font-light text-[16px] md:text-3xl lg:text-[32px] leading-none tracking-[4%] text-[#2A4C41] mb-2;
+
+}
+
+/* page 3 */
+.ctm-bl-img{
+  @apply pointer-events-none select-none absolute z-100 w-[215px] h-[218px] left-[-2.85px] bottom-0;
+}
+
+.ctm-tr-img{
+  @apply pointer-events-none select-none absolute z-0 w-[254px] h-[269px] -top-[15px] right-0;
+}
+.ctm-p3-h2{
+  @apply text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#5E5B48] ;
 }

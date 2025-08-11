@@ -17,22 +17,25 @@
         "padding_bottom": 28
       }
     },
-    "page_1_section_ma664g": {
-      "type": "page-1-section",
-      "name": "Warranty Section",
+    "page_3_section_jJj7dK": {
+      "type": "page-3-section",
+      "name": "Offers Section",
       "settings": {
-        "image_alt": "Warranty section image",
-        "kicker": "OUR EXCLUSIVE",
-        "heading": "WARRANTY",
-        "text": "<p>We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses.</p>",
-        "note": "*Some exclusions apply",
-        "button_label": "Learn More",
-        "button_link": ""
+        "subtitle": "Offer",
+        "icon": "shopify://shop_images/Vector.png",
+        "title": "Reserve Your Stay [30 Days] In Advance And Enjoy [Exclusive Savings] On All Suites And Villas.",
+        "description": "<p>At Serenova, we believe that luxury should arrive gently. That’s why our curated offers are designed not just to save you more but to give you more. More stillness. More time. More unforgettable experiences.</p>",
+        "cta_text": "VIEW ALL OFFERS",
+        "cta_link": "#",
+        "leaf_mask": "shopify://shop_images/Group_1622_1.png",
+        "house_mask": "shopify://shop_images/Object.png",
+        "main_image": "shopify://shop_images/Image_place_holder_1.png",
+        "secondary_image": "shopify://shop_images/b10958c24c486aedb77b3e024c86d7f530290746.png"
       }
     }
   },
   "order": [
     "main",
-    "page_1_section_ma664g"
+    "page_3_section_jJj7dK"
   ]
 }

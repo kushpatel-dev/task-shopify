@@ -1,0 +1,185 @@
+<section class="relative w-full h-[1500px] lg:h-[700px] bg-[#FDF6E3] overflow-hidden py-14 md:py-24 lg:py-32 my-auto">
+  {% if section.settings.leaf_mask %}
+    <img
+      height=""
+      width=""
+      src="{{ section.settings.leaf_mask | img_url: 'master' }}"
+      alt=""
+      class="ctm-tr-img"
+      loading="lazy"
+      aria-hidden="true">
+  {% endif %}
+
+  {% if section.settings.house_mask %}
+    <img
+      height=""
+      width=""
+      src="{{ section.settings.house_mask | img_url: 'master' }}"
+      alt=""
+      class="ctm-bl-img"
+      loading="lazy"
+      aria-hidden="true">
+  {% endif %}
+
+
+  <div class="relative z-0 max-w-[1050px] mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 px-4 md:px-8">
+
+    <div class="min-w-[380px] md:min-w-[400px] flex flex-col gap-6 md:gap-8 mx-0 md:mx-6">
+      <div class="flex flex-col gap-2">
+        {% if section.settings.icon %}
+          <img
+            height=""
+            width=""
+            src="{{ section.settings.icon | img_url: '40x40' }}"
+            alt="Coconut tree icon"
+            class="inline-block w-6 h-6 align-middle"
+            loading="lazy">
+        {% endif %}
+        <span class="uppercase tracking-wide text-[13px] md:text-sm font-semibold text-[#868264]">
+          {{ section.settings.subtitle }}
+        </span>
+      </div>
+
+      <h2 class="ctm-p3-h2 max-w-[400px] xl:max-w-[500px] ">
+        {%- assign highlighted_title = section.settings.title | escape %}
+        {{ highlighted_title | replace: '[', '<span class="font-bold text-[#92905A]">' | replace: ']', '</span>' }}
+      </h2>
+      <div class="prose prose-sm md:prose-base text-[#878279] max-w-[400px] xl:max-w-[500px]">
+
+        {{ section.settings.description }}
+      </div>
+      {% if section.settings.cta_text %}
+        <a href="{{ section.settings.cta_link }}" class="max-w-[120px] inline-block border border-[#868264] text-[#868264] px-6 py-2 mt-2 rounded transition-colors duration-150 hover:bg-[#92905A] hover:text-white font-medium text-base">
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+    <div class="lg:min-w-[724px] flex flex-col relative">
+      <div class="relative">
+        {% if section.settings.main_image %}
+          <img
+            height=""
+            width=""
+            src="{{ section.settings.main_image | img_url: '720x720' }}"
+            srcset="
+          {{ section.settings.main_image | img_url: '360x360' }} 360w,
+          {{ section.settings.main_image | img_url: '480x480' }} 480w,
+          {{ section.settings.main_image | img_url: '720x720' }} 720w
+        "
+            sizes="(max-width: 768px) 100vw, 60vw"
+            alt="{{ section.settings.main_image.alt | escape }}"
+            class="relative z-10 object-cover w-[415px] h-[417px] md:w-[300px] md:h-[300px] xl:w-[415px] xl:h-[417px] aspect-[4/3]"
+            loading="lazy">
+
+        {% endif %}
+        {% if section.settings.main_image_border %}
+          <img
+            height=""
+            width=""
+            src="{{ section.settings.main_image_border | img_url: '720x720' }}"
+            srcset="
+          {{ section.settings.main_image_border | img_url: '360x360' }} 360w,
+          {{ section.settings.main_image_border | img_url: '480x480' }} 480w,
+          {{ section.settings.main_image_border | img_url: '720x720' }} 720w
+        "
+            sizes="(max-width: 768px) 100vw, 60vw"
+            alt="{{ section.settings.main_image_border.alt | escape }}"
+            class="absolute z-10 top-[470px] right-[0px] lg:top-[150px] lg:right-[30px] object-cover w-[415px] h-[417px] aspect-[4/3]"
+            loading="lazy">
+
+        {% endif %}
+
+        {% if section.settings.secondary_image %}
+          <img
+            height=""
+            width=""
+            src="{{ section.settings.secondary_image | img_url: '560x560' }}"
+            srcset="
+          {{ section.settings.secondary_image | img_url: '280x280' }} 280w,
+          {{ section.settings.secondary_image | img_url: '420x420' }} 420w,
+          {{ section.settings.secondary_image | img_url: '560x560' }} 560w
+        "
+            sizes="(max-width: 768px) 100vw, 30vw"
+            alt="{{ section.settings.secondary_image.alt | escape }}"
+            class="absolute z-0 top-[370px] right-[0px] lg:top-[150px] lg:right-[200px] xl:top-[150px] xl:right-[100px] w-[415px] h-[417px] md:w-[330px] md:h-[320px] xl:w-[415px] xl:h-[417px] aspect-[3/2] object-cover bg-white"
+            loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Offers Section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Small Heading / Label",
+        "default": "Offer"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Coconut Tree Icon",
+        "info": "PNG icon displayed above or inline with heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Main Heading",
+        "default": "Reserve Your Stay [30 Days] In Advance And Enjoy [Exclusive Savings] On All Suites And Villas.",
+        "info": "Use [brackets] to highlight text in main heading"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Section Description",
+        "default": "<p>At Serenova, we believe that luxury should arrive gently. That’s why our curated offers are designed not just to save you more but to give you more. More stillness. More time. More unforgettable experiences.</p>"
+      }, {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Button Text",
+        "default": "VIEW ALL OFFERS"
+      }, {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA Button Link"
+      }, {
+        "type": "image_picker",
+        "id": "leaf_mask",
+        "label": "Decorative Leaf PNG",
+        "info": "Top-right. Use PNG with transparency. Suggested opacity: 5%"
+      }, {
+        "type": "image_picker",
+        "id": "house_mask",
+        "label": "Decorative House Umbrella PNG",
+        "info": "Bottom-left. Use PNG with transparency. Suggested opacity: 3%"
+      }, {
+        "type": "image_picker",
+        "id": "main_image",
+        "label": "Main (Large) Image",
+        "info": "Displayed top-left in images cluster"
+      }, {
+        "type": "image_picker",
+        "id": "main_image_border",
+        "label": "Main Image border",
+        "info": "Displayed top-left in images cluster"
+      }, {
+        "type": "image_picker",
+        "id": "secondary_image",
+        "label": "Secondary (Small) Image",
+        "info": "Displayed bottom-right, overlapping main image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Offers Section",
+        "category": "Promotions"
+      }
+    ]
+  }
+{% endschema %}

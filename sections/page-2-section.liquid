@@ -1,0 +1,107 @@
+<section class="relative w-full overflow-hidden bg-[#B8E3D5]" style="{% if section.settings.bg_image != blank %}background-image: url('{{ section.settings.bg_image | img_url: '1800x900' }}'); background-size: cover; background-position: right top; background-repeat: no-repeat;{% endif %}">
+  <div class="max-w-8xl px-4 py-12 md:py-20 flex flex-col md:flex-row items-center md:justify-start min-h-[400px] md:min-h-[500px]">
+    <div class="w-full bg-white/70 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none md:w-2/3 max-w-6xl p-6 md:p-10 md:ml-2">
+      {% if section.settings.subheading != blank %}
+        <h3 class="ctm-p2-h3">
+          {{ section.settings.subheading }}
+        </h3>
+
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2 class="ctm-p2-h2">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      {% if section.settings.body != blank %}
+        <p class="text-[#2A4C41] text-base md:text-lg leading-relaxed mb-7">
+          {{ section.settings.body }}
+        </p>
+      {% endif %}
+      <div class="flex flex-col sm:flex-row gap-4">
+        {% if section.settings.phone_number != blank and section.settings.phone_button_label != blank %}
+          <a
+            href="tel:{{ section.settings.phone_number }}"
+            class="flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-white text-base bg-[#24A37C] shadow hover:bg-[#117950] transition"
+            aria-label="{{ section.settings.phone_button_label }}: {{ section.settings.phone_number }}">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#ffffff"
+              stroke-width="2"><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5a2 2 0 012-2h2.586a1 1 0 01.707.293l2.121 2.121a1 1 0 010 1.414L9.414 8.586a16.016 16.016 0 007.07 7.07l1.758-1.758a1 1 0 011.414 0l2.121 2.121a1 1 0 01.293.707V19a2 2 0 01-2 2h-1C6.477 21 3 17.523 3 13V7a2 2 0 012-2z" /></svg>
+            {{ section.settings.phone_button_label }}
+          </a>
+        {% endif %}
+        {% if section.settings.contact_button_label != blank and section.settings.contact_button_link != blank %}
+          <a
+            href="{{ section.settings.contact_button_link }}"
+            class="flex items-center justify-center px-6 py-3 font-semibold text-white text-base bg-[#24A37C] shadow hover:bg-[#117950] transition"
+            aria-label="{{ section.settings.contact_button_label }}">
+            {{ section.settings.contact_button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Optometrist Hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "A TO Z EYE CARE:"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "YOUR OPTOMETRIST"
+      },
+      {
+        "type": "textarea",
+        "id": "body",
+        "label": "Body Text",
+        "default": "At A to Z Eye Care we provide the best vision care and finest service to Arcata, Eureka, and the cities in and near Humboldt County, CA. ..."
+      },
+      {
+        "type": "text",
+        "id": "phone_number",
+        "label": "Phone Number",
+        "default": "707.822.7641"
+      }, {
+        "type": "text",
+        "id": "phone_button_label",
+        "label": "Phone Button Label",
+        "default": "707.822.7641"
+      }, {
+        "type": "text",
+        "id": "contact_button_label",
+        "label": "Contact Button Label",
+        "default": "Contact Us"
+      }, {
+        "type": "url",
+        "id": "contact_button_link",
+        "label": "Contact Button Link"
+      }, {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Full Background Image",
+        "info": "Upload the combined right-side background image (eyeglasses, eye chart, contacts)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Optometrist Hero Full BG",
+        "category": "Hero"
+      }
+    ]
+  }
+{% endschema %}
