@@ -1,0 +1,194 @@
+<section class="py-12 bg-white">
+  <div class="max-w-8xl mx-auto px-4">
+    <!-- Flex container -->
+    <div id="productGrid" class="flex flex-wrap justify-center gap-6">
+      {% for block in section.blocks %}
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]" data-index="{{ forloop.index0 }}">
+
+          {% if block.settings.image %}
+            <img
+              height=""
+              width=""
+              src="{{ block.settings.image | img_url: '400x280' }}"
+              alt="{{ block.settings.title }}"
+              class="w-full h-[280px] object-cover rounded-t-lg">
+          {% endif %}
+
+          <div class="p-4 text-center">
+            <h3 class="font-bold text-xl uppercase mb-2" style="color: {{ section.settings.heading_color }};">
+              {{ block.settings.title }}
+            </h3>
+            <p class="mb-4" style="color: {{ section.settings.paragraph_color }};">
+              {{ block.settings.description }}
+            </p>
+
+            {% if block.settings.button_link %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="inline-block font-semibold py-2 px-5 rounded transition"
+                style="background-color: {{ section.settings.button_bg_color }};
+                       color: {{ section.settings.button_text_color }};">
+                {{ block.settings.button_text }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center mt-8 space-x-2" id="pagination">
+      <button id="prevPage" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">&lt;</button>
+      <div id="pageNumbers" class="flex space-x-2"></div>
+      <button id="nextPage" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">&gt;</button>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const productsPerPage = {{ section.settings.products_per_page }};
+  const productGrid = document.getElementById("productGrid");
+  const products = productGrid.querySelectorAll("[data-index]");
+  const totalProducts = products.length;
+  const totalPages = Math.ceil(totalProducts / productsPerPage);
+  
+  const prevBtn = document.getElementById("prevPage");
+  const nextBtn = document.getElementById("nextPage");
+  const pageNumbersContainer = document.getElementById("pageNumbers");
+  
+  let currentPage = 1;
+  
+  function showPage(page) {
+    products.forEach(p => p.style.display = "none");
+    const start = (page - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    products.forEach((p, i) => {
+      if (i >= start && i < end) p.style.display = "";
+    });
+  
+    const pageBtns = pageNumbersContainer.querySelectorAll("button");
+    pageBtns.forEach(btn => {
+      btn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 font-bold transition transform hover:scale-110 hover:bg-red-500 hover:text-white";
+    });
+  
+    const activeBtn = pageNumbersContainer.querySelector(`[data-page="${page}"]`);
+    if (activeBtn) {
+      activeBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-red-500 text-white font-bold transition transform hover:scale-110";
+    }
+  
+    prevBtn.disabled = page === 1;
+    nextBtn.disabled = page === totalPages;
+    currentPage = page;
+  }
+  
+  function createPagination() {
+    pageNumbersContainer.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 font-bold transition transform hover:scale-110 hover:bg-red-500 hover:text-white";
+      btn.setAttribute("data-page", i);
+      btn.addEventListener("click", () => showPage(i));
+      pageNumbersContainer.appendChild(btn);
+    }
+  }
+  
+  prevBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 hover:bg-red-500 hover:text-white";
+  nextBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 hover:bg-red-500 hover:text-white";
+  
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) showPage(currentPage - 1);
+  });
+  
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) showPage(currentPage + 1);
+  });
+  
+  if (totalPages > 1) {
+    createPagination();
+    showPage(1);
+  } else {
+    document.getElementById("pagination").style.display = "none";
+  }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Custom Product Grid",
+    "settings": [
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "paragraph_color",
+        "label": "Paragraph Color",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button Background Color",
+        "default": "#796F51"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#FFFFFF"
+      }, {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 4,
+        "max": 24,
+        "step": 4,
+        "label": "Products per page",
+        "default": 12
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product_card",
+        "name": "Product Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "View Details"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 50,
+    "presets": [
+      {
+        "name": "Custom Product Grid",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

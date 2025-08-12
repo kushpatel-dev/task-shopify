@@ -17,110 +17,157 @@
         "padding_bottom": 28
       }
     },
-    "page_1_section_h6MRe8": {
-      "type": "page-1-section",
-      "disabled": true,
-      "name": "Warranty Section",
-      "settings": {
-        "image": "shopify://shop_images/image_2.png",
-        "image_alt": "Warranty section image",
-        "kicker": "OUR EXCLUSIVE",
-        "heading": "WARRANTY",
-        "text": "<p>We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses.</p>",
-        "note": "*Some exclusions apply",
-        "button_label": "Learn More",
-        "button_link": ""
-      }
-    },
-    "collection_list_jtefdj": {
-      "type": "collection-list",
+    "page_6_section_nHF8VY": {
+      "type": "page-6-section",
       "blocks": {
-        "featured_collection_XFjjrp": {
-          "type": "featured_collection",
+        "service_iJpTjc": {
+          "type": "service",
           "settings": {
-            "collection": ""
+            "button_label": "Planning",
+            "button_bg_color": "#796f51",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#0a5a31",
+            "button_active_bg_color": "#0b6b3a",
+            "button_active_text_color": "#ffffff",
+            "image": "shopify://shop_images/image_1.png",
+            "caption_small": "PLANNING",
+            "heading": "Thoughtful Planning For Timeless Spaces",
+            "summary_text": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+            "bullet1_text": "Dictumst urna nisi elit",
+            "bullet2_text": "Metus facilisi urna cras",
+            "bullet3_text": "Nullam integer aliquet",
+            "bullet4_text": "Natoque makisent amet",
+            "bullet5_text": "Feugiat purus praesent",
+            "bullet6_text": "Nisi elit urna dictumst",
+            "view_details_text": "View Details",
+            "view_details_link": "",
+            "how_text": "How It Works",
+            "how_link": ""
           }
         },
-        "featured_collection_yE9dQb": {
-          "type": "featured_collection",
+        "service_nRe4L4": {
+          "type": "service",
           "settings": {
-            "collection": ""
+            "button_label": "Woodwork",
+            "button_bg_color": "#796f51",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#0a5a31",
+            "button_active_bg_color": "#0b6b3a",
+            "button_active_text_color": "#ffffff",
+            "image": "shopify://shop_images/image_1.png",
+            "caption_small": "PLANNING",
+            "heading": "Thoughtful Planning For Timeless Spaces",
+            "summary_text": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+            "bullet1_icon": "shopify://shop_images/Vector_1.png",
+            "bullet1_text": "Dictumst urna nisi elit",
+            "bullet2_icon": "shopify://shop_images/Vector_1.png",
+            "bullet2_text": "Metus facilisi urna cras",
+            "bullet3_icon": "shopify://shop_images/Vector_1.png",
+            "bullet3_text": "Nullam integer aliquet",
+            "bullet4_icon": "shopify://shop_images/Vector_1.png",
+            "bullet4_text": "Natoque makisent amet",
+            "bullet5_icon": "shopify://shop_images/Vector_1.png",
+            "bullet5_text": "Feugiat purus praesent",
+            "bullet6_icon": "shopify://shop_images/Vector_1.png",
+            "bullet6_text": "Nisi elit urna dictumst",
+            "view_details_text": "View Details",
+            "view_details_link": "shopify://policies/privacy-policy",
+            "how_text": "How It Works",
+            "how_link": "shopify://collections/coffee"
           }
         },
-        "featured_collection_acchP9": {
-          "type": "featured_collection",
+        "service_9UVVYQ": {
+          "type": "service",
           "settings": {
-            "collection": ""
+            "button_label": "Furnishing",
+            "button_bg_color": "#796f51",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#0a5a31",
+            "button_active_bg_color": "#0b6b3a",
+            "button_active_text_color": "#ffffff",
+            "image": "shopify://shop_images/image_1.png",
+            "caption_small": "PLANNING",
+            "heading": "Thoughtful Planning For Timeless Spaces",
+            "summary_text": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+            "bullet1_text": "Dictumst urna nisi elit",
+            "bullet2_text": "Metus facilisi urna cras",
+            "bullet3_text": "Nullam integer aliquet",
+            "bullet4_text": "Natoque makisent amet",
+            "bullet5_text": "Feugiat purus praesent",
+            "bullet6_text": "Nisi elit urna dictumst",
+            "view_details_text": "View Details",
+            "view_details_link": "",
+            "how_text": "How It Works",
+            "how_link": ""
+          }
+        },
+        "service_JNcTVP": {
+          "type": "service",
+          "settings": {
+            "button_label": "Consultation",
+            "button_bg_color": "#796f51",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#0a5a31",
+            "button_active_bg_color": "#0b6b3a",
+            "button_active_text_color": "#ffffff",
+            "image": "shopify://shop_images/image_1.png",
+            "caption_small": "PLANNING",
+            "heading": "Thoughtful Planning For Timeless Spaces",
+            "summary_text": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+            "bullet1_text": "Dictumst urna nisi elit",
+            "bullet2_text": "Metus facilisi urna cras",
+            "bullet3_text": "Nullam integer aliquet",
+            "bullet4_text": "Natoque makisent amet",
+            "bullet5_text": "Feugiat purus praesent",
+            "bullet6_text": "Nisi elit urna dictumst",
+            "view_details_text": "View Details",
+            "view_details_link": "",
+            "how_text": "How It Works",
+            "how_link": ""
+          }
+        },
+        "service_gGGaFG": {
+          "type": "service",
+          "settings": {
+            "button_label": "Installation",
+            "button_bg_color": "#796f51",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#0a5a31",
+            "button_active_bg_color": "#0b6b3a",
+            "button_active_text_color": "#ffffff",
+            "image": "shopify://shop_images/image_1.png",
+            "caption_small": "PLANNING",
+            "heading": "Thoughtful Planning For Timeless Spaces",
+            "summary_text": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+            "bullet1_text": "Dictumst urna nisi elit",
+            "bullet2_text": "Metus facilisi urna cras",
+            "bullet3_text": "Nullam integer aliquet",
+            "bullet4_text": "Natoque makisent amet",
+            "bullet5_text": "Feugiat purus praesent",
+            "bullet6_text": "Nisi elit urna dictumst",
+            "view_details_text": "View Details",
+            "view_details_link": "",
+            "how_text": "How It Works",
+            "how_link": ""
           }
         }
       },
       "block_order": [
-        "featured_collection_XFjjrp",
-        "featured_collection_yE9dQb",
-        "featured_collection_acchP9"
+        "service_iJpTjc",
+        "service_nRe4L4",
+        "service_9UVVYQ",
+        "service_JNcTVP",
+        "service_gGGaFG"
       ],
-      "name": "t:sections.collection-list.presets.name",
+      "name": "Creative Solutions",
       "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "rich_text_DmzUFq": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_CHDjGh": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text_xpPjN6": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "button_bTTCnp": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_CHDjGh",
-        "text_xpPjN6",
-        "button_bTTCnp"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "heading_small": "OUR SERVICE",
+        "heading_main": "Creative Solutions"
       }
     }
   },
   "order": [
     "main",
-    "page_1_section_h6MRe8",
-    "collection_list_jtefdj",
-    "rich_text_DmzUFq"
+    "page_6_section_nHF8VY"
   ]
 }

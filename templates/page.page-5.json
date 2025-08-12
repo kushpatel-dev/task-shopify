@@ -69,7 +69,10 @@
         "step_q9fjGy"
       ],
       "name": "Project Timeline",
-      "settings": {}
+      "settings": {
+        "label": "Our Process",
+        "heading": "Project Implementation Process"
+      }
     }
   },
   "order": [
