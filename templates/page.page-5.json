@@ -17,105 +17,63 @@
         "padding_bottom": 28
       }
     },
-    "page_5_section_6rmVMA": {
-      "type": "page-5-section",
-      "blocks": {
-        "process_step_LMXixC": {
-          "type": "process_step",
-          "settings": {
-            "number": "01",
-            "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
-            "icon": "shopify://shop_images/Background_Border.png"
-          }
-        },
-        "process_step_T7JA4T": {
-          "type": "process_step",
-          "settings": {
-            "number": "01",
-            "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
-            "icon": "shopify://shop_images/Background_Border.png"
-          }
-        },
-        "process_step_HpRFYP": {
-          "type": "process_step",
-          "settings": {
-            "number": "01",
-            "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
-            "icon": "shopify://shop_images/Background_Border.png"
-          }
-        },
-        "process_step_UEgLTU": {
-          "type": "process_step",
-          "settings": {
-            "number": "01",
-            "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
-            "icon": "shopify://shop_images/Background_Border.png"
-          }
-        },
-        "process_step_LRnQbY": {
-          "type": "process_step",
-          "settings": {
-            "number": "01",
-            "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
-            "icon": "shopify://shop_images/Background_Border.png"
-          }
-        }
-      },
-      "block_order": [
-        "process_step_LMXixC",
-        "process_step_T7JA4T",
-        "process_step_HpRFYP",
-        "process_step_UEgLTU",
-        "process_step_LRnQbY"
-      ],
-      "name": "Logo Showcase",
-      "settings": {
-        "section_title": "Project Implementation Process",
-        "section_subtitle": "OUR PROCESS",
-        "subtitle_color": "#a1887f"
-      }
-    },
     "page_5_sec_RTGaTj": {
       "type": "page-5-sec",
       "blocks": {
-        "process_step_zDB3Yc": {
-          "type": "process_step",
+        "step_HcPBmy": {
+          "type": "step",
           "settings": {
-            "number": "01",
+            "icon": "shopify://shop_images/Background_Border.png",
             "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
-            "icon": "shopify://shop_images/Background_Border.png"
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
           }
         },
-        "process_step_76BKQ9": {
-          "type": "process_step",
+        "step_cecjwL": {
+          "type": "step",
           "settings": {
-            "number": "02",
-            "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium.",
-            "icon": "shopify://shop_images/Background_Border.png"
+            "icon": "shopify://shop_images/Background_Border_4.png",
+            "title": "Schematic Design",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+          }
+        },
+        "step_4hqwdV": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Background_Border_3.png",
+            "title": "Design fipproval",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+          }
+        },
+        "step_h9LnE4": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Background_Border_2.png",
+            "title": "Purchase & Installation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+          }
+        },
+        "step_q9fjGy": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Background_Border_1.png",
+            "title": "Project HandOver",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
           }
         }
       },
       "block_order": [
-        "process_step_zDB3Yc",
-        "process_step_76BKQ9"
+        "step_HcPBmy",
+        "step_cecjwL",
+        "step_4hqwdV",
+        "step_h9LnE4",
+        "step_q9fjGy"
       ],
       "name": "Project Timeline",
-      "settings": {
-        "top_label": "OUR PROCESS",
-        "heading": "Project Implementation Process"
-      }
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "page_5_section_6rmVMA",
     "page_5_sec_RTGaTj"
   ]
 }
