@@ -49,3 +49,20 @@
 .ctm-font-p7{
   @apply text-[18px] md:text-[20px] lg:text-[24px] font-extrabold uppercase leading-relaxed mb-4;
 }
+/* p8 */
+.ctm-img-p8 {
+  @apply max-w-30 h-30 md:max-w-35 md:h-35 lg:max-w-40 lg:h-40 object-cover cursor-pointer mt-6;
+}
+
+.ctm-h2-p8{
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-[#857741] mb-4;
+}
+.ctm-check {
+  @apply h-5 w-5 !border !border-[#A6192E] rounded bg-white;
+}
+.ctm-check:checked {
+  @apply !bg-[#A6192E] !border-[#A6192E];
+}
+.ctm-h3-p9{
+  @apply absolute bottom-6 left-3 right-3 text-center uppercase font-bold px-2 drop-shadow-lg text-[22px] md:text-[28px] leading-tight tracking-tight;
+}

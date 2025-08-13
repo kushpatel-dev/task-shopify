@@ -17,77 +17,69 @@
         "padding_bottom": 28
       }
     },
-    "page_1_section_h6MRe8": {
-      "type": "page-1-section",
-      "name": "Warranty Section",
-      "settings": {
-        "image": "shopify://shop_images/image_2.png",
-        "image_alt": "Warranty section image",
-        "heading": "WARRANTY",
-        "note": "*Some exclusions apply",
-        "button_link": ""
-      }
-    },
-    "multirow_qktKEA": {
-      "type": "multirow",
+    "page_9_section_qj6bkE": {
+      "type": "page-9-section",
       "blocks": {
-        "row_RU3iXp": {
-          "type": "row",
+        "card_6e8pCW": {
+          "type": "card",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": ""
+            "card_image": "shopify://shop_images/ed2d1edce6df73654490da69aeb63c58cd852ef3_resized.jpg",
+            "season_text": "SUMMER 2026",
+            "card_title": "1-1 COACHING",
+            "price": "$2,597.00",
+            "register_link": "#"
           }
         },
-        "row_N8PzKt": {
-          "type": "row",
+        "card_tbFA4n": {
+          "type": "card",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": ""
+            "card_image": "shopify://shop_images/198a3914638c64577a8b78b4c6a0a71f8fab949a_1.jpg",
+            "season_text": "",
+            "card_title": "Online Group Coaching",
+            "price": "$2,597.00",
+            "register_link": "#"
           }
         },
-        "row_grzbKK": {
-          "type": "row",
+        "card_hTmUGF": {
+          "type": "card",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": ""
+            "card_image": "shopify://shop_images/924fbae483d0d80dcabb8204733fd644d66eb95f.jpg",
+            "season_text": "SUMMER 2026",
+            "card_title": "In-Person Group Coaching",
+            "price": "$997.00",
+            "register_link": "#"
+          }
+        },
+        "card_tpywcp": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/6c6d044c6908d28f4f23109189cc5bd7cdc4df09.jpg",
+            "season_text": "SUMMER 2026",
+            "card_title": "4-week Transformative Program",
+            "price": "$00.00",
+            "register_link": "#"
           }
         }
       },
       "block_order": [
-        "row_RU3iXp",
-        "row_N8PzKt",
-        "row_grzbKK"
+        "card_6e8pCW",
+        "card_tbFA4n",
+        "card_hTmUGF",
+        "card_tpywcp"
       ],
-      "name": "t:sections.multirow.presets.name",
+      "name": "More Journeys Section",
       "settings": {
-        "image_height": "medium",
-        "desktop_image_width": "medium",
-        "image_layout": "alternate-left",
-        "heading_size": "h1",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "background_pattern": "shopify://shop_images/fb6243363e572b3370718554526ba2db60de97d8.png",
+        "heading": "MORE JOURNEYS TO EXPLORE",
+        "heading_color": "#ffffff",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.",
+        "subheading_color": "#ffffff",
+        "card_title_color": "#ffffff"
       }
     }
   },
   "order": [
     "main",
-    "page_1_section_h6MRe8",
-    "multirow_qktKEA"
+    "page_9_section_qj6bkE"
   ]
 }

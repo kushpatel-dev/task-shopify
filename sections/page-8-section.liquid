@@ -1,260 +1,288 @@
-{% comment %}
-  Section: Online Group Coaching
-  Features:
-  - Left: main image with previous/next arrows, 4 square thumbnails (no borders)
-  - Right: Details
-    - Title + price + review stars (PNG)
-    - H3 bold intro (32px)
-    - Rich description paragraphs with optional bold callouts
-    - Two price options (Recorded / Live)
-    - Agreement checkbox
-    - Quantity stepper
-    - Buttons: Register Now, Buy with Shop Pay (hover effects)
-  Notes:
-  - Uses Tailwind utility classes; adjust class names if you compile Tailwind.
-  - Works on all devices with responsive grid.
-{% endcomment %}
+<section class="py-12 bg-white">
+  <div class="max-w-full mx-10 md:mx-14 lg:mx-[100px] xl:mx-[200px] px-4 lg:flex lg:gap-8">
 
-<section id="online-group-coaching" class="py-10 lg:py-14">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-      <!-- Gallery -->
-      <div class="">
-        <div class="relative rounded-xl overflow-hidden">
-          <button type="button" class="gallery-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-rose-600/90 text-white w-10 h-10 rounded-full grid place-items-center hover:bg-rose-700 focus:outline-none" aria-label="Previous image">
-            ‹
-          </button>
-          <button type="button" class="gallery-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-rose-600/90 text-white w-10 h-10 rounded-full grid place-items-center hover:bg-rose-700 focus:outline-none" aria-label="Next image">
-            ›
-          </button>
+    <!-- LEFT SIDE: IMAGE CAROUSEL -->
+    <div class="lg:w-1/2">
+      <div class="relative">
+          <!-- Main Image -->
+        <img
+          height=""
+          width=""
+          id="mainImage"
+          src="{{ section.settings.main_image | img_url: '800x' }}"
+          alt="Main product image"
+          class="w-full h-[400px] lg:h-[500px] object-cover">
 
-          {% assign main_image = section.settings.main_image | default: section.settings.thumb_1 %}
-          <img id="ogc-main" src="{{ main_image | image_url: width: 1400 }}" alt="{{ section.settings.main_alt | escape }}" class="w-full aspect-[16/11] object-cover" loading="eager">
+        <!-- Prev Button -->
+        <button id="prevBtn" class="flex w-10 h-10 justify-center items-center absolute left-4 top-1/2 transform -translate-y-1/2 bg-red-600 text-white p-2 rounded-full hover:bg-red-700">
+          &lt;
+        </button>
+        <!-- Next Button -->
+        <button id="nextBtn" class="flex w-10 h-10 justify-center items-center absolute right-4 top-1/2 transform -translate-y-1/2 bg-red-600 text-white p-2 rounded-full hover:bg-red-700">
+          &gt;
+        </button>
+      </div>
+      <!-- Thumbnails -->
+      <div class="flex flex-row justify-evenly items-center">
+        {% for block in section.blocks %}
+          <div
+            class="relative rounded-lg overflow-hidden transition data-[active=true]:ring-2 data-[active=true]:ring-red-600/40"
+            data-thumb
+            data-index="{{ forloop.index0 }}"
+            data-active="false">
+            <img
+              height=""
+              width=""
+              src="{{ block.settings.thumbnail | img_url: '200x' }}"
+              alt="Thumbnail"
+              class="ctm-img-p8 thumbnail"
+              data-image="{{ block.settings.thumbnail | img_url: '800x' }}">
+            <!-- Red overlay shown only when this thumb is active -->
+            <div class="active-overlay absolute inset-0 bg-red-600/40 opacity-0 transition duration-200" data-active="false"></div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE: PRODUCT DETAILS -->
+    <div class="lg:w-1/2 mt-8 lg:mt-0">
+      <!-- Title & Price -->
+      <h2 class="ctm-h2-p8">{{ section.settings.title }}</h2>
+      <div class="flex items-center gap-2 mt-2">
+        <span class="text-[#A6192E] !text-[20px] !font-extrabold">{{ section.settings.price }}</span>
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.star_image | img_url: '200x' }}"
+          alt="Star Rating"
+          class="h-8">
+      </div>
+
+      <!-- Description -->
+      <h3 class="!text-[32px] !font-extrabold mt-4">{{ section.settings.subtitle }}</h3>
+      <p class="mt-2 text-gray-700 text-[14px]">{{ section.settings.description }}</p>
+      <p class="mt-4 font-bold">{{ section.settings.bold_text }}</p>
+      <p class="font-bold">{{ section.settings.question_text }}</p>
+
+      <!-- Pricing Options -->
+      <div class="flex gap-4 mt-6">
+        <div class="border-2 border-red-600 rounded-lg p-4 cursor-pointer hover:shadow-lg transition w-1/2 text-center">
+          <h4 class="text-red-600 font-bold">{{ section.settings.recorded_label }}</h4>
+          <span class="text-red-600 font-bold text-xl">{{ section.settings.recorded_price }}</span>
         </div>
-
-        <!-- Thumbnails -->
-        <div class="mt-4 grid grid-cols-4 gap-3">
-          {% assign thumbs = "" | split: "" %}
-          {% assign thumbs = thumbs | push: section.settings.thumb_1 %}
-          {% assign thumbs = thumbs | push: section.settings.thumb_2 %}
-          {% assign thumbs = thumbs | push: section.settings.thumb_3 %}
-          {% assign thumbs = thumbs | push: section.settings.thumb_4 %}
-
-          {% for t in thumbs %}
-            {% if t != blank %}
-              <button class="ogc-thumb relative group rounded-lg overflow-hidden aspect-square focus:outline-none" data-src="{{ t | image_url: width: 1200 }}">
-                <img src="{{ t | image_url: width: 400 }}" alt="Gallery thumbnail {{ forloop.index }}" class="w-full h-full object-cover group-aria-selected:outline-none">
-                <span class="pointer-events-none absolute inset-0 ring-2 ring-rose-600 opacity-0 group-[.is-active]:opacity-100"></span>
-              </button>
-            {% else %}
-              <div class="bg-neutral-100 rounded-lg aspect-square"></div>
-            {% endif %}
-          {% endfor %}
+        <div class="border rounded-lg p-4 cursor-pointer hover:shadow-lg transition w-1/2 text-center">
+          <h4 class="font-bold">{{ section.settings.live_label }}</h4>
+          <span class="font-bold text-xl">{{ section.settings.live_price }}</span>
         </div>
       </div>
 
-      <!-- Details -->
-      <div class="space-y-6">
-        <!-- Header -->
-        <div class="space-y-3">
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-800">{{ section.settings.heading }}</h2>
+      <div class="mt-4 flex items-center gap-2">
+        <input
+          type="checkbox"
+          id="terms"
+          class="ctm-check">
+        <label for="terms" class="text-sm">{{ section.settings.terms_text }}</label>
+      </div>
 
-          <div class="flex items-center gap-4">
-            <div class="text-rose-700 text-2xl font-extrabold">
-              <span id="ogc-active-price" data-recorded="{{ section.settings.price_recorded | times: 100 | money_with_currency }}" data-live="{{ section.settings.price_live | times: 100 | money_with_currency }}">
-                {{ section.settings.default_price_type == 'live' 
-                  | ternary: section.settings.price_live | money_with_currency, section.settings.price_recorded | money_with_currency }}
-              </span>
-            </div>
-            {% if section.settings.stars_image != blank %}
-              <img src="{{ section.settings.stars_image | image_url: width: 160 }}" alt="Reviews" class="h-5 w-auto">
-            {% endif %}
-          </div>
-        </div>
 
-        <!-- Intro and Description -->
-        <div class="space-y-4">
-          <h3 class="font-bold text-[32px] leading-tight">{{ section.settings.intro_heading }}</h3>
-          <p class="text-neutral-700 leading-relaxed">{{ section.settings.description_main }}</p>
-          {% if section.settings.bold_block != blank %}
-            <p class="font-semibold text-neutral-900">{{ section.settings.bold_block }}</p>
-          {% endif %}
-          {% if section.settings.bold_block_2 != blank %}
-            <p class="font-semibold text-neutral-900">{{ section.settings.bold_block_2 }}</p>
-          {% endif>
-        </div>
-
-        <!-- Price Options -->
-        <div class="grid grid-cols-2 gap-4">
-          <button type="button" data-type="recorded" class="ogc-price-option is-active border-2 border-rose-600 rounded-xl p-4 text-left hover:shadow-sm focus:outline-none">
-            <div class="text-sm text-neutral-600">{{ section.settings.recorded_label }}</div>
-            <div class="text-2xl font-extrabold">{{ section.settings.price_recorded | money_with_currency }}</div>
+      <!-- Quantity Selector -->
+      <div class="flex items-center gap-4 mt-6">
+        <span class="!font-extrabold">Quantity:</span>
+        <div class="flex items-center rounded-full border border-[#8B0A10] overflow-hidden h-8">
+          <button id="decreaseQty" class="flex items-center justify-center w-8 h-8 text-gray-700 select-none">
+            −
           </button>
-          <button type="button" data-type="live" class="ogc-price-option border-2 border-neutral-200 rounded-xl p-4 text-left hover:shadow-sm focus:outline-none">
-            <div class="text-sm text-neutral-600">{{ section.settings.live_label }}</div>
-            <div class="text-2xl font-extrabold">{{ section.settings.price_live | money_with_currency }}</div>
+          <input
+            id="quantity"
+            type="text"
+            value="1"
+            class="w-10 h-8 text-center outline-none border-0 focus:ring-0 text-gray-800"
+            inputmode="numeric"
+            pattern="[0-9]*" />
+          <button id="increaseQty" class="flex items-center justify-center w-8 h-8 text-gray-700 select-none">
+            +
           </button>
         </div>
 
-        <!-- Agreement -->
-        <label class="flex items-start gap-3 text-sm text-neutral-700 select-none">
-          <input id="ogc-agree" type="checkbox" class="mt-1 h-4 w-4 rounded border-neutral-300 text-rose-600 focus:ring-rose-600">
-          <span>{{ section.settings.agreement_label }}</span>
-        </label>
+      </div>
 
-        <!-- Quantity -->
-        <div class="space-y-2">
-          <div class="text-sm font-semibold tracking-wide text-neutral-900">{{ section.settings.qty_label }}</div>
-          <div class="inline-flex items-center rounded-full border border-neutral-300 overflow-hidden">
-            <button type="button" id="ogc-qty-dec" class="w-10 h-10 grid place-items-center text-lg hover:bg-neutral-50">−</button>
-            <input id="ogc-qty" type="number" min="1" value="1" class="w-12 h-10 text-center appearance-none focus:outline-none" inputmode="numeric" pattern="[0-9]*">
-            <button type="button" id="ogc-qty-inc" class="w-10 h-10 grid place-items-center text-lg hover:bg-neutral-50">+</button>
-          </div>
-        </div>
-
-        <!-- Buttons -->
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="{{ section.settings.register_url }}" class="ogc-btn-primary inline-flex items-center justify-center rounded-full bg-rose-700 text-white px-6 h-11 font-semibold hover:-translate-y-0.5 hover:shadow-md transition">
-            {{ section.settings.register_label }}
-          </a>
-
-          {% if shop.enabled_payment_types contains 'shop_pay' %}
-            <a href="{{ section.settings.shop_pay_url }}" class="ogc-btn-secondary inline-flex items-center justify-center rounded-full border border-neutral-300 px-6 h-11 font-semibold hover:bg-neutral-50 transition">
-              {{ section.settings.shop_pay_label }}
-            </a>
-          {% else %}
-            <a href="{{ section.settings.shop_pay_url }}" class="ogc-btn-secondary inline-flex items-center justify-center rounded-full border border-neutral-300 px-6 h-11 font-semibold hover:bg-neutral-50 transition">
-              {{ section.settings.shop_pay_label }}
-            </a>
-          {% endif %}
-        </div>
+      <!-- Buttons -->
+      <div class="flex gap-4 mt-8">
+        <button class="bg-[#A6192E] text-white px-6 py-2 rounded-full hover:bg-red-700 transition font-bold">
+          {{ section.settings.register_button }}
+        </button>
+        <button class="border-2 border[#A6192E] text-red-600 px-6 py-2 rounded-full hover:bg-[#A6192E] hover:text-white transition font-bold flex items-center gap-2">
+          {{ section.settings.shop_button }}
+        </button>
       </div>
     </div>
   </div>
-
-  <script>
-    (function () {
-      const main = document.getElementById('ogc-main');
-      const thumbs = Array.from(document.querySelectorAll('.ogc-thumb'));
-      const prev = document.querySelector('.gallery-prev');
-      const next = document.querySelector('.gallery-next');
-
-      // Track index based on active thumb
-      let index = 0;
-      function setActive(i) {
-        index = i;
-        const src = thumbs[i].dataset.src;
-        main.src = src;
-        thumbs.forEach((b, k) => b.classList.toggle('is-active', k === i));
-      }
-      thumbs.forEach((btn, i) => {
-        btn.addEventListener('click', () => setActive(i));
-      });
-      if (thumbs.length) setActive(0);
-
-      function move(delta) {
-        if (!thumbs.length) return;
-        const n = (index + delta + thumbs.length) % thumbs.length;
-        setActive(n);
-      }
-      prev?.addEventListener('click', () => move(-1));
-      next?.addEventListener('click', () => move(1));
-
-      // Price toggle
-      const priceDisplay = document.getElementById('ogc-active-price');
-      const opts = Array.from(document.querySelectorAll('.ogc-price-option'));
-      let selectedType = 'recorded';
-      function updatePriceUI(type) {
-        selectedType = type;
-        opts.forEach(o => {
-          const active = o.getAttribute('data-type') === type;
-          o.classList.toggle('is-active', active);
-          o.classList.toggle('border-rose-600', active);
-          o.classList.toggle('border-neutral-200', !active);
-        });
-        const moneyRecorded = "{{ section.settings.price_recorded | money_with_currency }}";
-        const moneyLive = "{{ section.settings.price_live | money_with_currency }}";
-        priceDisplay.textContent = type === 'live' ? moneyLive : moneyRecorded;
-      }
-      opts.forEach(o => {
-        o.addEventListener('click', () => updatePriceUI(o.getAttribute('data-type')));
-      });
-      updatePriceUI("{{ section.settings.default_price_type }}");
-
-      // Quantity stepper
-      const qty = document.getElementById('ogc-qty');
-      document.getElementById('ogc-qty-inc')?.addEventListener('click', () => qty.value = Math.max(1, (parseInt(qty.value || '1', 10) + 1)));
-      document.getElementById('ogc-qty-dec')?.addEventListener('click', () => qty.value = Math.max(1, (parseInt(qty.value || '1', 10) - 1)));
-
-      // Agreement gate for primary button
-      const agree = document.getElementById('ogc-agree');
-      const primary = document.querySelector('.ogc-btn-primary');
-      function gate() {
-        if (!agree) return;
-        primary.classList.toggle('opacity-60', !agree.checked);
-        primary.classList.toggle('pointer-events-none', !agree.checked);
-        primary.setAttribute('aria-disabled', String(!agree.checked));
-      }
-      agree?.addEventListener('change', gate);
-      gate();
-    })();
-  </script>
-
-  <style>
-    /* Minimal fallback if Tailwind not present for a few key classes used above */
-    .container { max-width: 1200px; }
-    .ogc-btn-primary:hover { transform: translateY(-2px); }
-  </style>
 </section>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const thumbnails = document.querySelectorAll("[data-image]");
+  const mainImage  = document.getElementById("mainImage");
+  const wrappers   = document.querySelectorAll("[data-thumb]");
+  const overlays   = document.querySelectorAll(".active-overlay");
+  const images     = Array.from(thumbnails).map(img => img.dataset.image);
+  
+  if (!thumbnails.length) return;
+  
+  let currentIndex = 0;
+  
+  function updateActiveState(index) {
+    // Reset all
+    wrappers.forEach(w => w.setAttribute("data-active", "false"));
+    overlays.forEach(o => o.setAttribute("data-active", "false"));
+    overlays.forEach(o => o.style.opacity = "0");
+  
+    // Activate current
+    wrappers[index]?.setAttribute("data-active", "true");
+    overlays[index]?.setAttribute("data-active", "true");
+    overlays[index].style.opacity = "1"; // shows bg-red-600/40 at full (i.e., 40% red)
+  }
+  
+  // Initialize
+  mainImage.src = images[0] || mainImage.src;
+  updateActiveState(currentIndex);
+  
+  // Click handlers for thumbnails
+  thumbnails.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => {
+      currentIndex = index;
+      mainImage.src = images[currentIndex];
+      updateActiveState(currentIndex);
+    });
+  });
+  
+  // Prev/Next buttons
+  document.getElementById("prevBtn")?.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    mainImage.src = images[currentIndex];
+    updateActiveState(currentIndex);
+  });
+  
+  document.getElementById("nextBtn")?.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    mainImage.src = images[currentIndex];
+    updateActiveState(currentIndex);
+  });
+  
+  // Quantity (+/-) — defensive binds
+  document.getElementById("increaseQty")?.addEventListener("click", () => {
+    const qty = document.getElementById("quantity");
+    qty.value = (parseInt(qty.value || "1", 10) + 1).toString();
+  });
+  
+  document.getElementById("decreaseQty")?.addEventListener("click", () => {
+    const qty = document.getElementById("quantity");
+    const val = Math.max(1, parseInt(qty.value || "1", 10) - 1);
+    qty.value = val.toString();
+  });
+  });
+</script>
+
 {% schema %}
-{
-  "name": "Online Group Coaching",
-  "tag": "section",
-  "class": "section-online-group-coaching",
-  "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "ONLINE GROUP COACHING" },
-
-    { "type": "image_picker", "id": "stars_image", "label": "Review stars PNG" },
-
-    { "type": "image_picker", "id": "main_image", "label": "Main Image (optional, falls back to first thumb)" },
-    { "type": "text", "id": "main_alt", "label": "Main Image alt", "default": "Online Group Coaching" },
-
-    { "type": "image_picker", "id": "thumb_1", "label": "Thumbnail 1" },
-    { "type": "image_picker", "id": "thumb_2", "label": "Thumbnail 2" },
-    { "type": "image_picker", "id": "thumb_3", "label": "Thumbnail 3" },
-    { "type": "image_picker", "id": "thumb_4", "label": "Thumbnail 4" },
-
-    { "type": "text", "id": "intro_heading", "label": "Intro H3 (bold, 32px)", "default": "THE E.D.G.E. IMMERSION: A 12-WEEK JOURNEY OF BECOMING." },
-
-    { "type": "textarea", "id": "description_main", "label": "Main Description", "default": "The E.D.G.E. Initiation is a transformative 12-week odyssey where art meets discipline, and vulnerability meets power. This is where you strip away illusion, dismantle limitations, and breathe life into your fullest expression. Through somatic practices, deep inquiry, and embodied movement, you'll cultivate the courage to stand at your edge--and expand beyond it." },
-
-    { "type": "text", "id": "bold_block", "label": "Bold block #1", "default": "This is not just change. This is the art of becoming." },
-    { "type": "text", "id": "bold_block_2", "label": "Bold block #2", "default": "Are you ready to step into your masterpiece?" },
-
-    { "type": "text", "id": "recorded_label", "label": "Recorded label", "default": "Recorded Version" },
-    { "type": "text", "id": "live_label", "label": "Live Component label", "default": "Live Component" },
-
-    { "type": "select", "id": "default_price_type", "label": "Default price option", "default": "recorded", "options": [
-      { "value": "recorded", "label": "Recorded" },
-      { "value": "live", "label": "Live" }
-    ]},
-
-    { "type": "number", "id": "price_recorded", "label": "Recorded price (cents or decimal depending on money filter)", "default": 30000 },
-    { "type": "number", "id": "price_live", "label": "Live price", "default": 110000 },
-
-    { "type": "text", "id": "agreement_label", "label": "Agreement label", "default": "I agree to Terms and Conditions for training certification" },
-
-    { "type": "text", "id": "qty_label", "label": "Quantity label", "default": "QUANTITY:" },
-
-    { "type": "url", "id": "register_url", "label": "Register Now URL" },
-    { "type": "text", "id": "register_label", "label": "Register button label", "default": "REGISTER NOW" },
-
-    { "type": "url", "id": "shop_pay_url", "label": "Shop Pay URL" },
-    { "type": "text", "id": "shop_pay_label", "label": "Shop Pay button label", "default": "BUY WITH Shop Pay" }
-  ],
-  "presets": [
-    { "name": "Online Group Coaching" }
-  ]
-}
+  {
+    "name": "Coaching Product Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "main_image",
+        "label": "Main Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Online Group Coaching"
+      },
+      {
+        "type": "text",
+        "id": "price",
+        "label": "Main Price",
+        "default": "$300.00"
+      },
+      {
+        "type": "image_picker",
+        "id": "star_image",
+        "label": "Star Rating Image"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle (Bold)",
+        "default": "THE E.D.G.E. IMMERSION: A 12-WEEK JOURNEY OF BECOMING."
+      }, {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      }, {
+        "type": "text",
+        "id": "bold_text",
+        "label": "Bold Statement",
+        "default": "This is not just change. This is the art of becoming."
+      }, {
+        "type": "text",
+        "id": "question_text",
+        "label": "Question Text",
+        "default": "Are you ready to step into your masterpiece?"
+      }, {
+        "type": "text",
+        "id": "recorded_label",
+        "label": "Recorded Label",
+        "default": "Recorded Version"
+      }, {
+        "type": "text",
+        "id": "recorded_price",
+        "label": "Recorded Price",
+        "default": "$300.00"
+      }, {
+        "type": "text",
+        "id": "live_label",
+        "label": "Live Label",
+        "default": "Live Component"
+      }, {
+        "type": "text",
+        "id": "live_price",
+        "label": "Live Price",
+        "default": "$1,100.00"
+      }, {
+        "type": "text",
+        "id": "terms_text",
+        "label": "Terms & Conditions Text",
+        "default": "I agree to Terms and Conditions for training certification"
+      }, {
+        "type": "text",
+        "id": "register_button",
+        "label": "Register Button Text",
+        "default": "REGISTER NOW"
+      }, {
+        "type": "text",
+        "id": "shop_button",
+        "label": "Shop Pay Button Text",
+        "default": "BUY WITH ShopPay"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "thumbnail",
+        "name": "Thumbnail Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "thumbnail",
+            "label": "Thumbnail Image"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 4,
+    "presets": [
+      {
+        "name": "Coaching Product Section"
+      }
+    ]
+  }
 {% endschema %}
