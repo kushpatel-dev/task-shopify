@@ -1,0 +1,260 @@
+{% comment %}
+  Section: Online Group Coaching
+  Features:
+  - Left: main image with previous/next arrows, 4 square thumbnails (no borders)
+  - Right: Details
+    - Title + price + review stars (PNG)
+    - H3 bold intro (32px)
+    - Rich description paragraphs with optional bold callouts
+    - Two price options (Recorded / Live)
+    - Agreement checkbox
+    - Quantity stepper
+    - Buttons: Register Now, Buy with Shop Pay (hover effects)
+  Notes:
+  - Uses Tailwind utility classes; adjust class names if you compile Tailwind.
+  - Works on all devices with responsive grid.
+{% endcomment %}
+
+<section id="online-group-coaching" class="py-10 lg:py-14">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <!-- Gallery -->
+      <div class="">
+        <div class="relative rounded-xl overflow-hidden">
+          <button type="button" class="gallery-prev absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-rose-600/90 text-white w-10 h-10 rounded-full grid place-items-center hover:bg-rose-700 focus:outline-none" aria-label="Previous image">
+            ‹
+          </button>
+          <button type="button" class="gallery-next absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-rose-600/90 text-white w-10 h-10 rounded-full grid place-items-center hover:bg-rose-700 focus:outline-none" aria-label="Next image">
+            ›
+          </button>
+
+          {% assign main_image = section.settings.main_image | default: section.settings.thumb_1 %}
+          <img id="ogc-main" src="{{ main_image | image_url: width: 1400 }}" alt="{{ section.settings.main_alt | escape }}" class="w-full aspect-[16/11] object-cover" loading="eager">
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="mt-4 grid grid-cols-4 gap-3">
+          {% assign thumbs = "" | split: "" %}
+          {% assign thumbs = thumbs | push: section.settings.thumb_1 %}
+          {% assign thumbs = thumbs | push: section.settings.thumb_2 %}
+          {% assign thumbs = thumbs | push: section.settings.thumb_3 %}
+          {% assign thumbs = thumbs | push: section.settings.thumb_4 %}
+
+          {% for t in thumbs %}
+            {% if t != blank %}
+              <button class="ogc-thumb relative group rounded-lg overflow-hidden aspect-square focus:outline-none" data-src="{{ t | image_url: width: 1200 }}">
+                <img src="{{ t | image_url: width: 400 }}" alt="Gallery thumbnail {{ forloop.index }}" class="w-full h-full object-cover group-aria-selected:outline-none">
+                <span class="pointer-events-none absolute inset-0 ring-2 ring-rose-600 opacity-0 group-[.is-active]:opacity-100"></span>
+              </button>
+            {% else %}
+              <div class="bg-neutral-100 rounded-lg aspect-square"></div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="space-y-6">
+        <!-- Header -->
+        <div class="space-y-3">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-800">{{ section.settings.heading }}</h2>
+
+          <div class="flex items-center gap-4">
+            <div class="text-rose-700 text-2xl font-extrabold">
+              <span id="ogc-active-price" data-recorded="{{ section.settings.price_recorded | times: 100 | money_with_currency }}" data-live="{{ section.settings.price_live | times: 100 | money_with_currency }}">
+                {{ section.settings.default_price_type == 'live' 
+                  | ternary: section.settings.price_live | money_with_currency, section.settings.price_recorded | money_with_currency }}
+              </span>
+            </div>
+            {% if section.settings.stars_image != blank %}
+              <img src="{{ section.settings.stars_image | image_url: width: 160 }}" alt="Reviews" class="h-5 w-auto">
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Intro and Description -->
+        <div class="space-y-4">
+          <h3 class="font-bold text-[32px] leading-tight">{{ section.settings.intro_heading }}</h3>
+          <p class="text-neutral-700 leading-relaxed">{{ section.settings.description_main }}</p>
+          {% if section.settings.bold_block != blank %}
+            <p class="font-semibold text-neutral-900">{{ section.settings.bold_block }}</p>
+          {% endif %}
+          {% if section.settings.bold_block_2 != blank %}
+            <p class="font-semibold text-neutral-900">{{ section.settings.bold_block_2 }}</p>
+          {% endif>
+        </div>
+
+        <!-- Price Options -->
+        <div class="grid grid-cols-2 gap-4">
+          <button type="button" data-type="recorded" class="ogc-price-option is-active border-2 border-rose-600 rounded-xl p-4 text-left hover:shadow-sm focus:outline-none">
+            <div class="text-sm text-neutral-600">{{ section.settings.recorded_label }}</div>
+            <div class="text-2xl font-extrabold">{{ section.settings.price_recorded | money_with_currency }}</div>
+          </button>
+          <button type="button" data-type="live" class="ogc-price-option border-2 border-neutral-200 rounded-xl p-4 text-left hover:shadow-sm focus:outline-none">
+            <div class="text-sm text-neutral-600">{{ section.settings.live_label }}</div>
+            <div class="text-2xl font-extrabold">{{ section.settings.price_live | money_with_currency }}</div>
+          </button>
+        </div>
+
+        <!-- Agreement -->
+        <label class="flex items-start gap-3 text-sm text-neutral-700 select-none">
+          <input id="ogc-agree" type="checkbox" class="mt-1 h-4 w-4 rounded border-neutral-300 text-rose-600 focus:ring-rose-600">
+          <span>{{ section.settings.agreement_label }}</span>
+        </label>
+
+        <!-- Quantity -->
+        <div class="space-y-2">
+          <div class="text-sm font-semibold tracking-wide text-neutral-900">{{ section.settings.qty_label }}</div>
+          <div class="inline-flex items-center rounded-full border border-neutral-300 overflow-hidden">
+            <button type="button" id="ogc-qty-dec" class="w-10 h-10 grid place-items-center text-lg hover:bg-neutral-50">−</button>
+            <input id="ogc-qty" type="number" min="1" value="1" class="w-12 h-10 text-center appearance-none focus:outline-none" inputmode="numeric" pattern="[0-9]*">
+            <button type="button" id="ogc-qty-inc" class="w-10 h-10 grid place-items-center text-lg hover:bg-neutral-50">+</button>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="{{ section.settings.register_url }}" class="ogc-btn-primary inline-flex items-center justify-center rounded-full bg-rose-700 text-white px-6 h-11 font-semibold hover:-translate-y-0.5 hover:shadow-md transition">
+            {{ section.settings.register_label }}
+          </a>
+
+          {% if shop.enabled_payment_types contains 'shop_pay' %}
+            <a href="{{ section.settings.shop_pay_url }}" class="ogc-btn-secondary inline-flex items-center justify-center rounded-full border border-neutral-300 px-6 h-11 font-semibold hover:bg-neutral-50 transition">
+              {{ section.settings.shop_pay_label }}
+            </a>
+          {% else %}
+            <a href="{{ section.settings.shop_pay_url }}" class="ogc-btn-secondary inline-flex items-center justify-center rounded-full border border-neutral-300 px-6 h-11 font-semibold hover:bg-neutral-50 transition">
+              {{ section.settings.shop_pay_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const main = document.getElementById('ogc-main');
+      const thumbs = Array.from(document.querySelectorAll('.ogc-thumb'));
+      const prev = document.querySelector('.gallery-prev');
+      const next = document.querySelector('.gallery-next');
+
+      // Track index based on active thumb
+      let index = 0;
+      function setActive(i) {
+        index = i;
+        const src = thumbs[i].dataset.src;
+        main.src = src;
+        thumbs.forEach((b, k) => b.classList.toggle('is-active', k === i));
+      }
+      thumbs.forEach((btn, i) => {
+        btn.addEventListener('click', () => setActive(i));
+      });
+      if (thumbs.length) setActive(0);
+
+      function move(delta) {
+        if (!thumbs.length) return;
+        const n = (index + delta + thumbs.length) % thumbs.length;
+        setActive(n);
+      }
+      prev?.addEventListener('click', () => move(-1));
+      next?.addEventListener('click', () => move(1));
+
+      // Price toggle
+      const priceDisplay = document.getElementById('ogc-active-price');
+      const opts = Array.from(document.querySelectorAll('.ogc-price-option'));
+      let selectedType = 'recorded';
+      function updatePriceUI(type) {
+        selectedType = type;
+        opts.forEach(o => {
+          const active = o.getAttribute('data-type') === type;
+          o.classList.toggle('is-active', active);
+          o.classList.toggle('border-rose-600', active);
+          o.classList.toggle('border-neutral-200', !active);
+        });
+        const moneyRecorded = "{{ section.settings.price_recorded | money_with_currency }}";
+        const moneyLive = "{{ section.settings.price_live | money_with_currency }}";
+        priceDisplay.textContent = type === 'live' ? moneyLive : moneyRecorded;
+      }
+      opts.forEach(o => {
+        o.addEventListener('click', () => updatePriceUI(o.getAttribute('data-type')));
+      });
+      updatePriceUI("{{ section.settings.default_price_type }}");
+
+      // Quantity stepper
+      const qty = document.getElementById('ogc-qty');
+      document.getElementById('ogc-qty-inc')?.addEventListener('click', () => qty.value = Math.max(1, (parseInt(qty.value || '1', 10) + 1)));
+      document.getElementById('ogc-qty-dec')?.addEventListener('click', () => qty.value = Math.max(1, (parseInt(qty.value || '1', 10) - 1)));
+
+      // Agreement gate for primary button
+      const agree = document.getElementById('ogc-agree');
+      const primary = document.querySelector('.ogc-btn-primary');
+      function gate() {
+        if (!agree) return;
+        primary.classList.toggle('opacity-60', !agree.checked);
+        primary.classList.toggle('pointer-events-none', !agree.checked);
+        primary.setAttribute('aria-disabled', String(!agree.checked));
+      }
+      agree?.addEventListener('change', gate);
+      gate();
+    })();
+  </script>
+
+  <style>
+    /* Minimal fallback if Tailwind not present for a few key classes used above */
+    .container { max-width: 1200px; }
+    .ogc-btn-primary:hover { transform: translateY(-2px); }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Online Group Coaching",
+  "tag": "section",
+  "class": "section-online-group-coaching",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "ONLINE GROUP COACHING" },
+
+    { "type": "image_picker", "id": "stars_image", "label": "Review stars PNG" },
+
+    { "type": "image_picker", "id": "main_image", "label": "Main Image (optional, falls back to first thumb)" },
+    { "type": "text", "id": "main_alt", "label": "Main Image alt", "default": "Online Group Coaching" },
+
+    { "type": "image_picker", "id": "thumb_1", "label": "Thumbnail 1" },
+    { "type": "image_picker", "id": "thumb_2", "label": "Thumbnail 2" },
+    { "type": "image_picker", "id": "thumb_3", "label": "Thumbnail 3" },
+    { "type": "image_picker", "id": "thumb_4", "label": "Thumbnail 4" },
+
+    { "type": "text", "id": "intro_heading", "label": "Intro H3 (bold, 32px)", "default": "THE E.D.G.E. IMMERSION: A 12-WEEK JOURNEY OF BECOMING." },
+
+    { "type": "textarea", "id": "description_main", "label": "Main Description", "default": "The E.D.G.E. Initiation is a transformative 12-week odyssey where art meets discipline, and vulnerability meets power. This is where you strip away illusion, dismantle limitations, and breathe life into your fullest expression. Through somatic practices, deep inquiry, and embodied movement, you'll cultivate the courage to stand at your edge--and expand beyond it." },
+
+    { "type": "text", "id": "bold_block", "label": "Bold block #1", "default": "This is not just change. This is the art of becoming." },
+    { "type": "text", "id": "bold_block_2", "label": "Bold block #2", "default": "Are you ready to step into your masterpiece?" },
+
+    { "type": "text", "id": "recorded_label", "label": "Recorded label", "default": "Recorded Version" },
+    { "type": "text", "id": "live_label", "label": "Live Component label", "default": "Live Component" },
+
+    { "type": "select", "id": "default_price_type", "label": "Default price option", "default": "recorded", "options": [
+      { "value": "recorded", "label": "Recorded" },
+      { "value": "live", "label": "Live" }
+    ]},
+
+    { "type": "number", "id": "price_recorded", "label": "Recorded price (cents or decimal depending on money filter)", "default": 30000 },
+    { "type": "number", "id": "price_live", "label": "Live price", "default": 110000 },
+
+    { "type": "text", "id": "agreement_label", "label": "Agreement label", "default": "I agree to Terms and Conditions for training certification" },
+
+    { "type": "text", "id": "qty_label", "label": "Quantity label", "default": "QUANTITY:" },
+
+    { "type": "url", "id": "register_url", "label": "Register Now URL" },
+    { "type": "text", "id": "register_label", "label": "Register button label", "default": "REGISTER NOW" },
+
+    { "type": "url", "id": "shop_pay_url", "label": "Shop Pay URL" },
+    { "type": "text", "id": "shop_pay_label", "label": "Shop Pay button label", "default": "BUY WITH Shop Pay" }
+  ],
+  "presets": [
+    { "name": "Online Group Coaching" }
+  ]
+}
+{% endschema %}

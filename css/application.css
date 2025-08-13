@@ -42,3 +42,10 @@
 .ctm-h3-p6{
   @apply max-w-[540px] text-3xl md:text-[36px] font-extrabold leading-tight mb-4;
 }
+
+
+/* p 7 */
+
+.ctm-font-p7{
+  @apply text-[18px] md:text-[20px] lg:text-[24px] font-extrabold uppercase leading-relaxed mb-4;
+}

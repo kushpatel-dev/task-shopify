@@ -15,7 +15,7 @@
           {% endif %}
 
           <div class="p-4 text-center">
-            <h3 class="font-bold text-xl uppercase mb-2" style="color: {{ section.settings.heading_color }};">
+            <h3 class="ctm-font-p7" style="color: {{ section.settings.heading_color }};">
               {{ block.settings.title }}
             </h3>
             <p class="mb-4" style="color: {{ section.settings.paragraph_color }};">
@@ -38,9 +38,25 @@
 
     <!-- Pagination -->
     <div class="flex justify-center items-center mt-8 space-x-2" id="pagination">
-      <button id="prevPage" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">&lt;</button>
+      <button id="prevPage" class="p-3">
+        <img
+          height=""
+          width=""
+          src="{{'arrow-left.png' | asset_url }}"
+          alt="Previous"
+          class="w-6 h-6">
+
+      </button>
+
       <div id="pageNumbers" class="flex space-x-2"></div>
-      <button id="nextPage" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">&gt;</button>
+      <button id="nextPage">
+        <img
+          height=""
+          width=""
+          src="{{ 'arrow-right.png' | asset_url }}"
+          alt="Next"
+          class="w-6 h-6">
+      </button>
     </div>
   </div>
 </section>
@@ -73,7 +89,7 @@
   
     const activeBtn = pageNumbersContainer.querySelector(`[data-page="${page}"]`);
     if (activeBtn) {
-      activeBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-red-500 text-white font-bold transition transform hover:scale-110";
+      activeBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-[#A80000] text-white font-bold transition transform hover:scale-110";
     }
   
     prevBtn.disabled = page === 1;
@@ -93,8 +109,11 @@
     }
   }
   
-  prevBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 hover:bg-red-500 hover:text-white";
-  nextBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 hover:bg-red-500 hover:text-white";
+  prevBtn.className = "w-10 h-10 flex items-center justify-center rounded-full bg-white ";
+  nextBtn.className = "w-10 h-10 flex items-center justify-center rounded-full bg-white ";
+  
+  prevBtn.querySelector("img").classList.add("invert-0", "hover:invert"); 
+  nextBtn.querySelector("img").classList.add("invert-0", "hover:invert");
   
   prevBtn.addEventListener("click", () => {
     if (currentPage > 1) showPage(currentPage - 1);

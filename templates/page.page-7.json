@@ -181,7 +181,7 @@
       "settings": {
         "heading_color": "#a80000",
         "paragraph_color": "#4b5563",
-        "button_bg_color": "#dc2626",
+        "button_bg_color": "#a80000",
         "button_text_color": "#ffffff",
         "products_per_page": 12
       }
