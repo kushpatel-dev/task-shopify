@@ -66,3 +66,7 @@
 .ctm-h3-p9{
   @apply absolute bottom-6 left-3 right-3 text-center uppercase font-bold px-2 drop-shadow-lg text-[22px] md:text-[28px] leading-tight tracking-tight;
 }
+/* p10 */
+.ctm-nav {
+  @apply flex flex-wrap justify-center gap-4 text-[14px] md:space-x-6 overflow-x-auto md:overflow-visible;
+}

@@ -1,0 +1,162 @@
+<section class="relative bg-white w-full py-12 overflow-hidden">
+
+  <!-- Decorative coffee images -->
+  {% for i in (1..6) %}
+    {% assign pos_classes = "" %}
+    {% case i %}
+      {% when 1 %}
+        {% assign pos_classes = "top-0 left-0" %}
+      {% when 2 %}
+        {% assign pos_classes = "top-0 right-0" %}
+      {% when 3 %}
+        {% assign pos_classes = "top-1/2 -translate-y-1/2 left-0" %}
+      {% when 4 %}
+        {% assign pos_classes = "top-1/2 -translate-y-1/2 right-0" %}
+      {% when 5 %}
+        {% assign pos_classes = "bottom-[0] left-[20%]" %}
+      {% when 6 %}
+        {% assign pos_classes = "bottom-[10%] right-[20%]" %}
+    {% endcase %}
+
+    {% assign img_key = 'decorative_img_' | append: i %}
+    {% assign img_value = section.settings[img_key] %}
+
+    {% if img_value != blank %}
+      <img
+        height=""
+        width=""
+        src="{{ img_value | img_url: 'master' }}"
+        alt="Decorative Coffee {{ i }}"
+        class="absolute {{ pos_classes }} w-[150px] h-auto pointer-events-none select-none">
+    {% endif %}
+  {% endfor %}
+
+  <!-- Section heading -->
+  <h2 class="text-center font-bold text-3xl mb-8 tracking-wide text-[#4A1E0A]">
+    BEST SELLERS
+  </h2>
+
+  <!-- Product showcase -->
+  <div
+    id="bestSellersFlex"
+    class="flex flex-wrap justify-center gap-8 px-6 md:max-w-[1100px] md:mx-auto md:overflow-hidden overflow-x-auto"
+    style="scrollbar-width: none; -ms-overflow-style: none;">
+
+    {% for block in section.blocks %}
+      <div class="flex-shrink-0 flex flex-col items-center w-[222px]">
+        <img
+          height=""
+          width=""
+          src="{{ block.settings.image | img_url: 'master' }}"
+          alt="{{ block.settings.title }}"
+          class="w-[222px] h-[263px] object-contain">
+        <h3 class="mt-4 text-center" style="font-family: Fjord, serif; font-weight: 400; font-size: 24px; line-height: 40px; letter-spacing: 3%;">
+          {{ block.settings.title }}
+        </h3>
+        {% if block.settings.price != blank %}
+          <p class="text-center text-lg mt-1">{{ block.settings.price }}</p>
+        {% endif %}
+        <a href="{{ block.settings.product_url }}" class="mt-3 px-6 py-2 rounded-full bg-[#DF9D3E] text-white font-semibold hover:opacity-90 transition">
+          VIEW PRODUCT
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<style>
+  /* Hide scrollbar on small screens */
+  #bestSellersFlex::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const flexWrap = document.getElementById("bestSellersFlex");
+  
+    if (window.innerWidth < 1024) {
+      flexWrap.classList.remove("flex-wrap");
+      flexWrap.classList.add("flex-nowrap");
+    }
+  
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 1024) {
+        flexWrap.classList.remove("flex-wrap");
+        flexWrap.classList.add("flex-nowrap");
+      } else {
+        flexWrap.classList.add("flex-wrap");
+        flexWrap.classList.remove("flex-nowrap");
+      }
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Best Sellers Showcase",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "decorative_img_1",
+        "label": "Decorative Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorative_img_2",
+        "label": "Decorative Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorative_img_3",
+        "label": "Decorative Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorative_img_4",
+        "label": "Decorative Image 4"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_img_5",
+        "label": "Decorative Image 5"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_img_6",
+        "label": "Decorative Image 6"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Product Title"
+          }, {
+            "type": "text",
+            "id": "price",
+            "label": "Product Price"
+          }, {
+            "type": "url",
+            "id": "product_url",
+            "label": "Product URL"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 8,
+    "presets": [
+      {
+        "name": "Best Sellers Showcase",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

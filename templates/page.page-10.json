@@ -17,139 +17,325 @@
         "padding_bottom": 28
       }
     },
-    "page_1_section_h6MRe8": {
-      "type": "page-1-section",
-      "disabled": true,
-      "name": "Warranty Section",
-      "settings": {
-        "image": "shopify://shop_images/image_2.png",
-        "image_alt": "Warranty section image",
-        "heading": "WARRANTY",
-        "warranty_text": "WARRANTY",
-        "body": "We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses.",
-        "note": "*Some exclusions apply",
-        "button_text": "Learn More",
-        "button_link": "",
-        "text_color": "#174532"
-      }
-    },
-    "collection_list_jtefdj": {
-      "type": "collection-list",
+    "page_10_header_HttBD9": {
+      "type": "page-10-header",
       "blocks": {
-        "featured_collection_XFjjrp": {
-          "type": "featured_collection",
+        "link_FFX7hf": {
+          "type": "link",
           "settings": {
-            "collection": ""
+            "link_text": "By Grind",
+            "link_url": "#"
           }
         },
-        "featured_collection_yE9dQb": {
-          "type": "featured_collection",
+        "link_KV4Rqm": {
+          "type": "link",
           "settings": {
-            "collection": ""
+            "link_text": "By Roast",
+            "link_url": ""
           }
         },
-        "featured_collection_acchP9": {
-          "type": "featured_collection",
+        "link_pRNeY6": {
+          "type": "link",
           "settings": {
-            "collection": ""
+            "link_text": "By Country",
+            "link_url": ""
+          }
+        },
+        "link_TQBX9V": {
+          "type": "link",
+          "settings": {
+            "link_text": "Organic Coffee",
+            "link_url": ""
+          }
+        },
+        "link_b3xnBB": {
+          "type": "link",
+          "settings": {
+            "link_text": "Decaf Coffee",
+            "link_url": ""
+          }
+        },
+        "link_g4KQkc": {
+          "type": "link",
+          "settings": {
+            "link_text": "Low Acid Coffee",
+            "link_url": ""
+          }
+        },
+        "link_qURxVD": {
+          "type": "link",
+          "settings": {
+            "link_text": "More",
+            "link_url": ""
           }
         }
       },
       "block_order": [
-        "featured_collection_XFjjrp",
-        "featured_collection_yE9dQb",
-        "featured_collection_acchP9"
+        "link_FFX7hf",
+        "link_KV4Rqm",
+        "link_pRNeY6",
+        "link_TQBX9V",
+        "link_b3xnBB",
+        "link_g4KQkc",
+        "link_qURxVD"
       ],
-      "disabled": true,
-      "name": "t:sections.collection-list.presets.name",
+      "name": "Custom Header",
       "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "top_bar_bg_color": "#000000",
+        "top_bar_text_color": "#ffffff",
+        "top_bar_text": "15% OFF for first time customers. Enter promo code: TRYDONPABLO | Free shipping on all orders of $50 or more!",
+        "phone_number": "(305) 249-5628",
+        "logo": "shopify://shop_images/Don_Pablo_sillouette_logo_2_1.png",
+        "account_icon": "shopify://shop_images/cart.svg",
+        "cart_icon": "shopify://shop_images/user_2_1.svg"
       }
     },
-    "featured_product_VbfmcM": {
-      "type": "featured-product",
+    "page_10_swiper_dJL8aP": {
+      "type": "page-10-swiper",
       "blocks": {
-        "text_KnAyEm": {
-          "type": "text",
+        "slide_fbMCcY": {
+          "type": "slide",
           "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
+            "bg_image": "shopify://shop_images/d749de498ed6764ed547d79a4255fad9d0ab2a80.jpg",
+            "heading_line1": "COFFEE HAS",
+            "heading_line2": "NEVER TASTED",
+            "heading_big": "THIS GOOD",
+            "subtext": "Even the best roasting process is useless without premium quality beans — and at Don Pablo Coffee, ours are unmatched.",
+            "cta_link": "#",
+            "cta_label": "",
+            "overlay_tint": "dark"
           }
         },
-        "title_UnbchF": {
-          "type": "title",
+        "slide_RYdria": {
+          "type": "slide",
           "settings": {
-            "heading_size": "h1"
+            "bg_image": "shopify://shop_images/9547e6d65f67d735bd4b23b10a0d2119123c1808.jpg",
+            "heading_line1": "COFFEE HAS",
+            "heading_line2": "NEVER TASTED",
+            "heading_big": "THIS GOOD",
+            "subtext": "Even the best roasting process is useless without premium quality beans — and at Don Pablo Coffee, ours are unmatched.",
+            "cta_link": "",
+            "cta_label": "",
+            "overlay_tint": "dark"
           }
         },
-        "price_xc6z6j": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_ah8EFH": {
-          "type": "variant_picker",
+        "slide_c4QUbE": {
+          "type": "slide",
           "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_qR9Efq": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_ibxTBR": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "share_hcgBBP": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "bg_image": "shopify://shop_images/b120892ccaf689a0b6aa0ba427931848486d0a56.jpg",
+            "heading_line1": "COFFEE HAS",
+            "heading_line2": "NEVER TASTED",
+            "heading_big": "THIS GOOD",
+            "subtext": "Even the best roasting process is useless without premium quality beans — and at Don Pablo Coffee, ours are unmatched.",
+            "cta_link": "",
+            "cta_label": "",
+            "overlay_tint": "dark"
           }
         }
       },
       "block_order": [
-        "text_KnAyEm",
-        "title_UnbchF",
-        "price_xc6z6j",
-        "variant_picker_ah8EFH",
-        "quantity_selector_qR9Efq",
-        "buy_buttons_ibxTBR",
-        "share_hcgBBP"
+        "slide_fbMCcY",
+        "slide_RYdria",
+        "slide_c4QUbE"
       ],
-      "name": "t:sections.featured-product.presets.name",
+      "name": "Coffee Hero Slider",
       "settings": {
-        "product": "",
-        "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "coffee_icon": "shopify://shop_images/Layer_2.png",
+        "primary_cta_link": "#",
+        "primary_cta_label": "Shop Now",
+        "prev_icon": "shopify://shop_images/Group_1.svg",
+        "next_icon": "shopify://shop_images/Group.svg",
+        "auto_play_seconds": 4,
+        "pause_on_hover": false
+      }
+    },
+    "page_10_product_CWNqFA": {
+      "type": "page-10-product",
+      "blocks": {
+        "category_D6eenw": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bgorganic_coffee.jpg",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_VrN37L": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bgdecaf-coffee.jpg",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_8rw3aP": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bglow-acid-coffee.jpg",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_HQLmVJ": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/AdobeStock_206731785_1.png",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_ntHaUr": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bgground-coffee_1.jpg",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_RDKbGG": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bgsingle-serve-coffee.jpg",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_tXkmpj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bglight-roast-coffee.jpg",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_fbfA7J": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bgmedium-dark-roast-coffee.jpg",
+            "title": "Organic Coffee"
+          }
+        },
+        "category_bGVR6C": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bgdark-roast-coffee.jpg",
+            "title": "Organic Coffee"
+          }
+        }
+      },
+      "block_order": [
+        "category_D6eenw",
+        "category_VrN37L",
+        "category_8rw3aP",
+        "category_HQLmVJ",
+        "category_ntHaUr",
+        "category_RDKbGG",
+        "category_tXkmpj",
+        "category_fbfA7J",
+        "category_bGVR6C"
+      ],
+      "name": "Coffee Categories Flex",
+      "settings": {
+        "font_family": "helvetica_n4",
+        "font_color": "#ffffff",
+        "decorative_image": "shopify://shop_images/Asset_2_1.png"
+      }
+    },
+    "page_10_productdisplay_3qtbhf": {
+      "type": "page-10-productdisplay",
+      "blocks": {
+        "product_Kmey4x": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$500",
+            "product_url": ""
+          }
+        },
+        "product_XERGG7": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$500",
+            "product_url": ""
+          }
+        },
+        "product_FfR3Th": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$500",
+            "product_url": ""
+          }
+        },
+        "product_E4bPNW": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle.png",
+            "title": "DON PABLO SIGNATURE BLEND",
+            "price": "$500",
+            "product_url": ""
+          }
+        },
+        "product_FGGtTi": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle.png",
+            "title": "DON PABLO SIGNATURE BLEND",
+            "price": "$500",
+            "product_url": ""
+          }
+        },
+        "product_eei3PA": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle.png",
+            "title": "DON PABLO SIGNATURE BLEND",
+            "price": "$500",
+            "product_url": ""
+          }
+        },
+        "product_jz4nCp": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle.png",
+            "title": "DON PABLO SIGNATURE BLEND",
+            "price": "$500",
+            "product_url": ""
+          }
+        },
+        "product_dAhdey": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle.png",
+            "title": "DON PABLO SIGNATURE BLEND",
+            "price": "$500",
+            "product_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_Kmey4x",
+        "product_XERGG7",
+        "product_FfR3Th",
+        "product_E4bPNW",
+        "product_FGGtTi",
+        "product_eei3PA",
+        "product_jz4nCp",
+        "product_dAhdey"
+      ],
+      "name": "Best Sellers Showcase",
+      "settings": {
+        "decorative_img_1": "shopify://shop_images/coffee-bean-1_1.png",
+        "decorative_img_2": "shopify://shop_images/coffee-bean-2_1.png",
+        "decorative_img_3": "shopify://shop_images/coffee-bean-4_1.png",
+        "decorative_img_4": "shopify://shop_images/coffee-bean-3_1.png",
+        "decorative_img_5": "shopify://shop_images/coffee-bean-1_1.png",
+        "decorative_img_6": "shopify://shop_images/coffee-bean-6_1.png"
       }
     }
   },
   "order": [
     "main",
-    "page_1_section_h6MRe8",
-    "collection_list_jtefdj",
-    "featured_product_VbfmcM"
+    "page_10_header_HttBD9",
+    "page_10_swiper_dJL8aP",
+    "page_10_product_CWNqFA",
+    "page_10_productdisplay_3qtbhf"
   ]
 }

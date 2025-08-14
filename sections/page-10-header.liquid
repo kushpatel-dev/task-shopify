@@ -1,0 +1,191 @@
+<div>
+  <!-- Top Bar -->
+  <div
+    class="py-4"
+    style="background-color: {{ section.settings.top_bar_bg_color }}; color: {{ section.settings.top_bar_text_color }};"
+  >
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-[16px]">{{ section.settings.top_bar_text }}</p>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="w-full bg-white py-4">
+    <div class="w-full mx-auto px-4 md:px-10 md:py-8">
+      <!-- Flex Container -->
+      <div class="flex flex-col md:flex-row items-center md:items-start justify-start gap-4">
+        
+        <!-- Phone Number -->
+        {% if section.settings.phone_number != blank %}
+          <span class="text-[14px] md:text-2xl text-[#511E02] flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 inline-block mr-1"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.29 2
+                15.65 15.65 0 0 1-8.23-2.94
+                15.17 15.17 0 0 1-6.19-6.19
+                A15.65 15.65 0 0 1 2 4.29
+                a2 2 0 0 1 2-2
+                16.09 16.09 0 0 1 5 1.5
+                l1.64 1.64a2 2 0 0 1 .3 2.14
+                l-1.39 1.39a.5.5 0 0 0 0 .71
+                l4.24 4.24a.5.5 0 0 0 .71 0
+                l1.39-1.39a2 2 0 0 1 2.14.3
+                l1.64 1.64a16.09 16.09 0 0 1 1.5 5z">
+              </path>
+            </svg>
+            {{ section.settings.phone_number }}
+          </span>
+        {% endif %}
+
+        <!-- Logo -->
+        <div class="flex justify-center md:flex-grow">
+          {% if section.settings.logo != blank %}
+            <a href="{{ routes.root_url }}">
+              <img height="" width="" src="{{ section.settings.logo | image_url: width: 700 }}"
+                alt="{{ section.settings.logo.alt | default: shop.name }}"
+                class="max-h-38 lg:max-h-56 w-auto"
+              >
+            </a>
+          {% else %}
+            <h1 class="text-2xl font-bold">
+              <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+            </h1>
+          {% endif %}
+        </div>
+
+        <!-- Icons -->
+        <div class="flex items-center space-x-4">
+          <a href="{{ routes.cart_url }}">
+            <img height="" width=""  src="{{ section.settings.cart_icon | image_url: width: 700 }}"
+              alt="Cart"
+              class="h-[20px] w-[20px]">
+          </a>
+          <a href="{{ routes.account_url }}">
+            <img height="" width="" src="{{ section.settings.account_icon | image_url: width: 700 }}"
+              alt="Account"
+              class="h-[20px] w-[20px]">
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-4">
+        <ul class="ctm-nav">
+          {% for block in section.blocks %}
+            <li>
+              <a href="{{ block.settings.link_url }}"
+                class="text-[#3D3D3D] font-bold hover:text-gray-900  whitespace-nowrap">
+                {{ block.settings.link_text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Header",
+  "tag": "header",
+  "class": "custom-header-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Top Bar Settings"
+    },
+    {
+      "type": "color",
+      "id": "top_bar_bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "top_bar_text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "top_bar_text",
+      "label": "Top Bar Text",
+      "default": "15% OFF for first time customers. Enter promo code: TRYDONPABLO | Free shipping on all orders of $50 or more!",
+      "info": "One line of text for the top bar."
+    },
+    {
+      "type": "header",
+      "content": "Main Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone Number",
+      "default": "(305) 249-5628"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Store Logo",
+      "info": "Upload your logo image. The default size is 293px x 197.08px."
+    },
+    {
+      "type": "image_picker",
+      "id": "account_icon",
+      "label": "Store Logo",
+      "info": "Upload your account image."
+    },
+    {
+      "type": "image_picker",
+      "id": "cart_icon",
+      "label": "Store Logo",
+      "info": "Upload your cart image."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Navigation Link",
+      "limit": 7,
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Link"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Header",
+      "blocks": [
+        {
+          "type": "link"
+        },
+        {
+          "type": "link"
+        },
+        {
+          "type": "link"
+        },
+        {
+          "type": "link"
+        },
+        {
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

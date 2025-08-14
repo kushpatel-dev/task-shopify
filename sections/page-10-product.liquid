@@ -1,0 +1,113 @@
+{% comment %} 
+                               Section: Coffee Product Categories (Flex Layout with font + color pickers) 
+{% endcomment %}
+<section class="relative bg-[#060301] w-[1920px] mx-auto overflow-hidden md:px-16 md:py-8" style="max-width: 100%;">
+  <!-- Decorative brush stroke image -->
+  {% if section.settings.decorative_image != blank %}
+    <img
+      height=""
+      width=""
+      src="{{ section.settings.decorative_image | img_url: 'master' }}"
+      alt="Decorative stroke"
+      class="absolute max-w-[1900px] h-[370px] -left-[378px] bottom-0 pointer-events-none">
+  {% endif %}
+
+  <!-- Products container -->
+  <div
+    id="coffeeFlex"
+    class="flex flex-wrap gap-4 px-6 py-8 lg:overflow-visible overflow-x-auto scroll-smooth"
+    style="scrollbar-width: none; -ms-overflow-style: none;">
+    {% for block in section.blocks %}
+      <div class="relative flex-shrink-0 w-full sm:w-[48%] lg:w-[32%] h-[300px] overflow-hidden">
+        <img
+          height=""
+          width=""
+          src="{{ block.settings.image | img_url: 'master' }}"
+          alt="{{ block.settings.title }}"
+          class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h3 class="!font-extrabold !text-[24px]" style="color: {{ section.settings.font_color }}; font-family: {{ section.settings.font_family | replace: '+', ' ' }};">
+            {{ block.settings.title }}
+          </h3>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  /* Hide scrollbar on small screens */
+  #coffeeFlex::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const flexWrap = document.getElementById("coffeeFlex");
+  
+    if (window.innerWidth < 768) {
+      flexWrap.classList.remove("flex-wrap");
+      flexWrap.classList.add("flex-nowrap");
+    }
+  
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 768) {
+        flexWrap.classList.remove("flex-wrap");
+        flexWrap.classList.add("flex-nowrap");
+      } else {
+        flexWrap.classList.add("flex-wrap");
+        flexWrap.classList.remove("flex-nowrap");
+      }
+    });
+  });
+</script>
+
+{% schema %}
+
+  {
+    "name": "Coffee Categories Flex",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_family",
+        "label": "Font Family",
+        "default": "helvetica_n4"
+      }, {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#FFFFFF"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_image",
+        "label": "Decorative Bottom Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "category",
+        "name": "Category Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Category Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Category Title",
+            "default": "Organic Coffee"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 9,
+    "presets": [
+      {
+        "name": "Coffee Categories Flex",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
