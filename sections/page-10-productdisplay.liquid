@@ -1,5 +1,12 @@
 <section class="relative bg-white w-full py-12 overflow-hidden">
-
+  {% if section.settings.decorative_image != blank %}
+    <img
+      height=""
+      width=""
+      src="{{ section.settings.decorative_image | img_url: 'master' }}"
+      alt="Decorative stroke"
+      class="absolute max-w-[1900px] h-[370px] -left-[378px] -top-[300px] pointer-events-none">
+  {% endif %}
   <!-- Decorative coffee images -->
   {% for i in (1..6) %}
     {% assign pos_classes = "" %}
@@ -13,9 +20,9 @@
       {% when 4 %}
         {% assign pos_classes = "top-1/2 -translate-y-1/2 right-0" %}
       {% when 5 %}
-        {% assign pos_classes = "bottom-[0] left-[20%]" %}
+        {% assign pos_classes = "bottom-[0] left-[10%]" %}
       {% when 6 %}
-        {% assign pos_classes = "bottom-[10%] right-[20%]" %}
+        {% assign pos_classes = "bottom-[5%] right-[14%]" %}
     {% endcase %}
 
     {% assign img_key = 'decorative_img_' | append: i %}
@@ -27,12 +34,12 @@
         width=""
         src="{{ img_value | img_url: 'master' }}"
         alt="Decorative Coffee {{ i }}"
-        class="absolute {{ pos_classes }} w-[150px] h-auto pointer-events-none select-none">
+        class="absolute {{ pos_classes }} w-[130px] h-auto pointer-events-none select-none">
     {% endif %}
   {% endfor %}
 
   <!-- Section heading -->
-  <h2 class="text-center font-bold text-3xl mb-8 tracking-wide text-[#4A1E0A]">
+  <h2 class="text-center font-bold text-3xl mb-8 mt-24 tracking-wide text-[#4A1E0A]">
     BEST SELLERS
   </h2>
 
@@ -124,6 +131,10 @@
         "type": "image_picker",
         "id": "decorative_img_6",
         "label": "Decorative Image 6"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_image",
+        "label": "Decorative Bottom Image"
       }
     ],
     "blocks": [
