@@ -74,11 +74,82 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "featured_product_VbfmcM": {
+      "type": "featured-product",
+      "blocks": {
+        "text_KnAyEm": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_UnbchF": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_xc6z6j": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_ah8EFH": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_qR9Efq": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_ibxTBR": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_hcgBBP": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_KnAyEm",
+        "title_UnbchF",
+        "price_xc6z6j",
+        "variant_picker_ah8EFH",
+        "quantity_selector_qR9Efq",
+        "buy_buttons_ibxTBR",
+        "share_hcgBBP"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "page_1_section_h6MRe8",
-    "collection_list_jtefdj"
+    "collection_list_jtefdj",
+    "featured_product_VbfmcM"
   ]
 }
