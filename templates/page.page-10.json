@@ -322,6 +322,7 @@
       ],
       "name": "Best Sellers Showcase",
       "settings": {
+        "coffee_icon": "shopify://shop_images/Layer_2.png",
         "decorative_img_1": "shopify://shop_images/coffee-bean-1_1.png",
         "decorative_img_2": "shopify://shop_images/coffee-bean-2_1.png",
         "decorative_img_3": "shopify://shop_images/coffee-bean-4_1.png",

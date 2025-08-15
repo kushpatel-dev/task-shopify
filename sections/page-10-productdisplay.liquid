@@ -38,8 +38,22 @@
     {% endif %}
   {% endfor %}
 
+
+              {% assign icon = section.settings.coffee_icon %}
+              <div class="mt-24 flex justify-center">
+                {% if icon != blank %}
+                  <img
+                    height=""
+                    width=""
+                    src="{{ icon | image_url: width: 160 }}"
+                    alt=""
+                    class="h-10 w-10 object-contain">
+                {% else %}
+                  <span class="inline-block h-10 w-10 rounded-full bg-white/90" aria-hidden="true"></span>
+                {% endif %}
+              </div>
   <!-- Section heading -->
-  <h2 class="text-center font-bold text-3xl mb-8 mt-24 tracking-wide text-[#4A1E0A]">
+  <h2 class="text-center font-bold text-3xl mb-8 mt-4 tracking-wide text-[#4A1E0A]">
     BEST SELLERS
   </h2>
 
@@ -104,7 +118,12 @@
   {
     "name": "Best Sellers Showcase",
     "settings": [
-      {
+       {
+        "type": "image_picker",
+        "id": "coffee_icon",
+        "label": "Coffee bean icon",
+        "info": "Shown above headline"
+      },{
         "type": "image_picker",
         "id": "decorative_img_1",
         "label": "Decorative Image 1"
