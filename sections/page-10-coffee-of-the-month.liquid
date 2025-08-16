@@ -1,0 +1,130 @@
+{% schema %}
+{
+  "name": "Coffee Of The Month",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "top_icon",
+      "label": "Top Icon"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "TRY OUR COFFEE"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlight Text",
+      "default": "OF THE MONTH"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "BOURBON INFUSED COFFEE"
+    },
+    {
+      "type": "text",
+      "id": "price_text",
+      "label": "Price Text",
+      "default": "$24.99 - 12OZ BAG IN COLLECTABLE TUBE"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph1",
+      "label": "Paragraph 1",
+      "default": "<p>Don Pablo Bourbon Infused Coffee – Coffee soaked in fine Kentucky Bourbon, then roasted to remove the alcohol, so only the Bourbon flavor remains…</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph2",
+      "label": "Paragraph 2",
+      "default": "<p>Our Organic, Specialty-Grade coffee is soaked in fine Kentucky Bourbon, until it absorbs every drop. Then dried and roasted to Medium-Dark perfection in small batches, evaporating the alcohol, but infusing the coffee with intense, full-bodied notes of caramel, honey and butterscotch...a velvety balance of sweet and spice, fruitiness and nuttiness, that delights with each sip and keeps you coming back for more!</p>"
+    },
+    {
+      "type": "text",
+      "id": "bold_heading",
+      "label": "Bold Heading",
+      "default": "MAKES A GREAT GIFT!"
+    },
+    {
+      "type": "text",
+      "id": "note_text",
+      "label": "Note Text",
+      "default": "**Don Pablo Bourbon Infused Coffee is freshly roasted to order. Please allow 1-2 weeks for your order to be shipped."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "VIEW PRODUCT"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coffee Of The Month Section"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="relative bg-white py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- LEFT CONTENT -->
+    <div class="flex-1">
+      <!-- Centered Block -->
+      <div class="text-center mb-8">
+        {% if section.settings.top_icon != blank %}
+          <img src="{{ section.settings.top_icon | img_url: '100x100' }}" alt="icon" class="mx-auto mb-4">
+        {% endif %}
+        <p class="text-gray-700 tracking-wide uppercase">{{ section.settings.subtitle }}</p>
+        <p class="text-[#6B2E15] font-extrabold uppercase">{{ section.settings.highlight_text }}</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-[#6B2E15] mt-2">{{ section.settings.main_heading }}</h2>
+        <p class="mt-2 text-gray-800">{{ section.settings.price_text }}</p>
+      </div>
+
+      <!-- Left Aligned Text -->
+      <div class="text-left space-y-4">
+        <div class="text-gray-700 prose max-w-none">
+          {{ section.settings.paragraph1 }}
+        </div>
+        <div class="text-gray-700 prose max-w-none">
+          {{ section.settings.paragraph2 }}
+        </div>
+        <h3 class="font-extrabold text-[#6B2E15] uppercase">{{ section.settings.bold_heading }}</h3>
+        <p class="text-sm text-gray-600">{{ section.settings.note_text }}</p>
+        
+        {% if section.settings.button_label != blank %}
+          <a href="{{ section.settings.button_link }}" class="inline-block mt-6 px-6 py-3 bg-[#C97A38] text-white font-medium rounded-full shadow hover:bg-[#a35f28] transition">
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- RIGHT PRODUCT IMAGE -->
+    <div class="flex-1 relative">
+      {% if section.settings.product_image != blank %}
+        <img 
+          src="{{ section.settings.product_image | img_url: '600x600' }}" 
+          alt="Product" 
+          class="relative mx-auto w-full max-w-md"
+        >
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-black/20 blur-2xl rounded-full"></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
