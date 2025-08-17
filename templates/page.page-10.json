@@ -237,88 +237,48 @@
     "page_10_productdisplay_3qtbhf": {
       "type": "page-10-productdisplay",
       "blocks": {
-        "product_Kmey4x": {
+        "product_WgwBph": {
           "type": "product",
           "settings": {
             "image": "shopify://shop_images/Rectangle_1.png",
             "title": "DON PABLO COLOMBIAN DECAF",
-            "price": "$500",
-            "product_url": ""
+            "price": "$17.99",
+            "product_url": "#"
           }
         },
-        "product_XERGG7": {
+        "product_DCXjyA": {
           "type": "product",
           "settings": {
             "image": "shopify://shop_images/Rectangle_1.png",
             "title": "DON PABLO COLOMBIAN DECAF",
-            "price": "$500",
-            "product_url": ""
+            "price": "$17.99",
+            "product_url": "#"
           }
         },
-        "product_FfR3Th": {
+        "product_8ExWNf": {
           "type": "product",
           "settings": {
             "image": "shopify://shop_images/Rectangle_1.png",
             "title": "DON PABLO COLOMBIAN DECAF",
-            "price": "$500",
-            "product_url": ""
+            "price": "$17.99",
+            "product_url": "#"
           }
         },
-        "product_E4bPNW": {
+        "product_fjEJdc": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/Rectangle.png",
-            "title": "DON PABLO SIGNATURE BLEND",
-            "price": "$500",
-            "product_url": ""
-          }
-        },
-        "product_FGGtTi": {
-          "type": "product",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle.png",
-            "title": "DON PABLO SIGNATURE BLEND",
-            "price": "$500",
-            "product_url": ""
-          }
-        },
-        "product_eei3PA": {
-          "type": "product",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle.png",
-            "title": "DON PABLO SIGNATURE BLEND",
-            "price": "$500",
-            "product_url": ""
-          }
-        },
-        "product_jz4nCp": {
-          "type": "product",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle.png",
-            "title": "DON PABLO SIGNATURE BLEND",
-            "price": "$500",
-            "product_url": ""
-          }
-        },
-        "product_dAhdey": {
-          "type": "product",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle.png",
-            "title": "DON PABLO SIGNATURE BLEND",
-            "price": "$500",
-            "product_url": ""
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$17.99",
+            "product_url": "#"
           }
         }
       },
       "block_order": [
-        "product_Kmey4x",
-        "product_XERGG7",
-        "product_FfR3Th",
-        "product_E4bPNW",
-        "product_FGGtTi",
-        "product_eei3PA",
-        "product_jz4nCp",
-        "product_dAhdey"
+        "product_WgwBph",
+        "product_DCXjyA",
+        "product_8ExWNf",
+        "product_fjEJdc"
       ],
       "name": "Best Sellers Showcase",
       "settings": {
@@ -331,6 +291,58 @@
         "decorative_img_6": "shopify://shop_images/coffee-bean-6_1.png",
         "decorative_image": "shopify://shop_images/Asset_2_1.png"
       }
+    },
+    "page_10_coffee_of_the_month_fizTQ3": {
+      "type": "page-10-coffee-of-the-month",
+      "name": "Coffee Of The Month Section",
+      "settings": {
+        "top_icon": "shopify://shop_images/Layer_2.png",
+        "subtitle": "TRY OUR COFFEE",
+        "highlight_text": "OF THE MONTH",
+        "main_heading": "BOURBON INFUSED COFFEE",
+        "price_text": "$24.99 - 12OZ BAG IN COLLECTABLE TUBE",
+        "paragraph1": "<p>Don Pablo Bourbon Infused Coffee – Coffee soaked in fine Kentucky Bourbon, then roasted to remove the alcohol, so only the Bourbon flavor remains…</p>",
+        "paragraph2": "<p>Our Organic, Specialty-Grade coffee is soaked in fine Kentucky Bourbon, until it absorbs every drop. Then dried and roasted to Medium-Dark perfection in small batches, evaporating the alcohol, but infusing the coffee with intense, full-bodied notes of caramel, honey and butterscotch...a velvety balance of sweet and spice, fruitiness and nuttiness, that delights with each sip and keeps you coming back for more!</p>",
+        "bold_heading": "MAKES A GREAT GIFT!",
+        "note_text": "**Don Pablo Bourbon Infused Coffee is freshly roasted to order. Please allow 1-2 weeks for your order to be shipped.",
+        "button_label": "VIEW PRODUCT",
+        "button_link": "#",
+        "product_image": "shopify://shop_images/a63680f40f347aa8e564d6915e29ed603ccb931f.png",
+        "product_image1": "shopify://shop_images/c84e272b99fb9905129d7b4c81846c91bdd9aebf.png",
+        "product_image_bg": "shopify://shop_images/428858693f597e289560ca796a76f17f7f48df5d.png",
+        "product_image_bg2": "shopify://shop_images/8987b7ea8d4bb5341b64a16d48ede3d9ac0e4116.png"
+      }
+    },
+    "page_10_story_AQGg9q": {
+      "type": "page-10-story",
+      "blocks": {
+        "content_block_Hqq8ja": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/Layer_2.png",
+            "heading": "AUTHENTIC SMALL FARM COFFEE BEANSFROM OUR FAMILY TO YOURS",
+            "summary": "Even the best roasting process is useless without premium quality beans – and at Don Pablo Coffee, ours are unmatched. We source our beans from small, authentic farms in the best coffee-growing regions in the world, and as a family-run coffee company, the personal relationships with farmers we form allows us to choose the best beans from the crop. Through years of trust and relationship-building, we can identify the best production regions, choosing only the beans that grow where conditions are perfect."
+          }
+        },
+        "content_block_ywqwkx": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/Layer_2.png",
+            "heading": "AUTHENTIC SMALL FARM COFFEE BEANSFROM OUR FAMILY TO YOURS",
+            "summary": "Even the best roasting process is useless without premium quality beans – and at Don Pablo Coffee, ours are unmatched. We source our beans from small, authentic farms in the best coffee-growing regions in the world, and as a family-run coffee company, the personal relationships with farmers we form allows us to choose the best beans from the crop. Through years of trust and relationship-building, we can identify the best production regions, choosing only the beans that grow where conditions are perfect."
+          }
+        }
+      },
+      "block_order": [
+        "content_block_Hqq8ja",
+        "content_block_ywqwkx"
+      ],
+      "name": "Brush Gradient Content",
+      "settings": {
+        "background_image": "shopify://shop_images/AdobeStock_285354391_1.png",
+        "brush_top": "shopify://shop_images/svgviewer-output.svg",
+        "brush_bottom": "shopify://shop_images/svgviewer-output_1.svg"
+      }
     }
   },
   "order": [
@@ -338,6 +350,8 @@
     "page_10_header_HttBD9",
     "page_10_swiper_dJL8aP",
     "page_10_product_CWNqFA",
-    "page_10_productdisplay_3qtbhf"
+    "page_10_productdisplay_3qtbhf",
+    "page_10_coffee_of_the_month_fizTQ3",
+    "page_10_story_AQGg9q"
   ]
 }

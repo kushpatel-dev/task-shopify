@@ -1,0 +1,99 @@
+{% schema %}
+{
+  "name": "Brush Gradient Content",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "brush_top",
+      "label": "Top Brush Effect"
+    },
+    {
+      "type": "image_picker",
+      "id": "brush_bottom",
+      "label": "Bottom Brush Effect"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Block Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "FROM OUR FAMILY TO YOURS"
+        },
+        {
+          "type": "textarea",
+          "id": "summary",
+          "label": "Summary",
+          "default": "We source only the best beans and build lasting relationships with farmers."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brush Gradient Content",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+<section class="relative w-full py-16 overflow-hidden">
+<div 
+  class="absolute inset-0 bg-cover bg-center z-0"
+  style="background-image: url({{ section.settings.background_image | image_url }});">
+</div>
+
+<!-- Gradient Overlay -->
+<div 
+  class="absolute inset-0 z-1" 
+  style="background: linear-gradient(270deg, #DF9D3E 51.25%, rgba(255, 255, 255, 0) 100%);">
+</div>
+
+  <!-- Brush Top -->
+  {% if section.settings.brush_top != blank %}
+    <img height="" width=""
+      src="{{ section.settings.brush_top | image_url }}" 
+      class="absolute top-0 left-0 w-full z-1" 
+      alt="brush-top">
+  {% endif %}
+
+  <!-- Content shifted to right 50% -->
+  <div class="relative z-1 max-w-[1200px] mx-auto px-6 flex justify-end">
+    <div class="w-full md:w-1/2 flex flex-col gap-8">
+      {% for block in section.blocks %}
+        <div class="flex flex-col space-y-4 p-2">
+          {% if block.settings.block_image != blank %}
+            <img height="" width=""
+              src="{{ block.settings.block_image | image_url }}" 
+              alt="block image" 
+              class="w-16 h-16 object-contain">
+          {% endif %}
+          <h2 class="text-2xl font-bold text-gray-900">{{ block.settings.heading }}</h2>
+          <p class="text-base text-gray-800">{{ block.settings.summary }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Brush Bottom -->
+  {% if section.settings.brush_bottom != blank %}
+    <img height="" width=""
+      src="{{ section.settings.brush_bottom | image_url }}" 
+      class="absolute bottom-0 left-0 w-full z-1" 
+      alt="brush-bottom">
+  {% endif %}
+</section>

@@ -70,6 +70,18 @@
       "type": "image_picker",
       "id": "product_image",
       "label": "Product Image"
+    }, {
+      "type": "image_picker",
+      "id": "product_image1",
+      "label": "Product Image"
+    },{
+      "type": "image_picker",
+      "id": "product_image_bg",
+      "label": "Product Image"
+    },{
+      "type": "image_picker",
+      "id": "product_image_bg2",
+      "label": "Product Image"
     }
   ],
   "presets": [
@@ -81,14 +93,14 @@
 {% endschema %}
 
 <section class="relative bg-white py-16">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-12">
+  <div class="max-w-8xl mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center gap-12">
     
     <!-- LEFT CONTENT -->
     <div class="flex-1">
       <!-- Centered Block -->
       <div class="text-center mb-8">
         {% if section.settings.top_icon != blank %}
-          <img src="{{ section.settings.top_icon | img_url: '100x100' }}" alt="icon" class="mx-auto mb-4">
+          <img height="" width="" src="{{ section.settings.top_icon | img_url: '100x100' }}" alt="icon" class="mx-auto mb-4">
         {% endif %}
         <p class="text-gray-700 tracking-wide uppercase">{{ section.settings.subtitle }}</p>
         <p class="text-[#6B2E15] font-extrabold uppercase">{{ section.settings.highlight_text }}</p>
@@ -106,25 +118,51 @@
         </div>
         <h3 class="font-extrabold text-[#6B2E15] uppercase">{{ section.settings.bold_heading }}</h3>
         <p class="text-sm text-gray-600">{{ section.settings.note_text }}</p>
-        
-        {% if section.settings.button_label != blank %}
+      </div>
+      <div class="flex justify-center">
+       {% if section.settings.button_label != blank %}
           <a href="{{ section.settings.button_link }}" class="inline-block mt-6 px-6 py-3 bg-[#C97A38] text-white font-medium rounded-full shadow hover:bg-[#a35f28] transition">
             {{ section.settings.button_label }}
           </a>
         {% endif %}
-      </div>
+        </div>
     </div>
+    <!-- left PRODUCT IMAGE -->
+    <div class="flex flex-col md:flex-row gap-6 md:gap-4 flex-1 relative items-center justify-center">
+  
+  {% if section.settings.product_image1 != blank %}
+    <img height="" width=""
+      src="{{ section.settings.product_image1 | img_url: '600x600' }}" 
+      alt="Product" 
+      class="relative z-1 w-40 h-56 sm:w-44 sm:h-60 md:w-52 md:h-72 lg:w-60 lg:h-80 xl:w-64 xl:h-[405px] object-contain"
+    >
+  {% endif %}
 
-    <!-- RIGHT PRODUCT IMAGE -->
-    <div class="flex-1 relative">
-      {% if section.settings.product_image != blank %}
-        <img 
-          src="{{ section.settings.product_image | img_url: '600x600' }}" 
-          alt="Product" 
-          class="relative mx-auto w-full max-w-md"
-        >
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-black/20 blur-2xl rounded-full"></div>
-      {% endif %}
-    </div>
+  {% if section.settings.product_image != blank %}
+    <img height="" width=""
+      src="{{ section.settings.product_image | img_url: '600x600' }}" 
+      alt="Product" 
+      class="relative z-1 w-40 h-56 sm:w-44 sm:h-60 md:w-52 md:h-72 lg:w-60 lg:h-80 xl:w-64 xl:h-[405px] object-contain"
+    >
+  {% endif %}
+
+  {% if section.settings.product_image_bg != blank %}
+    <img height="" width=""
+      src="{{ section.settings.product_image_bg | img_url: '600x600' }}" 
+      alt="Product" 
+      class="absolute md:w-[280px] md:right-[-50px] md:bottom-[-30px] lg:w-[290px] lg:right-[20px] lg:bottom-[-30px] xl:w-[350px] xl:right-[70px] xl:bottom-[10px] w-28 sm:w-32 opacity-70"
+    >
+  {% endif %}
+
+  {% if section.settings.product_image_bg2 != blank %}
+    <img height="" width=""
+      src="{{ section.settings.product_image_bg2 | img_url: '600x600' }}" 
+      alt="Product" 
+      class="absolute md:w-[280px] md:left-[-50px] md:bottom-[-30px] lg:w-[290px] lg:left-[0px] lg:bottom-[-30px] xl:w-[350px] xl:left-[70px] xl:bottom-[35px] w-28 sm:w-32 opacity-70"
+    >
+  {% endif %}
+
+</div>
+
   </div>
 </section>
