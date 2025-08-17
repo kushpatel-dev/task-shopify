@@ -343,6 +343,76 @@
         "brush_top": "shopify://shop_images/svgviewer-output.svg",
         "brush_bottom": "shopify://shop_images/svgviewer-output_1.svg"
       }
+    },
+    "page_10_comment_DELUcL": {
+      "type": "page-10-comment",
+      "blocks": {
+        "testimonial_ChQGTY": {
+          "type": "testimonial",
+          "settings": {
+            "review_text": "“We love this coffee... We followed Mr. Burke's suggestions for grinding and brewing and are very happy with the full-bodied, delicious taste of this coffee without any bitterness! \n\nBeggin B.",
+            "reviewer_name": "kush"
+          }
+        },
+        "testimonial_qmHaDg": {
+          "type": "testimonial",
+          "settings": {
+            "review_text": "We love this coffee... amazing taste without bitterness! yes it's good.",
+            "reviewer_name": "John D."
+          }
+        },
+        "testimonial_Cj7PMe": {
+          "type": "testimonial",
+          "settings": {
+            "review_text": "“We love this coffee... We followed Mr. Burke's suggestions for grinding and brewing and are very happy with the full-bodied, delicious taste of this coffee without any bitterness!",
+            "reviewer_name": "John D."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_ChQGTY",
+        "testimonial_qmHaDg",
+        "testimonial_Cj7PMe"
+      ],
+      "name": "Testimonial Slider",
+      "settings": {
+        "coffee_image": "shopify://shop_images/Coffee-Grains_1.png"
+      }
+    },
+    "page_10_footer_MLrxqY": {
+      "type": "page-10-footer",
+      "name": "Extended Footer",
+      "settings": {
+        "bg_color": "#372e2d",
+        "text_color": "#ffffff",
+        "font_family": "sans-serif",
+        "newsletter_subtitle": "Subscribe to our",
+        "newsletter_title": "NEWSLETTER",
+        "heading_size": 28,
+        "input_placeholder": "Enter Email",
+        "button_label": "SUBSCRIBE",
+        "button_bg": "#d7953f",
+        "button_text_color": "#ffffff",
+        "newsletter_box_width": 270,
+        "newsletter_box_height": 80,
+        "social_heading": "FOLLOW US",
+        "social_heading_size": 20,
+        "icon_bg": "#d7953f",
+        "icon_color": "#000000",
+        "facebook_link": "",
+        "twitter_link": "",
+        "youtube_link": "",
+        "instagram_link": ""
+      }
+    },
+    "p_10_footer_Jr6abJ": {
+      "type": "p-10-footer",
+      "name": "Footer",
+      "settings": {
+        "footer_copyright_text": "© 2025 Your Brand",
+        "footer_credits_text": "// YOURAGENCY",
+        "footer_icon": "shopify://shop_images/heart.png"
+      }
     }
   },
   "order": [
@@ -352,6 +422,9 @@
     "page_10_product_CWNqFA",
     "page_10_productdisplay_3qtbhf",
     "page_10_coffee_of_the_month_fizTQ3",
-    "page_10_story_AQGg9q"
+    "page_10_story_AQGg9q",
+    "page_10_comment_DELUcL",
+    "page_10_footer_MLrxqY",
+    "p_10_footer_Jr6abJ"
   ]
 }
