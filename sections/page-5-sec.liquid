@@ -34,10 +34,36 @@
       </h2>
     </div>
 
+    <!-- ✅ Mobile Layout (Vertical stacked timeline) -->
+    <div class="flex flex-col gap-10 lg:hidden">
+      {% for block in section.blocks %}
+        <div class="flex flex-col items-center text-center">
+          <div class="relative z-10 w-[90px] h-[90px] flex items-center justify-center rounded-lg transition-colors duration-300 hover:!bg-emerald-900" style="background-color: {{ section.settings.icon_bg_color }};">
+            {% if block.settings.icon != blank %}
+              <img
+                src="{{ block.settings.icon | image_url: width: 64 }}"
+                alt="{{ block.settings.title | escape }}"
+                width="64"
+                height="64"
+                loading="lazy"
+                class="w-[45px] h-[45px]">
+            {% else %}
+              <div class="w-12 h-12 bg-gray-300 rounded"></div>
+            {% endif %}
+          </div>
+          <div class="mt-4">
+            <p class="text-xl font-semibold" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</p>
+            <p class="text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
+            <p class="text-lg font-bold mt-1" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>  
+
     {% if section.blocks.size > 0 %}
       <div class="mt-24">
         <!-- Desktop Layout: Alternating Timeline -->
-        <div class="relative">
+        <div class="relative sm:hidden md:block">
           <!-- Horizontal timeline line with a class for CSS targeting -->
           <div class="timeline-horizontal-line absolute top-1/2 left-0 w-full h-0.5" style="background-color: {{ section.settings.line_color }};"></div>
 
