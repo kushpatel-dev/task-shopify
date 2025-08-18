@@ -385,7 +385,7 @@
       "settings": {
         "bg_color": "#372e2d",
         "text_color": "#ffffff",
-        "font_family": "sans-serif",
+        "font_family": "arvo_n4",
         "newsletter_subtitle": "Subscribe to our",
         "newsletter_title": "NEWSLETTER",
         "heading_size": 28,
@@ -393,25 +393,29 @@
         "button_label": "SUBSCRIBE",
         "button_bg": "#d7953f",
         "button_text_color": "#ffffff",
-        "newsletter_box_width": 270,
-        "newsletter_box_height": 80,
+        "newsletter_box_width": 320,
+        "newsletter_box_height": 70,
         "social_heading": "FOLLOW US",
         "social_heading_size": 20,
         "icon_bg": "#d7953f",
         "icon_color": "#000000",
-        "facebook_link": "",
-        "twitter_link": "",
-        "youtube_link": "",
-        "instagram_link": ""
+        "facebook_link": "#",
+        "facebook_icon": "shopify://shop_images/Vector_81065c78-fded-48a0-9718-ed36025b078f.png",
+        "twitter_link": "#",
+        "twitter_icon": "shopify://shop_images/Vector_1_047bf9ba-be86-404d-98c4-d46eaaee7839.png",
+        "youtube_link": "#",
+        "youtube_icon": "shopify://shop_images/008-youtube_1.png",
+        "instagram_link": "#",
+        "instagram_icon": "shopify://shop_images/011-instagram_1.png"
       }
     },
     "p_10_footer_Jr6abJ": {
       "type": "p-10-footer",
       "name": "Footer",
       "settings": {
-        "footer_copyright_text": "© 2025 Your Brand",
-        "footer_credits_text": "// YOURAGENCY",
-        "footer_icon": "shopify://shop_images/heart.png"
+        "left_text": "© 2020 Don Pablo Coffee",
+        "icon": "shopify://shop_images/heart.png",
+        "right_text": "// TECHYSCOUTS"
       }
     }
   },
