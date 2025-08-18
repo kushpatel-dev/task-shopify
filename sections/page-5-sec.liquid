@@ -23,13 +23,13 @@
 {% endstyle %}
 
 <div class="py-12 lg:py-24 overflow-hidden" style="background-color: {{ section.settings.bg_color }};">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center">
       <h3 class="text-sm font-bold tracking-widest uppercase" style="color: {{ section.settings.subheading_color }};">
         {{ section.settings.section_subheading }}
       </h3>
-      <h2 class="mt-4 text-4xl md:text-5xl font-bold" style="color: {{ section.settings.heading_color }};">
+      <h2 class="ctm-h2-p5 mt-4 text-4xl md:text-5xl font-bold" style="color: {{ section.settings.heading_color }};">
         {{ section.settings.section_heading }}
       </h2>
     </div>
@@ -49,7 +49,7 @@
                   <!-- Text content -->
                   <div class="text-center px-4 relative h-48 w-full flex items-center {% if is_odd_index == 0 %}mt-6 pt-10 border-t-2{% else %}mb-4 pb-0 border-b-2{% endif %}" style="border-color: {{ section.settings.line_color }};">
                     <!-- Vertical Connector Line -->
-                    <div class="absolute left-1/2 -translate-x-1/2 w-0.5 h-12 {% if is_odd_index == 1 %}bottom-0{% else %}top-0{% endif %}" style="background-color: {{ section.settings.line_color }};"></div>
+                    <div class="absolute left-1/2 -translate-x-1/2 w-[3px] h-12 {% if is_odd_index == 1 %}bottom-0{% else %}top-0{% endif %}" style="background-color: {{ section.settings.line_color }};"></div>
                     {% if is_odd_index == 0 %}
                       <!-- Content for Items on Top -->
                       <div class="text-left w-full">
@@ -60,6 +60,7 @@
                     {% else %}
                       <!-- Content for Items on Bottom -->
                       <div class="relative text-left w-full">
+
                         <h3 class="text-xl font-semibold" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</h3>
                         <p class="text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
                         <p class="text-2xl font-medium mt-1" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
@@ -68,7 +69,7 @@
                   </div>
 
                   <!-- Icon -->
-                  <div class="relative z-10 w-[100px] h-[103px] flex items-center justify-center rounded-lg" style="background-color: {{ section.settings.icon_bg_color }};">
+                  <div class="relative z-10 w-[100px] h-[103px] flex items-center justify-center rounded-lg transition-colors duration-300 hover:!bg-emerald-900" style="background-color: {{ section.settings.icon_bg_color }};">
                     {% if block.settings.icon != blank %}
                       <img
                         src="{{ block.settings.icon | image_url: width: 64 }}"
@@ -81,6 +82,7 @@
                       <div class="w-16 h-16 bg-gray-300 rounded"></div>
                     {% endif %}
                   </div>
+
                 </div>
               </div>
             {% endfor %}

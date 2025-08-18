@@ -40,6 +40,10 @@ font-family: 'quasimoda';
   @apply text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#5E5B48] ;
 }
 
+.ctm-h2-p5{
+font-family: 'unbounded';
+  
+}
 /* page 6  */
 
 .ctm-h3-p6{

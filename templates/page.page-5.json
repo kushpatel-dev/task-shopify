@@ -25,8 +25,8 @@
           "settings": {
             "icon": "shopify://shop_images/SVG.png",
             "step_number": "01",
-            "title": "Planning",
-            "description": "Defining requirements and project goals to ensure clarity."
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
           }
         },
         "step_BTCRGj": {
@@ -34,8 +34,8 @@
           "settings": {
             "icon": "shopify://shop_images/SVG_2.png",
             "step_number": "02",
-            "title": "Planning",
-            "description": "Defining requirements and project goals to ensure clarity."
+            "title": "Schematic Design",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
           }
         },
         "step_TYAhm4": {
@@ -43,8 +43,8 @@
           "settings": {
             "icon": "shopify://shop_images/Link_3.png",
             "step_number": "03",
-            "title": "Planning",
-            "description": "Defining requirements and project goals to ensure clarity."
+            "title": "Design fipproval",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
           }
         },
         "step_AnCeTk": {
@@ -52,8 +52,8 @@
           "settings": {
             "icon": "shopify://shop_images/Link_2.png",
             "step_number": "04",
-            "title": "Planning",
-            "description": "Defining requirements and project goals to ensure clarity."
+            "title": "Purchase &Installation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
           }
         },
         "step_F6PdpU": {
@@ -61,8 +61,8 @@
           "settings": {
             "icon": "shopify://shop_images/SVG_1.png",
             "step_number": "05",
-            "title": "Planning",
-            "description": "Defining requirements and project goals to ensure clarity."
+            "title": "Project HandOver",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
           }
         }
       },
@@ -83,7 +83,7 @@
         "text_color": "#6b7280",
         "number_color": "#008060",
         "icon_bg_color": "#8f7745",
-        "line_color": "#d1d5db"
+        "line_color": "#796f51"
       }
     }
   },
