@@ -1,6 +1,8 @@
 <section class="relative bg-white w-full py-12 overflow-hidden">
   {% if section.settings.decorative_image != blank %}
-    <img height="" width="" 
+    <img
+      height=""
+      width=""
       src="{{ section.settings.decorative_image | img_url: 'master' }}"
       alt="Decorative stroke"
       class="absolute max-w-[1900px] h-[370px] -left-[378px] -top-[300px] pointer-events-none">
@@ -28,18 +30,22 @@
     {% assign img_value = section.settings[img_key] %}
 
     {% if img_value != blank %}
-      <img height="" width=""
+      <img
+        height=""
+        width=""
         src="{{ img_value | img_url: 'master' }}"
         alt="Decorative Coffee {{ i }}"
         class="absolute {{ pos_classes }} w-[130px] h-auto pointer-events-none select-none">
     {% endif %}
-  {% endfor %}
+{% endfor %}
 
   <!-- Icon -->
   {% assign icon = section.settings.coffee_icon %}
   <div class="mt-24 flex justify-center">
     {% if icon != blank %}
-      <img height="" width=""
+      <img
+        height=""
+        width=""
         src="{{ icon | image_url: width: 160 }}"
         alt=""
         class="h-10 w-10 object-contain">
@@ -49,33 +55,32 @@
   </div>
 
   <!-- Section heading -->
-  <h2 class="text-center font-bold text-3xl mb-8 mt-4 tracking-wide text-[#4A1E0A]">
+  <h2 class="ctm-h2-p10 text-center ">
     BEST SELLERS
   </h2>
 
   <!-- Product showcase (Flex-based) -->
-  <div
-    class="flex flex-wrap justify-center gap-8 px-6 md:max-w-[1400px] md:mx-auto">
-    
+  <div class="flex flex-wrap justify-center gap-8 px-6 md:max-w-[1400px] md:mx-auto">
+
     {% for block in section.blocks %}
       <div class="flex flex-col items-center 
                   w-full sm:w-[calc(50%-1rem)] lg:w-[calc(24%-1rem)] flex-shrink-0">
-        <img height="" width=""
+        <img
+          height=""
+          width=""
           src="{{ block.settings.image | img_url: 'master' }}"
           alt="{{ block.settings.title }}"
           class="w-full h-[263px] object-contain">
-        
-        <h3 class="mt-4 text-center" 
-            style="font-family: Fjord, serif; font-weight: 400; font-size: 24px; line-height: 40px; letter-spacing: 3%;">
+
+        <h3 class="ctm-h3-p10-2 mt-4 text-center">
           {{ block.settings.title }}
         </h3>
-        
+
         {% if block.settings.price != blank %}
-          <p class="text-center text-lg mt-1">{{ block.settings.price }}</p>
+          <p class="text-center text-lg mt-1" style="font-family: Fjord, serif; font-weight: 400;">{{ block.settings.price }}</p>
         {% endif %}
-        
-        <a href="{{ block.settings.product_url }}" 
-           class="mt-3 px-6 py-2 rounded-full bg-[#DF9D3E] text-white font-semibold hover:opacity-90 transition">
+
+        <a href="{{ block.settings.product_url }}" class="mt-3 px-6 py-2 rounded-full bg-[#DF9D3E] text-white font-semibold hover:opacity-90 transition">
           VIEW PRODUCT
         </a>
       </div>
@@ -84,4 +89,79 @@
 </section>
 
 
-{% schema %} { "name": "Best Sellers Showcase", "settings": [ { "type": "image_picker", "id": "coffee_icon", "label": "Coffee bean icon", "info": "Shown above headline" },{ "type": "image_picker", "id": "decorative_img_1", "label": "Decorative Image 1" }, { "type": "image_picker", "id": "decorative_img_2", "label": "Decorative Image 2" }, { "type": "image_picker", "id": "decorative_img_3", "label": "Decorative Image 3" }, { "type": "image_picker", "id": "decorative_img_4", "label": "Decorative Image 4" }, { "type": "image_picker", "id": "decorative_img_5", "label": "Decorative Image 5" }, { "type": "image_picker", "id": "decorative_img_6", "label": "Decorative Image 6" }, { "type": "image_picker", "id": "decorative_image", "label": "Decorative Bottom Image" } ], "blocks": [ { "type": "product", "name": "Product Item", "settings": [ { "type": "image_picker", "id": "image", "label": "Product Image" }, { "type": "text", "id": "title", "label": "Product Title" }, { "type": "text", "id": "price", "label": "Product Price" }, { "type": "url", "id": "product_url", "label": "Product URL" } ] } ], "max_blocks": 8, "presets": [ { "name": "Best Sellers Showcase", "category": "Custom" } ] } {% endschema %}
+{% schema %}
+  {
+    "name": "Best Sellers Showcase",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "coffee_icon",
+        "label": "Coffee bean icon",
+        "info": "Shown above headline"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorative_img_1",
+        "label": "Decorative Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorative_img_2",
+        "label": "Decorative Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorative_img_3",
+        "label": "Decorative Image 3"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_img_4",
+        "label": "Decorative Image 4"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_img_5",
+        "label": "Decorative Image 5"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_img_6",
+        "label": "Decorative Image 6"
+      }, {
+        "type": "image_picker",
+        "id": "decorative_image",
+        "label": "Decorative Bottom Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Product Title"
+          }, {
+            "type": "text",
+            "id": "price",
+            "label": "Product Price"
+          }, {
+            "type": "url",
+            "id": "product_url",
+            "label": "Product URL"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 8,
+    "presets": [
+      {
+        "name": "Best Sellers Showcase",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

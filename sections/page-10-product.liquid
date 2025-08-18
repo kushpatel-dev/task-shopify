@@ -1,17 +1,4 @@
-{% comment %} 
-   Section: Coffee Product Categories (Flex Layout with font + color pickers) 
-{% endcomment %}
 <section class="relative bg-[#060301] w-[1920px] mx-auto overflow-hidden md:px-16 md:py-8" style="max-width: 100%;">
-  <!-- Decorative brush stroke image -->
-  {% if section.settings.decorative_image != blank %}
-    <img
-      height=""
-      width=""
-      src="{{ section.settings.decorative_image | img_url: 'master' }}"
-      alt="Decorative stroke"
-      class="absolute max-w-[1900px] h-[370px] -left-[378px] bottom-0 pointer-events-none">
-  {% endif %}
-
   <!-- Products container -->
   <div
     id="coffeeFlex"
@@ -26,9 +13,10 @@
           alt="{{ block.settings.title }}"
           class="w-full h-full object-cover">
         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
-          <h3 class="!font-extrabold !text-[24px]" style="color: {{ section.settings.font_color }}; font-family: {{ section.settings.font_family | replace: '+', ' ' }};">
+          <h3 class="ctm-h3-p10 text-white">
             {{ block.settings.title }}
           </h3>
+
         </div>
       </div>
     {% endfor %}
@@ -78,10 +66,6 @@
         "id": "font_color",
         "label": "Font Color",
         "default": "#FFFFFF"
-      }, {
-        "type": "image_picker",
-        "id": "decorative_image",
-        "label": "Decorative Bottom Image"
       }
     ],
     "blocks": [

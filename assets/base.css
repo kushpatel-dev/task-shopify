@@ -468,7 +468,6 @@ table:not([class]) th {
 a:empty,
 ul:empty,
 dl:empty,
-div:empty,
 section:empty,
 article:empty,
 p:empty,
@@ -3594,4 +3593,45 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
+}
+
+@font-face {
+  font-family: 'Fjord';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/FjordOne-Regular.ttf?v=1755497782');
+}
+
+
+@font-face {
+  font-family: 'subway-novella';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/SubwayNovellaDEMO.ttf?v=1755498751');
+}
+
+@font-face {
+  font-family: 'oxygen';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/Oxygen-Regular.ttf?v=1755494898');
+}
+@font-face {
+  font-family: 'abel';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/Abel-Regular.ttf?v=1755503272');
+}
+
+@font-face {
+  font-family: 'unbounded';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/Unbounded-Regular.ttf?v=1755518677');
+}
+@font-face {
+  font-family: 'scotch-display';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/ScotchDisplay-Bold.ttf?v=1755519198');
+}
+@font-face {
+  font-family: 'quasimoda';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/Quasimoda_Regular.otf?v=1755519489');
+}
+@font-face {
+  font-family: 'outfit';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/OutfitRegular.ttf?v=1755520252');
+}
+@font-face {
+  font-family: 'futura-pt';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/futura-pt-heavy-589a6dd12187e.otf?v=1755520618');
 }

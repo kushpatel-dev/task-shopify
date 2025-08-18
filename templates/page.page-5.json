@@ -20,58 +20,70 @@
     "page_5_sec_RTGaTj": {
       "type": "page-5-sec",
       "blocks": {
-        "step_HcPBmy": {
+        "step_xQWd9b": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Background_Border.png",
-            "title": "Initial Consultation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            "icon": "shopify://shop_images/SVG.png",
+            "step_number": "01",
+            "title": "Planning",
+            "description": "Defining requirements and project goals to ensure clarity."
           }
         },
-        "step_cecjwL": {
+        "step_BTCRGj": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Background_Border_4.png",
-            "title": "Schematic Design",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            "icon": "shopify://shop_images/SVG_2.png",
+            "step_number": "02",
+            "title": "Planning",
+            "description": "Defining requirements and project goals to ensure clarity."
           }
         },
-        "step_4hqwdV": {
+        "step_TYAhm4": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Background_Border_3.png",
-            "title": "Design fipproval",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            "icon": "shopify://shop_images/Link_3.png",
+            "step_number": "03",
+            "title": "Planning",
+            "description": "Defining requirements and project goals to ensure clarity."
           }
         },
-        "step_h9LnE4": {
+        "step_AnCeTk": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Background_Border_2.png",
-            "title": "Purchase & Installation",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            "icon": "shopify://shop_images/Link_2.png",
+            "step_number": "04",
+            "title": "Planning",
+            "description": "Defining requirements and project goals to ensure clarity."
           }
         },
-        "step_q9fjGy": {
+        "step_F6PdpU": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Background_Border_1.png",
-            "title": "Project HandOver",
-            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium."
+            "icon": "shopify://shop_images/SVG_1.png",
+            "step_number": "05",
+            "title": "Planning",
+            "description": "Defining requirements and project goals to ensure clarity."
           }
         }
       },
       "block_order": [
-        "step_HcPBmy",
-        "step_cecjwL",
-        "step_4hqwdV",
-        "step_h9LnE4",
-        "step_q9fjGy"
+        "step_xQWd9b",
+        "step_BTCRGj",
+        "step_TYAhm4",
+        "step_AnCeTk",
+        "step_F6PdpU"
       ],
       "name": "Project Timeline",
       "settings": {
-        "label": "Our Process",
-        "heading": "Project Implementation Process"
+        "section_subheading": "OUR PROCESS",
+        "section_heading": "Project Implementation Process",
+        "bg_color": "#f9fafb",
+        "subheading_color": "#878e88",
+        "heading_color": "#111827",
+        "text_color": "#6b7280",
+        "number_color": "#008060",
+        "icon_bg_color": "#8f7745",
+        "line_color": "#d1d5db"
       }
     }
   },

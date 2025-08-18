@@ -229,9 +229,8 @@
       ],
       "name": "Coffee Categories Flex",
       "settings": {
-        "font_family": "helvetica_n4",
-        "font_color": "#ffffff",
-        "decorative_image": "shopify://shop_images/Asset_2_1.png"
+        "font_family": "sans_serif_n4",
+        "font_color": "#ffffff"
       }
     },
     "page_10_productdisplay_3qtbhf": {
@@ -272,13 +271,53 @@
             "price": "$17.99",
             "product_url": "#"
           }
+        },
+        "product_ga98H3": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$17.99",
+            "product_url": "#"
+          }
+        },
+        "product_Y3rFbL": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$17.99",
+            "product_url": "#"
+          }
+        },
+        "product_KKE7Uc": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$17.99",
+            "product_url": "#"
+          }
+        },
+        "product_qMQwex": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.png",
+            "title": "DON PABLO COLOMBIAN DECAF",
+            "price": "$17.99",
+            "product_url": "#"
+          }
         }
       },
       "block_order": [
         "product_WgwBph",
         "product_DCXjyA",
         "product_8ExWNf",
-        "product_fjEJdc"
+        "product_fjEJdc",
+        "product_ga98H3",
+        "product_Y3rFbL",
+        "product_KKE7Uc",
+        "product_qMQwex"
       ],
       "name": "Best Sellers Showcase",
       "settings": {
@@ -303,7 +342,7 @@
         "price_text": "$24.99 - 12OZ BAG IN COLLECTABLE TUBE",
         "paragraph1": "<p>Don Pablo Bourbon Infused Coffee – Coffee soaked in fine Kentucky Bourbon, then roasted to remove the alcohol, so only the Bourbon flavor remains…</p>",
         "paragraph2": "<p>Our Organic, Specialty-Grade coffee is soaked in fine Kentucky Bourbon, until it absorbs every drop. Then dried and roasted to Medium-Dark perfection in small batches, evaporating the alcohol, but infusing the coffee with intense, full-bodied notes of caramel, honey and butterscotch...a velvety balance of sweet and spice, fruitiness and nuttiness, that delights with each sip and keeps you coming back for more!</p>",
-        "bold_heading": "MAKES A GREAT GIFT!",
+        "bold_heading": "MAKES A GREAT GIFT ?",
         "note_text": "**Don Pablo Bourbon Infused Coffee is freshly roasted to order. Please allow 1-2 weeks for your order to be shipped.",
         "button_label": "VIEW PRODUCT",
         "button_link": "#",
@@ -320,7 +359,7 @@
           "type": "content_block",
           "settings": {
             "block_image": "shopify://shop_images/Layer_2.png",
-            "heading": "AUTHENTIC SMALL FARM COFFEE BEANSFROM OUR FAMILY TO YOURS",
+            "heading": "AUTHENTIC SMALL FARM COFFEE BEANS",
             "summary": "Even the best roasting process is useless without premium quality beans – and at Don Pablo Coffee, ours are unmatched. We source our beans from small, authentic farms in the best coffee-growing regions in the world, and as a family-run coffee company, the personal relationships with farmers we form allows us to choose the best beans from the crop. Through years of trust and relationship-building, we can identify the best production regions, choosing only the beans that grow where conditions are perfect."
           }
         },
@@ -328,7 +367,7 @@
           "type": "content_block",
           "settings": {
             "block_image": "shopify://shop_images/Layer_2.png",
-            "heading": "AUTHENTIC SMALL FARM COFFEE BEANSFROM OUR FAMILY TO YOURS",
+            "heading": "AUTHENTIC SMALL FARM COFFEE BEANS",
             "summary": "Even the best roasting process is useless without premium quality beans – and at Don Pablo Coffee, ours are unmatched. We source our beans from small, authentic farms in the best coffee-growing regions in the world, and as a family-run coffee company, the personal relationships with farmers we form allows us to choose the best beans from the crop. Through years of trust and relationship-building, we can identify the best production regions, choosing only the beans that grow where conditions are perfect."
           }
         }
@@ -340,8 +379,8 @@
       "name": "Brush Gradient Content",
       "settings": {
         "background_image": "shopify://shop_images/AdobeStock_285354391_1.png",
-        "brush_top": "shopify://shop_images/svgviewer-output.svg",
-        "brush_bottom": "shopify://shop_images/svgviewer-output_1.svg"
+        "brush_top": "shopify://shop_images/svgviewer-output_3ce3d050-1b39-4241-9e33-781ce6cfb336.svg",
+        "brush_bottom": "shopify://shop_images/svgviewer-output_2.svg"
       }
     },
     "page_10_comment_DELUcL": {

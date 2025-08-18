@@ -6,6 +6,7 @@
 
 .ctm-text-size-h2 {
   @apply text-[18px] md:text-4xl lg:text-[40px] xl:text-[48px] mb-5 uppercase font-serif font-bold leading-[1] tracking-[1px];
+  font-family: 'scotch-display';
 }
 
 .ctm-text-size-p{
@@ -19,9 +20,11 @@
 
 .ctm-p2-h2{
   @apply text-[#144634] text-[18px] md:text-4xl lg:text-[40px] xl:text-[48px] font-bold mb-2 font-serif leading-tight;
+  font-family: 'scotch-display';
 }
 .ctm-p2-h3{
 @apply uppercase font-light text-[16px] md:text-3xl lg:text-[32px] leading-none tracking-[4%] text-[#2A4C41] mb-2;
+font-family: 'quasimoda';
 
 }
 
@@ -40,14 +43,20 @@
 /* page 6  */
 
 .ctm-h3-p6{
-  @apply max-w-[540px] text-3xl md:text-[36px] font-extrabold leading-tight mb-4;
+  @apply max-w-[540px] font-extrabold leading-tight mb-4;
+  font-family: 'unbounded';
+  font-size: 36px;
 }
-
+.ctm-heading{
+  font-family: 'unbounded';
+  font-size: 40px;
+}
 
 /* p 7 */
 
 .ctm-font-p7{
   @apply text-[18px] md:text-[20px] lg:text-[24px] font-extrabold uppercase leading-relaxed mb-4;
+  font-family: 'outfit';
 }
 /* p8 */
 .ctm-img-p8 {
@@ -56,6 +65,7 @@
 
 .ctm-h2-p8{
   @apply text-3xl md:text-4xl lg:text-5xl font-bold text-[#857741] mb-4;
+  font-family: "futura-pt";
 }
 .ctm-check {
   @apply h-5 w-5 !border !border-[#A6192E] rounded bg-white;
@@ -66,7 +76,55 @@
 .ctm-h3-p9{
   @apply absolute bottom-6 left-3 right-3 text-center uppercase font-bold px-2 drop-shadow-lg text-[22px] md:text-[28px] leading-tight tracking-tight;
 }
+
+.ctm-h-p9{
+  font-family: 'futura-pt';
+
+}
 /* p10 */
 .ctm-nav {
   @apply flex flex-wrap justify-center gap-4 text-[14px] md:space-x-6 overflow-x-auto md:overflow-visible;
 }
+.ctm-h3-p10 {
+  font-family:subway-novella, sans-serif;
+  color: aliceblue;
+  font-size: xx-large;
+}
+
+.ctm-h2-p10 {
+  font-family: subway-novella, sans-serif;
+  color: #4A1E0A;
+  font-size: 34px;
+}
+
+.ctm-h3-p10-2 {
+  font-family:subway-novella, sans-serif;
+  color: #4A1E0A;
+  font-size: x-large;
+}
+.ctm-p2-10{
+  font-family:subway-novella, sans-serif;
+  @apply text-[16px] md:text-[18px] lg:text-[20px] font-bold text-[#6B2E15] mb-4;
+}
+.ctm-p3-10{
+  font-family:subway-novella, sans-serif;
+  @apply text-3xl md:text-4xl font-extrabold text-[#6B2E15] mt-2;
+}
+.ctm-h3-p10-3{
+ font-family:subway-novella, sans-serif;
+  @apply text-[16px] md:text-[18px] font-extrabold text-[#6B2E15] uppercase mb-4; 
+}
+
+.ctm{
+  font-family: 'abel';
+  @apply text-[16px] md:text-[16px] lg:text-[16px] font-bold text-gray-700 mb-4;
+}
+/* custom gradient overlay */
+.ctm-grediant {
+  background-image: linear-gradient(
+    270deg,
+    rgba(223, 157, 62, 0.95) 51.25%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+

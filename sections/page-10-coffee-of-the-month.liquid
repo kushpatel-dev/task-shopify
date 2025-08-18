@@ -1,168 +1,169 @@
 {% schema %}
-{
-  "name": "Coffee Of The Month",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "top_icon",
-      "label": "Top Icon"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "TRY OUR COFFEE"
-    },
-    {
-      "type": "text",
-      "id": "highlight_text",
-      "label": "Highlight Text",
-      "default": "OF THE MONTH"
-    },
-    {
-      "type": "text",
-      "id": "main_heading",
-      "label": "Main Heading",
-      "default": "BOURBON INFUSED COFFEE"
-    },
-    {
-      "type": "text",
-      "id": "price_text",
-      "label": "Price Text",
-      "default": "$24.99 - 12OZ BAG IN COLLECTABLE TUBE"
-    },
-    {
-      "type": "richtext",
-      "id": "paragraph1",
-      "label": "Paragraph 1",
-      "default": "<p>Don Pablo Bourbon Infused Coffee – Coffee soaked in fine Kentucky Bourbon, then roasted to remove the alcohol, so only the Bourbon flavor remains…</p>"
-    },
-    {
-      "type": "richtext",
-      "id": "paragraph2",
-      "label": "Paragraph 2",
-      "default": "<p>Our Organic, Specialty-Grade coffee is soaked in fine Kentucky Bourbon, until it absorbs every drop. Then dried and roasted to Medium-Dark perfection in small batches, evaporating the alcohol, but infusing the coffee with intense, full-bodied notes of caramel, honey and butterscotch...a velvety balance of sweet and spice, fruitiness and nuttiness, that delights with each sip and keeps you coming back for more!</p>"
-    },
-    {
-      "type": "text",
-      "id": "bold_heading",
-      "label": "Bold Heading",
-      "default": "MAKES A GREAT GIFT!"
-    },
-    {
-      "type": "text",
-      "id": "note_text",
-      "label": "Note Text",
-      "default": "**Don Pablo Bourbon Infused Coffee is freshly roasted to order. Please allow 1-2 weeks for your order to be shipped."
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button Label",
-      "default": "VIEW PRODUCT"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
-    },
-    {
-      "type": "image_picker",
-      "id": "product_image",
-      "label": "Product Image"
-    }, {
-      "type": "image_picker",
-      "id": "product_image1",
-      "label": "Product Image"
-    },{
-      "type": "image_picker",
-      "id": "product_image_bg",
-      "label": "Product Image"
-    },{
-      "type": "image_picker",
-      "id": "product_image_bg2",
-      "label": "Product Image"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Coffee Of The Month Section"
-    }
-  ]
-}
+  {
+    "name": "Coffee Of The Month",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "top_icon",
+        "label": "Top Icon"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "TRY OUR COFFEE"
+      },
+      {
+        "type": "text",
+        "id": "highlight_text",
+        "label": "Highlight Text",
+        "default": "OF THE MONTH"
+      },
+      {
+        "type": "text",
+        "id": "main_heading",
+        "label": "Main Heading",
+        "default": "BOURBON INFUSED COFFEE"
+      }, {
+        "type": "text",
+        "id": "price_text",
+        "label": "Price Text",
+        "default": "$24.99 - 12OZ BAG IN COLLECTABLE TUBE"
+      }, {
+        "type": "richtext",
+        "id": "paragraph1",
+        "label": "Paragraph 1",
+        "default": "<p>Don Pablo Bourbon Infused Coffee – Coffee soaked in fine Kentucky Bourbon, then roasted to remove the alcohol, so only the Bourbon flavor remains…</p>"
+      }, {
+        "type": "richtext",
+        "id": "paragraph2",
+        "label": "Paragraph 2",
+        "default": "<p>Our Organic, Specialty-Grade coffee is soaked in fine Kentucky Bourbon, until it absorbs every drop. Then dried and roasted to Medium-Dark perfection in small batches, evaporating the alcohol, but infusing the coffee with intense, full-bodied notes of caramel, honey and butterscotch...a velvety balance of sweet and spice, fruitiness and nuttiness, that delights with each sip and keeps you coming back for more!</p>"
+      }, {
+        "type": "text",
+        "id": "bold_heading",
+        "label": "Bold Heading",
+        "default": "MAKES A GREAT GIFT!"
+      }, {
+        "type": "text",
+        "id": "note_text",
+        "label": "Note Text",
+        "default": "**Don Pablo Bourbon Infused Coffee is freshly roasted to order. Please allow 1-2 weeks for your order to be shipped."
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "VIEW PRODUCT"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "image_picker",
+        "id": "product_image",
+        "label": "Product Image"
+      }, {
+        "type": "image_picker",
+        "id": "product_image1",
+        "label": "Product Image"
+      }, {
+        "type": "image_picker",
+        "id": "product_image_bg",
+        "label": "Product Image"
+      }, {
+        "type": "image_picker",
+        "id": "product_image_bg2",
+        "label": "Product Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Coffee Of The Month Section"
+      }
+    ]
+  }
 {% endschema %}
 
 <section class="relative bg-white py-16">
   <div class="max-w-8xl mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center gap-12">
-    
+
     <!-- LEFT CONTENT -->
     <div class="flex-1">
       <!-- Centered Block -->
       <div class="text-center mb-8">
         {% if section.settings.top_icon != blank %}
-          <img height="" width="" src="{{ section.settings.top_icon | img_url: '100x100' }}" alt="icon" class="mx-auto mb-4">
+          <img
+            height=""
+            width=""
+            src="{{ section.settings.top_icon | img_url: '100x100' }}"
+            alt="icon"
+            class="mx-auto mb-4">
         {% endif %}
         <p class="text-gray-700 tracking-wide uppercase">{{ section.settings.subtitle }}</p>
-        <p class="text-[#6B2E15] font-extrabold uppercase">{{ section.settings.highlight_text }}</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-[#6B2E15] mt-2">{{ section.settings.main_heading }}</h2>
+        <p class="ctm-p2-10 text-[#6B2E15] font-extrabold uppercase">{{ section.settings.highlight_text }}</p>
+        <h2 class="ctm-p3-10">{{ section.settings.main_heading }}</h2>
         <p class="mt-2 text-gray-800">{{ section.settings.price_text }}</p>
       </div>
 
       <!-- Left Aligned Text -->
       <div class="text-left space-y-4">
-        <div class="text-gray-700 prose max-w-none">
+        <div class="ctm prose max-w-none">
           {{ section.settings.paragraph1 }}
         </div>
-        <div class="text-gray-700 prose max-w-none">
+        <div class="ctm">
           {{ section.settings.paragraph2 }}
         </div>
-        <h3 class="font-extrabold text-[#6B2E15] uppercase">{{ section.settings.bold_heading }}</h3>
-        <p class="text-sm text-gray-600">{{ section.settings.note_text }}</p>
+        <h3 class="ctm-h3-p10-3 font-extrabold text-[#6B2E15] uppercase">{{ section.settings.bold_heading }}</h3>
+        <p class="ctm">{{ section.settings.note_text }}</p>
       </div>
       <div class="flex justify-center">
-       {% if section.settings.button_label != blank %}
+        {% if section.settings.button_label != blank %}
           <a href="{{ section.settings.button_link }}" class="inline-block mt-6 px-6 py-3 bg-[#C97A38] text-white font-medium rounded-full shadow hover:bg-[#a35f28] transition">
             {{ section.settings.button_label }}
           </a>
         {% endif %}
-        </div>
+      </div>
     </div>
     <!-- left PRODUCT IMAGE -->
     <div class="flex flex-col md:flex-row gap-6 md:gap-4 flex-1 relative items-center justify-center">
-  
-  {% if section.settings.product_image1 != blank %}
-    <img height="" width=""
-      src="{{ section.settings.product_image1 | img_url: '600x600' }}" 
-      alt="Product" 
-      class="relative z-1 w-40 h-56 sm:w-44 sm:h-60 md:w-52 md:h-72 lg:w-60 lg:h-80 xl:w-64 xl:h-[405px] object-contain"
-    >
-  {% endif %}
 
-  {% if section.settings.product_image != blank %}
-    <img height="" width=""
-      src="{{ section.settings.product_image | img_url: '600x600' }}" 
-      alt="Product" 
-      class="relative z-1 w-40 h-56 sm:w-44 sm:h-60 md:w-52 md:h-72 lg:w-60 lg:h-80 xl:w-64 xl:h-[405px] object-contain"
-    >
-  {% endif %}
+      {% if section.settings.product_image1 != blank %}
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.product_image1 | img_url: '600x600' }}"
+          alt="Product"
+          class="relative z-1 w-40 h-56 sm:w-44 sm:h-60 md:w-52 md:h-72 lg:w-60 lg:h-80 xl:w-64 xl:h-[405px] object-contain">
+      {% endif %}
 
-  {% if section.settings.product_image_bg != blank %}
-    <img height="" width=""
-      src="{{ section.settings.product_image_bg | img_url: '600x600' }}" 
-      alt="Product" 
-      class="absolute md:w-[280px] md:right-[-50px] md:bottom-[-30px] lg:w-[290px] lg:right-[20px] lg:bottom-[-30px] xl:w-[350px] xl:right-[70px] xl:bottom-[10px] w-28 sm:w-32 opacity-70"
-    >
-  {% endif %}
+      {% if section.settings.product_image != blank %}
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.product_image | img_url: '600x600' }}"
+          alt="Product"
+          class="relative z-1 w-40 h-56 sm:w-44 sm:h-60 md:w-52 md:h-72 lg:w-60 lg:h-80 xl:w-64 xl:h-[405px] object-contain">
+      {% endif %}
 
-  {% if section.settings.product_image_bg2 != blank %}
-    <img height="" width=""
-      src="{{ section.settings.product_image_bg2 | img_url: '600x600' }}" 
-      alt="Product" 
-      class="absolute md:w-[280px] md:left-[-50px] md:bottom-[-30px] lg:w-[290px] lg:left-[0px] lg:bottom-[-30px] xl:w-[350px] xl:left-[70px] xl:bottom-[35px] w-28 sm:w-32 opacity-70"
-    >
-  {% endif %}
+      {% if section.settings.product_image_bg != blank %}
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.product_image_bg | img_url: '600x600' }}"
+          alt="Product"
+          class="absolute md:w-[280px] md:right-[20px] md:bottom-[-30px] lg:w-[290px] lg:right-[20px] lg:bottom-[-30px] xl:w-[350px] xl:right-[70px] xl:bottom-[10px] w-28 sm:w-32 opacity-70">
+      {% endif %}
 
-</div>
+      {% if section.settings.product_image_bg2 != blank %}
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.product_image_bg2 | img_url: '600x600' }}"
+          alt="Product"
+          class="absolute md:w-[280px] md:left-[-50px] md:bottom-[-30px] lg:w-[290px] lg:left-[0px] lg:bottom-[-30px] xl:w-[350px] xl:left-[70px] xl:bottom-[35px] w-28 sm:w-32 opacity-70">
+      {% endif %}
+
+    </div>
 
   </div>
 </section>
