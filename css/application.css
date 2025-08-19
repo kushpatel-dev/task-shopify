@@ -128,7 +128,7 @@ font-family: 'unbounded';
 }
 
 .ctm-h3-p10-2 {
-  font-family:subway-novella, sans-serif;
+  font-family:"subway-novella", sans-serif;
   color: #4A1E0A;
   font-size: x-large;
 }
@@ -165,3 +165,7 @@ font-family: 'unbounded';
   color: #8E8E8E;
 }
 
+.ctm-Fjord-font{
+  @apply text-[36px] font-extrabold text-[#7B2D26] tracking-wide;
+ font-family: "Fjord";
+}
