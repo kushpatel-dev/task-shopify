@@ -1,3 +1,130 @@
+<section class="relative w-full">
+  <!-- Background -->
+
+  <div class="relative clip-top" style="
+       position: relative; 
+       z-index: 1000;
+       background:
+         linear-gradient(0deg, #572D2D, #572D2D),
+         radial-gradient(30% 40.31% at 73.35% 53.89%, #492626 0%, rgba(73, 38, 38, 0) 100%);
+     ">
+
+    <div class="absolute inset-0">
+      <!-- Pattern overlay -->
+      {% if section.settings.background_pattern %}
+        <div class="absolute inset-0">
+          <img
+            height=""
+            width=""
+            src="{{ section.settings.background_pattern | img_url: 'master' }}"
+            alt="Pattern"
+            class="w-full h-full object-cover mix-blend-multiply contrast-10">
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Content -->
+    <div class="relative max-w-full mx-auto px-4 py-20">
+      <!-- Heading -->
+      <h2 class="ctm-h-p9 text-center uppercase" style="font-size:54px; line-height:100%; color: {{ section.settings.heading_color }};">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="ctm-p-p9 text-center mt-4 max-w-8xl mx-auto" style="font-family: 'Futura PT'; font-weight:400; font-size:16px; line-height:100%; color: {{ section.settings.subheading_color }};">
+        {{ section.settings.subheading }}
+      </p>
+
+      <!-- Cards -->
+      <div class="mt-12 flex flex-wrap justify-center gap-8">
+        {% for block in section.blocks %}
+          <article
+            class="group w-[300px] lg:h-[500px] flex flex-col"
+            {{ block.shopify_attributes }}
+            aria-label="{{ block.settings.card_title | escape }}">
+
+            <!-- IMAGE AREA -->
+            <div class="relative h-[440px] overflow-hidden group">
+              {% if block.settings.card_image %}
+                <!-- First (default) image -->
+                <img
+                  height=""
+                  width=""
+                  src="{{ block.settings.card_image | image_url: width: 900 }}"
+                  srcset="
+        {{ block.settings.card_image | image_url: width: 600 }} 600w,
+        {{ block.settings.card_image | image_url: width: 900 }} 900w,
+        {{ block.settings.card_image | image_url: width: 1200 }} 1200w
+      "
+                  sizes="(min-width:1024px) 300px, 300px"
+                  alt="{{ block.settings.card_title | escape }}"
+                  class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+                  loading="lazy">
+              {% endif %}
+
+              {% if block.settings.card_image_hover %}
+                <!-- Second (hover) image -->
+                <img
+                  height=""
+                  width=""
+                  src="{{ block.settings.card_image_hover | image_url: width: 900 }}"
+                  srcset="
+        {{ block.settings.card_image_hover | image_url: width: 600 }} 600w,
+        {{ block.settings.card_image_hover | image_url: width: 900 }} 900w,
+        {{ block.settings.card_image_hover | image_url: width: 1200 }} 1200w
+      "
+                  sizes="(min-width:1024px) 300px, 300px"
+                  alt="{{ block.settings.card_title | escape }} hover"
+                  class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  loading="lazy">
+              {% endif %}
+
+              <!-- Legibility gradient -->
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
+
+              <!-- Season tag -->
+              {% if block.settings.season_text != blank %}
+                <div class="absolute bottom-40 right-35 grid place-items-center">
+                  <span class="px-2 py-1 !text-[18px] md:text-[22px] uppercase tracking-wide rounded border border-amber-50 text-white">
+                    {{ block.settings.season_text }}
+                  </span>
+                </div>
+              {% endif %}
+
+              <!-- Card title -->
+              {% if block.settings.card_title != blank %}
+                <h3 class="w-[270px] ctm-h3-p9" style="color: {{ section.settings.card_title_color }}; font-family:'Futura PT Cond','Futura PT',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+                  {{ block.settings.card_title | newline_to_br }}
+                </h3>
+              {% endif %}
+            </div>
+
+
+            <!-- CTA AREA -->
+            {% if block.settings.register_link != blank %}
+              <div class="relative p-4">
+                <a
+                  href="{{ block.settings.register_link }}"
+                  class="w-full inline-flex items-center justify-center rounded-full font-semibold py-2.5 px-6 transition
+                   bg-[#A6192E] text-white hover:bg-[#8B1427] focus:outline-none focus:ring-2 focus:ring-white/40"
+                  style="font-family:'Futura PT',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;"
+                  aria-label="{{ block.settings.price }} | Register">
+                  {{ block.settings.price }} | Register
+                </a>
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Clip path top */
+  .clip-top {
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0% 100%);
+  }
+</style>
+
 {% schema %}
   {
     "name": "More Journeys to Explore",
@@ -47,6 +174,11 @@
             "label": "Card Image"
           },
           {
+            "type": "image_picker",
+            "id": "card_image_hover",
+            "label": "Card Hover Image"
+          },
+          {
             "type": "text",
             "id": "season_text",
             "label": "Season Text",
@@ -57,8 +189,7 @@
             "id": "card_title",
             "label": "Card Title",
             "default": "1-1 COACHING"
-          },
-          {
+          }, {
             "type": "text",
             "id": "price",
             "label": "Price",
@@ -80,117 +211,3 @@
     ]
   }
 {% endschema %}
-
-<section class="relative w-full">
-  <!-- Background -->
-
-  <div class="relative clip-top" style="
-       position: relative; 
-       z-index: 1000;
-       background:
-         linear-gradient(0deg, #572D2D, #572D2D),
-         radial-gradient(30% 40.31% at 73.35% 53.89%, #492626 0%, rgba(73, 38, 38, 0) 100%);
-     ">
-
-    <div class="absolute inset-0">
-      <!-- Pattern overlay -->
-      {% if section.settings.background_pattern %}
-        <div class="absolute inset-0">
-          <img
-            height=""
-            width=""
-            src="{{ section.settings.background_pattern | img_url: 'master' }}"
-            alt="Pattern"
-            class="w-full h-full object-cover mix-blend-multiply contrast-10">
-        </div>
-      {% endif %}
-    </div>
-
-    <!-- Content -->
-    <div class="relative max-w-full mx-auto px-4 py-20">
-      <!-- Heading -->
-      <h2 class="ctm-h-p9 text-center uppercase" style="font-size:54px; line-height:100%; color: {{ section.settings.heading_color }};">
-        {{ section.settings.heading }}
-      </h2>
-      <p class="text-center mt-4 max-w-8xl mx-auto" style="font-family: 'Futura PT'; font-weight:400; font-size:16px; line-height:100%; color: {{ section.settings.subheading_color }};">
-        {{ section.settings.subheading }}
-      </p>
-
-      <!-- Cards -->
-      <div class="mt-12 flex flex-wrap justify-center gap-8">
-        {% for block in section.blocks %}
-          <article
-            class="group w-[300px] lg:h-[500px] flex flex-col"
-            {{ block.shopify_attributes }}
-            aria-label="{{ block.settings.card_title | escape }}">
-
-            <!-- IMAGE AREA -->
-            <div class="relative h-[440px] overflow-hidden">
-              {% if block.settings.card_image %}
-                <img
-                  height=""
-                  width=""
-                  src="{{ block.settings.card_image | image_url: width: 900 }}"
-                  srcset="
-              {{ block.settings.card_image | image_url: width: 600 }} 600w,
-              {{ block.settings.card_image | image_url: width: 900 }} 900w,
-              {{ block.settings.card_image | image_url: width: 1200 }} 1200w
-             "
-                  sizes="(min-width:1024px) 300px, 300px"
-                  alt="{{ block.settings.card_title | escape }}"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  loading="lazy">
-              {% else %}
-                <div class="w-full h-full bg-black/20 grid place-items-center text-white/70">
-                  <span class="text-sm">No image</span>
-                </div>
-              {% endif %}
-
-              <!-- Legibility gradient -->
-              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
-
-              <!-- Season tag: centered -->
-              {% if block.settings.season_text != blank %}
-
-                <div class="absolute bottom-40 right-35 grid place-items-center">
-                  <span class="px-2 py-1 !text-[18px] md:text-[22px] uppercase tracking-wide rounded border border-amber-50 text-white">
-                    {{ block.settings.season_text }}
-                  </span>
-                </div>
-
-              {% endif %}
-
-              <!-- Card title -->
-              {% if block.settings.card_title != blank %}
-                <h3 class=" w-[270px] ctm-h3-p9" style="color: {{ section.settings.card_title_color }}; font-family:'Futura PT Cond','Futura PT',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
-                  {{ block.settings.card_title | newline_to_br }}
-                </h3>
-              {% endif %}
-            </div>
-
-            <!-- CTA AREA -->
-            {% if block.settings.register_link != blank %}
-              <div class="relative p-4">
-                <a
-                  href="{{ block.settings.register_link }}"
-                  class="w-full inline-flex items-center justify-center rounded-full font-semibold py-2.5 px-6 transition
-                   bg-[#A6192E] text-white hover:bg-[#8B1427] focus:outline-none focus:ring-2 focus:ring-white/40"
-                  style="font-family:'Futura PT',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;"
-                  aria-label="{{ block.settings.price }} | Register">
-                  {{ block.settings.price }} | Register
-                </a>
-              </div>
-            {% endif %}
-          </article>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  /* Clip path top */
-  .clip-top {
-    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0% 100%);
-  }
-</style>

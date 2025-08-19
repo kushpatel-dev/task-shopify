@@ -87,7 +87,11 @@ font-family: 'unbounded';
 }
 
 .ctm-h2-p8{
-  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-[#857741] mb-4;
+  @apply text-[34px] md:text-[48px] lg:text-[50px] font-bold text-[#857741] mb-4;
+  font-family: "futura-pt";
+}
+.ctm-h3-p8{
+  @apply text-[#253746] text-[32px];
   font-family: "futura-pt";
 }
 .ctm-check {
@@ -102,7 +106,10 @@ font-family: 'unbounded';
 
 .ctm-h-p9{
   font-family: 'futura-pt';
+}
 
+.ctm-p-p9{
+  font-family: 'futura-pt';
 }
 /* p10 */
 .ctm-nav {

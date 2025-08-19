@@ -100,6 +100,16 @@
             "button_link": "#"
           }
         },
+        "product_card_4TKzcg": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/image_8.png",
+            "title": "Sustainable Seafood",
+            "description": "Humpback whales are our most commonly spotted whales aboard the Cape May Whale Watcher fleet, so let’s learn a little bit more about these spectacular animals.",
+            "button_text": "Read More",
+            "button_link": "#"
+          }
+        },
         "product_card_LxUXLt": {
           "type": "product_card",
           "settings": {
@@ -121,6 +131,16 @@
           }
         },
         "product_card_kwqnz4": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/image_11.png",
+            "title": "Talkin’ Trash",
+            "description": "Marine Debris, what is it? The ocean, one of the most vast and unique environments here on planet Earth. Our oceans cover about 70% of the entire planet, which has allowed...",
+            "button_text": "Read More",
+            "button_link": "#"
+          }
+        },
+        "product_card_kU4DmP": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/image_11.png",
@@ -170,9 +190,11 @@
         "product_card_i7jGqg",
         "product_card_REQLhd",
         "product_card_DnGEUh",
+        "product_card_4TKzcg",
         "product_card_LxUXLt",
         "product_card_YtBJeL",
         "product_card_kwqnz4",
+        "product_card_kU4DmP",
         "product_card_An8MeU",
         "product_card_yRcpYc",
         "product_card_CqJAHi"

@@ -1,5 +1,5 @@
 <section class="py-12 bg-white">
-  <div class="max-w-full mx-10 md:mx-14 lg:mx-[100px] xl:mx-[200px] px-4 lg:flex lg:gap-8">
+  <div class="max-w-[1100px] mx-10 md:mx-14 lg:mx-[100px] xl:mx-[150px] px-4 lg:flex lg:gap-8">
 
     <!-- LEFT SIDE: IMAGE CAROUSEL -->
     <div class="lg:w-1/2">
@@ -23,32 +23,35 @@
         </button>
       </div>
       <!-- Thumbnails -->
-      <div class="flex flex-row justify-evenly items-center">
+      <div class="flex flex-row justify-evenly items-center gap-4">
         {% for block in section.blocks %}
-          <div
-            class="relative rounded-lg overflow-hidden transition data-[active=true]:ring-2 data-[active=true]:ring-red-600/40"
-            data-thumb
-            data-index="{{ forloop.index0 }}"
-            data-active="false">
-            <img
-              height=""
-              width=""
-              src="{{ block.settings.thumbnail | img_url: '200x' }}"
-              alt="Thumbnail"
-              class="ctm-img-p8 thumbnail"
-              data-image="{{ block.settings.thumbnail | img_url: '800x' }}">
-            <!-- Red overlay shown only when this thumb is active -->
-            <div class="active-overlay absolute inset-0 bg-red-600/40 opacity-0 transition duration-200" data-active="false"></div>
-          </div>
+          {% if block.settings.thumbnail != blank %}
+            <div
+              class="group relative w-50 h-50 rounded-lg overflow-hidden cursor-pointer transition"
+              data-thumb
+              data-index="{{ forloop.index0 }}"
+              data-active="false">
+              <img
+                height=""
+                width=""
+                src="{{ block.settings.thumbnail | img_url: '200x' }}"
+                alt="Thumbnail {{ forloop.index }}"
+                class="w-full min-h-50 object-cover ctm-img-p8 thumbnail"
+                data-image="{{ block.settings.thumbnail | img_url: '800x' }}">
+              <!-- Overlay: only visible when wrapper has data-active="true" -->
+              <div class="active-overlay pointer-events-none absolute bottom-0 left-0 w-[100px] h-[110px] bg-red-600/40 opacity-0 transition-opacity duration-200 group-data-[active=true]:opacity-100"></div>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
+
 
     </div>
 
     <!-- RIGHT SIDE: PRODUCT DETAILS -->
     <div class="lg:w-1/2 mt-8 lg:mt-0">
       <!-- Title & Price -->
-      <h2 class="ctm-h2-p8">{{ section.settings.title }}</h2>
+      <h2 class="ctm-h2-p8 lg:min-w[500px] xl:min-w-[550px]">{{ section.settings.title }}</h2>
       <div class="flex items-center gap-2 mt-2">
         <span class="text-[#A6192E] !text-[20px] !font-extrabold">{{ section.settings.price }}</span>
         <img
@@ -60,7 +63,7 @@
       </div>
 
       <!-- Description -->
-      <h3 class="!text-[32px] !font-extrabold mt-4">{{ section.settings.subtitle }}</h3>
+      <h3 class="ctm-h3-p8 !text-[32px] !font-extrabold mt-4">{{ section.settings.subtitle }}</h3>
       <p class="mt-2 text-gray-700 text-[14px]">{{ section.settings.description }}</p>
       <p class="mt-4 font-bold">{{ section.settings.bold_text }}</p>
       <p class="font-bold">{{ section.settings.question_text }}</p>
@@ -89,7 +92,7 @@
       <!-- Quantity Selector -->
       <div class="flex items-center gap-4 mt-6">
         <span class="!font-extrabold">Quantity:</span>
-        <div class="flex items-center rounded-full border border-[#8B0A10] overflow-hidden h-8">
+        <div class="flex items-center justify-center rounded-full border border-[#8B0A10] overflow-hidden h-10 w-30">
           <button id="decreaseQty" class="flex items-center justify-center w-8 h-8 text-gray-700 select-none">
             −
           </button>
