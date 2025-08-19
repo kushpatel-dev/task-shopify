@@ -100,7 +100,7 @@
     
           function step() {
             // 60fps: move by (totalWidth / speed / 60) per frame
-            const pxStep = totalWidth / (speed * 60);
+            const pxStep = totalWidth / (speed * 50);
             pos += dir * pxStep;
             // Reset as soon as looped
             if (dir === 1 && pos >= 0)          pos = -totalWidth;
@@ -111,8 +111,8 @@
           step();
     
           // Optional: Pause on hover (uncomment to enable)
-          // track.parentNode.addEventListener('mouseenter',()=>track.style.pointerEvents='none');
-          // track.parentNode.addEventListener('mouseleave',()=>track.style.pointerEvents='auto');
+           track.parentNode.addEventListener('mouseenter',()=>track.style.pointerEvents='none');
+           track.parentNode.addEventListener('mouseleave',()=>track.style.pointerEvents='auto');
         };
         if (imgs.length === 0) measureAndAnimate();
         else {
