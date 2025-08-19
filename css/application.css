@@ -37,12 +37,16 @@ font-family: 'quasimoda';
   @apply pointer-events-none select-none absolute z-0 w-[254px] h-[269px] -top-[15px] right-0;
 }
 .ctm-p3-h2{
-  @apply text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#5E5B48] ;
+  @apply leading-tight text-[#5E5B48] ;
+
 }
 
-.ctm-h2-p5{
-font-family: 'unbounded';
-  
+.ctm-frame-img {
+  @apply absolute z-10 w-full h-[404px] top-[5px] right-[5px] md:top-[-10px] md:left-[10px] md:w-[300px] md:h-[300px] lg:top-[-10px] lg:right-[30px] lg:w-[300px] lg:h-[300px] xl:top-[0px] xl:right-[30px] xl:w-[415px] xl:h-[417px] object-cover  aspect-[4/3];
+}
+
+.ctm-unbound-font{
+font-family: 'unbounded';  
 }
 /* page 6  */
 
@@ -55,12 +59,27 @@ font-family: 'unbounded';
   font-family: 'unbounded';
   font-size: 40px;
 }
-
+.poppins-font {
+  font-family: 'poppins';
+  font-size: 16px;
+  font-weight: 400;
+  color: #848283;
+}
+.poppins-font2 {
+  font-family: 'poppins';
+  font-size: 16px;
+  font-weight: 500;
+  color: #161618;
+}
 /* p 7 */
 
 .ctm-font-p7{
   @apply text-[18px] md:text-[20px] lg:text-[24px] font-extrabold uppercase leading-relaxed mb-4;
   font-family: 'outfit';
+}
+
+.ctm-font2-p7{
+ font-family: 'outfit';
 }
 /* p8 */
 .ctm-img-p8 {
@@ -130,5 +149,12 @@ font-family: 'unbounded';
     rgba(223, 157, 62, 0.95) 51.25%,
     rgba(255, 255, 255, 0) 100%
   );
+}
+
+.ctm-teachers-font {
+  font-family: 'teachers';
+  font-size: 40px;
+  font-weight: 400;
+  color: #8E8E8E;
 }
 

@@ -18,7 +18,7 @@
             <h3 class="ctm-font-p7" style="color: {{ section.settings.heading_color }};">
               {{ block.settings.title }}
             </h3>
-            <p class="mb-4" style="color: {{ section.settings.paragraph_color }};">
+            <p class="ctm-font2-p7 mb-4" style="color: {{ section.settings.paragraph_color }};">
               {{ block.settings.description }}
             </p>
 
@@ -112,7 +112,7 @@
   prevBtn.className = "w-10 h-10 flex items-center justify-center rounded-full bg-white ";
   nextBtn.className = "w-10 h-10 flex items-center justify-center rounded-full bg-white ";
   
-  prevBtn.querySelector("img").classList.add("invert-0", "hover:invert"); 
+  prevBtn.querySelector("img").classList.add("invert-0"); 
   nextBtn.querySelector("img").classList.add("invert-0", "hover:invert");
   
   prevBtn.addEventListener("click", () => {
