@@ -1,14 +1,17 @@
+{% assign per_page = section.settings.products_per_page | default: 6 %}
+{% assign total_products = section.blocks | size %}
+{% assign total_pages = total_products | plus: per_page | minus: 1 | divided_by: per_page %}
+
 <section class="py-12 bg-white">
   <div class="max-w-8xl mx-auto px-4">
-    <!-- Flex container -->
+    <!-- Grid -->
     <div id="productGrid" class="flex flex-wrap justify-center gap-6">
       {% for block in section.blocks %}
         <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]" data-index="{{ forloop.index0 }}">
-
           {% if block.settings.image %}
             <img
-              height=""
               width=""
+              height=""
               src="{{ block.settings.image | img_url: '400x280' }}"
               alt="{{ block.settings.title }}"
               class="w-full h-[280px] object-cover rounded-t-lg">
@@ -18,7 +21,7 @@
             <h3 class="ctm-font-p7" style="color: {{ section.settings.heading_color }};">
               {{ block.settings.title }}
             </h3>
-            <p class="mb-4" style="color: {{ section.settings.paragraph_color }};">
+            <p class="ctm-font2-p7 mb-4" style="color: {{ section.settings.paragraph_color }};">
               {{ block.settings.description }}
             </p>
 
@@ -26,8 +29,7 @@
               <a
                 href="{{ block.settings.button_link }}"
                 class="inline-block font-semibold py-2 px-5 rounded transition"
-                style="background-color: {{ section.settings.button_bg_color }};
-                       color: {{ section.settings.button_text_color }};">
+                style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }};">
                 {{ block.settings.button_text }}
               </a>
             {% endif %}
@@ -36,101 +38,143 @@
       {% endfor %}
     </div>
 
-    <!-- Pagination -->
-    <div class="flex justify-center items-center mt-8 space-x-2" id="pagination">
-      <button id="prevPage" class="p-3">
-        <img
-          height=""
-          width=""
-          src="{{'arrow-left.png' | asset_url }}"
-          alt="Previous"
-          class="w-6 h-6">
+    {% if total_pages > 1 %}
+      <!-- Pagination -->
+      <div id="pagination" class="flex justify-center items-center mt-8 gap-3">
+        <!-- Prev -->
+        <button id="prevPage" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-700 text-red-700 bg-white hover:bg-red-100 disabled:opacity-40 disabled:cursor-not-allowed transition">
+          <img
+            height=""
+            width=""
+            src="{{ 'arrow-left.png' | asset_url }}"
+            alt="Previous"
+            class="w-5 h-5">
+        </button>
 
-      </button>
+        <!-- Page numbers (rendered by Liquid, not JS) -->
+        <div id="pageNumbers" class="flex items-center gap-2">
+          {% for i in (1..total_pages) %}
+            <button
+              class="pg-btn"
+              data-page="{{ i }}"
+              aria-label="Go to page {{ i }}">
+              {{ i }}
+            </button>
+          {% endfor %}
+        </div>
 
-      <div id="pageNumbers" class="flex space-x-2"></div>
-      <button id="nextPage">
-        <img
-          height=""
-          width=""
-          src="{{ 'arrow-right.png' | asset_url }}"
-          alt="Next"
-          class="w-6 h-6">
-      </button>
-    </div>
+        <!-- Next -->
+        <button id="nextPage" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-700 text-red-700 bg-white hover:bg-red-100 disabled:opacity-40 disabled:cursor-not-allowed transition">
+          <img
+            width=""
+            height=""
+            src="{{ 'arrow-right.png' | asset_url }}"
+            alt="Next"
+            class="w-5 h-5">
+        </button>
+      </div>
+    {% endif %}
   </div>
 </section>
+
+<!-- Plain CSS for semantic states (no @apply) -->
+<style>
+  /* Base pill: always round, red border/text on white (matches your image) */
+  .pg-btn {
+    width: 2.5rem;
+    /* 40px */
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 2px solid #A80000;
+    /* brand red */
+    background: #fff;
+    color: #A80000;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease
+    , color 0.2s ease
+    , transform 0.2s ease;
+  }
+  .pg-btn:hover:not(.is-active) {
+    background: #ffe5e5;
+    /* subtle hover */
+  }
+  /* Active page → solid red with white text */
+  .pg-btn.is-active {
+    background: #A80000;
+    color: #fff;
+    border-color: #A80000;
+    font-weight: 700;
+  }
+
+  /* Pure logic class for visibility (JS toggles this) */
+  #productGrid [data-index].is-hidden {
+    display: none;
+  }
+</style>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-  const productsPerPage = {{ section.settings.products_per_page }};
-  const productGrid = document.getElementById("productGrid");
-  const products = productGrid.querySelectorAll("[data-index]");
-  const totalProducts = products.length;
-  const totalPages = Math.ceil(totalProducts / productsPerPage);
+    const perPage = {{ per_page }};
+    const productGrid = document.getElementById("productGrid");
+    const items = productGrid.querySelectorAll("[data-index]");
   
-  const prevBtn = document.getElementById("prevPage");
-  const nextBtn = document.getElementById("nextPage");
-  const pageNumbersContainer = document.getElementById("pageNumbers");
+    const prevBtn = document.getElementById("prevPage");
+    const nextBtn = document.getElementById("nextPage");
+    const pageNumbersContainer = document.getElementById("pageNumbers");
+    const pageButtons = pageNumbersContainer ? pageNumbersContainer.querySelectorAll(".pg-btn") : [];
+    const totalPages = pageButtons.length || 1;
   
-  let currentPage = 1;
+    let currentPage = 1;
   
-  function showPage(page) {
-    products.forEach(p => p.style.display = "none");
-    const start = (page - 1) * productsPerPage;
-    const end = start + productsPerPage;
-    products.forEach((p, i) => {
-      if (i >= start && i < end) p.style.display = "";
-    });
+    function showPage(page){
+      const start = (page - 1) * perPage;
+      const end = start + perPage;
   
-    const pageBtns = pageNumbersContainer.querySelectorAll("button");
-    pageBtns.forEach(btn => {
-      btn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 font-bold transition transform hover:scale-110 hover:bg-red-500 hover:text-white";
-    });
+      items.forEach((el, i) => {
+        const visible = i >= start && i < end;
+        el.classList.toggle("is-hidden", !visible);
+      });
   
-    const activeBtn = pageNumbersContainer.querySelector(`[data-page="${page}"]`);
-    if (activeBtn) {
-      activeBtn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-[#A80000] text-white font-bold transition transform hover:scale-110";
+      pageButtons.forEach(btn => btn.classList.remove("is-active"));
+      const activeBtn = pageNumbersContainer && pageNumbersContainer.querySelector(`[data-page="${page}"]`);
+      if (activeBtn) activeBtn.classList.add("is-active");
+  
+      if (prevBtn) prevBtn.disabled = page === 1;
+      if (nextBtn) nextBtn.disabled = page === totalPages;
+  
+      currentPage = page;
     }
   
-    prevBtn.disabled = page === 1;
-    nextBtn.disabled = page === totalPages;
-    currentPage = page;
-  }
+    // Wire clicks without styling in JS
+    pageButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = Number(btn.getAttribute("data-page"));
+        if (target && target !== currentPage) showPage(target);
+      });
+    });
   
-  function createPagination() {
-    pageNumbersContainer.innerHTML = "";
-    for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement("button");
-      btn.textContent = i;
-      btn.className = "w-10 h-10 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 font-bold transition transform hover:scale-110 hover:bg-red-500 hover:text-white";
-      btn.setAttribute("data-page", i);
-      btn.addEventListener("click", () => showPage(i));
-      pageNumbersContainer.appendChild(btn);
+    if (prevBtn) prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) showPage(currentPage - 1);
+    });
+    if (nextBtn) nextBtn.addEventListener("click", () => {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    });
+  
+    // Initialize
+    if (totalPages > 1){
+      showPage(1);
+    } else {
+      const pag = document.getElementById("pagination");
+      if (pag) pag.style.display = "none";
+      // show all if only one page
+      items.forEach(el => el.classList.remove("is-hidden"));
     }
-  }
-  
-  prevBtn.className = "w-10 h-10 flex items-center justify-center rounded-full bg-white ";
-  nextBtn.className = "w-10 h-10 flex items-center justify-center rounded-full bg-white ";
-  
-  prevBtn.querySelector("img").classList.add("invert-0", "hover:invert"); 
-  nextBtn.querySelector("img").classList.add("invert-0", "hover:invert");
-  
-  prevBtn.addEventListener("click", () => {
-    if (currentPage > 1) showPage(currentPage - 1);
-  });
-  
-  nextBtn.addEventListener("click", () => {
-    if (currentPage < totalPages) showPage(currentPage + 1);
-  });
-  
-  if (totalPages > 1) {
-    createPagination();
-    showPage(1);
-  } else {
-    document.getElementById("pagination").style.display = "none";
-  }
   });
 </script>
+
 
 {% schema %}
   {

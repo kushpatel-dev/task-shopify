@@ -37,12 +37,16 @@ font-family: 'quasimoda';
   @apply pointer-events-none select-none absolute z-0 w-[254px] h-[269px] -top-[15px] right-0;
 }
 .ctm-p3-h2{
-  @apply text-2xl md:text-3xl lg:text-4xl font-light leading-tight text-[#5E5B48] ;
+  @apply leading-tight text-[#5E5B48] ;
+
 }
 
-.ctm-h2-p5{
-font-family: 'unbounded';
-  
+.ctm-frame-img {
+  @apply absolute z-10 w-full h-[404px] top-[5px] right-[5px] md:top-[-10px] md:left-[10px] md:w-[300px] md:h-[300px] lg:top-[-10px] lg:right-[30px] lg:w-[300px] lg:h-[300px] xl:top-[0px] xl:right-[30px] xl:w-[415px] xl:h-[417px] object-cover  aspect-[4/3];
+}
+
+.ctm-unbound-font{
+font-family: 'unbounded';  
 }
 /* page 6  */
 
@@ -55,12 +59,27 @@ font-family: 'unbounded';
   font-family: 'unbounded';
   font-size: 40px;
 }
-
+.poppins-font {
+  font-family: 'poppins';
+  font-size: 16px;
+  font-weight: 400;
+  color: #848283;
+}
+.poppins-font2 {
+  font-family: 'poppins';
+  font-size: 16px;
+  font-weight: 500;
+  color: #161618;
+}
 /* p 7 */
 
 .ctm-font-p7{
   @apply text-[18px] md:text-[20px] lg:text-[24px] font-extrabold uppercase leading-relaxed mb-4;
   font-family: 'outfit';
+}
+
+.ctm-font2-p7{
+ font-family: 'outfit';
 }
 /* p8 */
 .ctm-img-p8 {
@@ -68,7 +87,11 @@ font-family: 'unbounded';
 }
 
 .ctm-h2-p8{
-  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-[#857741] mb-4;
+  @apply text-[34px] md:text-[48px] lg:text-[50px] font-bold text-[#857741] mb-4;
+  font-family: "futura-pt";
+}
+.ctm-h3-p8{
+  @apply text-[#253746] text-[32px];
   font-family: "futura-pt";
 }
 .ctm-check {
@@ -83,7 +106,10 @@ font-family: 'unbounded';
 
 .ctm-h-p9{
   font-family: 'futura-pt';
+}
 
+.ctm-p-p9{
+  font-family: 'futura-pt';
 }
 /* p10 */
 .ctm-nav {
@@ -102,7 +128,7 @@ font-family: 'unbounded';
 }
 
 .ctm-h3-p10-2 {
-  font-family:subway-novella, sans-serif;
+  font-family:"subway-novella", sans-serif;
   color: #4A1E0A;
   font-size: x-large;
 }
@@ -132,3 +158,14 @@ font-family: 'unbounded';
   );
 }
 
+.ctm-teachers-font {
+  font-family: 'teachers';
+  font-size: 40px;
+  font-weight: 400;
+  color: #8E8E8E;
+}
+
+.ctm-Fjord-font{
+  @apply text-[36px] font-extrabold text-[#7B2D26] tracking-wide;
+ font-family: "Fjord";
+}

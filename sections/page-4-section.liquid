@@ -8,7 +8,7 @@
     {% endif %}
 
     {% if section.settings.heading %}
-      <h2 class="mb-8 text-3xl md:text-4xl lg:!text-[40px] font-extrabold text-black text-center" style="{% if section.settings.heading_shadow %}text-shadow:0 2px 16px #eee;{% endif %}">
+      <h2 class="ctm-unbound-font mb-8 text-3xl md:text-4xl lg:!text-[40px] font-extrabold text-black text-center" style="{% if section.settings.heading_shadow %}text-shadow:0 2px 16px #eee;{% endif %}">
         {{ section.settings.heading }}
       </h2>
     {% endif %}
@@ -100,7 +100,7 @@
     
           function step() {
             // 60fps: move by (totalWidth / speed / 60) per frame
-            const pxStep = totalWidth / (speed * 60);
+            const pxStep = totalWidth / (speed * 50);
             pos += dir * pxStep;
             // Reset as soon as looped
             if (dir === 1 && pos >= 0)          pos = -totalWidth;
@@ -111,8 +111,8 @@
           step();
     
           // Optional: Pause on hover (uncomment to enable)
-          // track.parentNode.addEventListener('mouseenter',()=>track.style.pointerEvents='none');
-          // track.parentNode.addEventListener('mouseleave',()=>track.style.pointerEvents='auto');
+           track.parentNode.addEventListener('mouseenter',()=>track.style.pointerEvents='none');
+           track.parentNode.addEventListener('mouseleave',()=>track.style.pointerEvents='auto');
         };
         if (imgs.length === 0) measureAndAnimate();
         else {

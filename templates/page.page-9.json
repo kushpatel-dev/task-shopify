@@ -24,6 +24,7 @@
           "type": "card",
           "settings": {
             "card_image": "shopify://shop_images/ed2d1edce6df73654490da69aeb63c58cd852ef3_resized.jpg",
+            "card_image_hover": "shopify://shop_images/ad41af6196f8437dcbb68815b511695846938e55.jpg",
             "season_text": "SUMMER 2026",
             "card_title": "1-1 COACHING",
             "price": "$2,597.00",
@@ -34,6 +35,7 @@
           "type": "card",
           "settings": {
             "card_image": "shopify://shop_images/198a3914638c64577a8b78b4c6a0a71f8fab949a_1.jpg",
+            "card_image_hover": "shopify://shop_images/6aa93921c4e0a408e7b222a636239198bb509208.jpg",
             "season_text": "",
             "card_title": "Online Group Coaching",
             "price": "$2,597.00",
@@ -44,6 +46,7 @@
           "type": "card",
           "settings": {
             "card_image": "shopify://shop_images/924fbae483d0d80dcabb8204733fd644d66eb95f.jpg",
+            "card_image_hover": "shopify://shop_images/c6547772fea48afa8237cecbb0535eaac390cfda.jpg",
             "season_text": "SUMMER 2026",
             "card_title": "In-Person Group Coaching",
             "price": "$997.00",
@@ -54,6 +57,7 @@
           "type": "card",
           "settings": {
             "card_image": "shopify://shop_images/6c6d044c6908d28f4f23109189cc5bd7cdc4df09.jpg",
+            "card_image_hover": "shopify://shop_images/a138e6634fabaeb3ee820bd1ed160afadcb37db7.jpg",
             "season_text": "SUMMER 2026",
             "card_title": "4-week Transformative Program",
             "price": "$00.00",

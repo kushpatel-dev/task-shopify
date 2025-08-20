@@ -1,73 +1,48 @@
-{% style %}
-  .timeline-horizontal-line::before,
-  .timeline-horizontal-line::after {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    /* 16px */
-    height: 1rem;
-    /* 16px */
-    border-radius: 9999px;
-    /* Make it a perfect circle */
-    background-color: {{ section.settings.line_color }};
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-  }
-  .timeline-horizontal-line::before {
-    left: 0;
-  }
-  .timeline-horizontal-line::after {
-    right: 0;
-  }
-{% endstyle %}
-
 <div class="py-12 lg:py-24 overflow-hidden" style="background-color: {{ section.settings.bg_color }};">
-  <div class="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center">
       <h3 class="text-sm font-bold tracking-widest uppercase" style="color: {{ section.settings.subheading_color }};">
         {{ section.settings.section_subheading }}
       </h3>
-      <h2 class="ctm-h2-p5 mt-4 text-4xl md:text-5xl font-bold" style="color: {{ section.settings.heading_color }};">
+      <h2 class="ctm-unbound-font mt-4 text-4xl md:text-5xl font-bold" style="color: {{ section.settings.heading_color }};">
         {{ section.settings.section_heading }}
       </h2>
     </div>
-
-    <!-- ✅ Mobile Layout (Vertical stacked timeline) -->
-    <div class="flex flex-col gap-10 md:hidden">
-      {% for block in section.blocks %}
-        <div class="flex flex-col items-center text-center">
-          <div class="relative z-10 w-[90px] h-[90px] flex items-center justify-center rounded-lg transition-colors duration-300 hover:!bg-emerald-900" style="background-color: {{ section.settings.icon_bg_color }};">
-            {% if block.settings.icon != blank %}
-              <img
-                src="{{ block.settings.icon | image_url: width: 64 }}"
-                alt="{{ block.settings.title | escape }}"
-                width="64"
-                height="64"
-                loading="lazy"
-                class="w-[45px] h-[45px]">
-            {% else %}
-              <div class="w-12 h-12 bg-gray-300 rounded"></div>
-            {% endif %}
-          </div>
-          <div class="mt-4">
-            <p class="text-xl font-semibold" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</p>
-            <p class="text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
-            <p class="text-lg font-bold mt-1" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-
     {% if section.blocks.size > 0 %}
       <div class="mt-24">
+        <!-- ✅ Mobile Layout (Vertical stacked timeline) -->
+        <div class="flex flex-col gap-10 md:hidden">
+          {% for block in section.blocks %}
+            <div class="flex flex-col items-center text-center">
+              <div class="relative z-10 w-[90px] h-[90px] flex items-center justify-center rounded-lg transition-colors duration-300 hover:!bg-emerald-900" style="background-color: {{ section.settings.icon_bg_color }};">
+                {% if block.settings.icon != blank %}
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 64 }}"
+                    alt="{{ block.settings.title | escape }}"
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                    class="w-[45px] h-[45px]">
+                {% else %}
+                  <div class="w-12 h-12 bg-gray-300 rounded"></div>
+                {% endif %}
+              </div>
+              <div class="mt-4">
+                <p class="ctm-unbound-font text-xl font-semibold" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</p>
+                <p class="ctm-unbound-font text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
+                <p class="ctm-unbound-font text-lg font-bold mt-1" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+
         <!-- Desktop Layout: Alternating Timeline -->
         <div class="relative sm:hidden md:block">
           <!-- Horizontal timeline line with a class for CSS targeting -->
           <div class="timeline-horizontal-line absolute top-1/2 left-0 w-full h-0.5" style="background-color: {{ section.settings.line_color }};"></div>
-
-          <div class="relative flex justify-between">
+          <div class="relative flex justify-between ">
             {% for block in section.blocks %}
               {% assign is_odd_index = forloop.index | modulo: 2 %}
               <div class="w-1/{{ section.blocks.size }} flex justify-center">
@@ -79,23 +54,23 @@
                     {% if is_odd_index == 0 %}
                       <!-- Content for Items on Top -->
                       <div class="text-left w-full">
-                        <p class="text-2xl font-medium" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
-                        <h3 class="text-xl font-semibold mt-1" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</h3>
-                        <p class="text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
+                        <p class="ctm-unbound-font text-2xl font-medium mt-[10px]" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
+                        <h3 class="ctm-unbound-font text-xl font-semibold mt-1" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</h3>
+                        <p class="ctm-unbound-font text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
                       </div>
                     {% else %}
                       <!-- Content for Items on Bottom -->
                       <div class="relative text-left w-full">
 
-                        <h3 class="text-xl font-semibold" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</h3>
-                        <p class="text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
-                        <p class="text-2xl font-medium mt-1" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
+                        <h3 class="ctm-unbound-font text-xl font-semibold" style="color: {{ section.settings.heading_color }};">{{ block.settings.title }}</h3>
+                        <p class="ctm-unbound-font text-sm mt-2" style="color: {{ section.settings.text_color }};">{{ block.settings.description }}</p>
+                        <p class="ctm-unbound-font text-2xl font-medium mb-[10px]" style="color: {{ section.settings.number_color }};">{{ block.settings.step_number }}</p>
                       </div>
                     {% endif %}
                   </div>
 
                   <!-- Icon -->
-                  <div class="relative z-10 w-[100px] h-[103px] flex items-center justify-center rounded-lg transition-colors duration-300 hover:!bg-emerald-900" style="background-color: {{ section.settings.icon_bg_color }};">
+                  <div class="relative z-10 w-[100px] h-[103px] p-[25px] flex items-center justify-center rounded-lg transition-colors duration-300 hover:!bg-emerald-900" style="background-color: {{ section.settings.icon_bg_color }};">
                     {% if block.settings.icon != blank %}
                       <img
                         src="{{ block.settings.icon | image_url: width: 64 }}"
@@ -105,7 +80,7 @@
                         loading="lazy"
                         class="w-[50px] h-[50px]">
                     {% else %}
-                      <div class="w-16 h-16 bg-gray-300 rounded"></div>
+                      <div class="w-[60px] h-[60px] bg-gray-300 rounded"></div>
                     {% endif %}
                   </div>
 

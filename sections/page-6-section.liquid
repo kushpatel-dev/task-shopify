@@ -1,5 +1,5 @@
 <section id="our-service-{{ section.id }}" class="py-12 bg-white">
-  <div class="max-w-8xl mx-auto px-4 md:px-8">
+  <div class="max-w-8xl mx-auto px-4 md:px-8 lg:px-12">
     <!-- Headings -->
     <div class="text-center mb-8">
       {% if section.settings.heading_small != blank %}
@@ -11,7 +11,7 @@
 
     <!-- Buttons row -->
     <div class="overflow-x-auto pb-6">
-      <div class="flex gap-4 items-center justify-start md:justify-center" role="tablist">
+      <div class="flex gap-8 items-center justify-start md:justify-center" role="tablist">
         {% for block in section.blocks %}
           <button
             type="button"
@@ -60,7 +60,7 @@ box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       {% for block in section.blocks %}
         <div
           id="service-content-{{ section.id }}-{{ forloop.index0 }}"
-          class="service-content hidden md:grid md:grid-cols-2 gap-8 items-start"
+          class="service-content hidden md:grid md:grid-cols-2 gap-10 items-start"
           role="tabpanel"
           aria-labelledby="service-tab-{{ section.id }}-{{ forloop.index0 }}"
           data-service-index="{{ forloop.index0 }}">
@@ -68,21 +68,21 @@ box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
           <!-- Image column -->
           <div class="w-full">
             {% if block.settings.image != blank %}
-              <div class="overflow-hidden rounded-xl shadow-sm">
+              <div class="overflow-hidden md:pl-12">
                 <img
                   width=""
                   height=""
                   src="{{ block.settings.image | img_url: '1600x' }}"
                   alt="{{ block.settings.heading | escape }}"
-                  class="w-full h-[250px] md:h-[380px] object-cover" />
+                  class="w-full h-[250px] md:h-[390px] rounded-2xl object-cover" />
               </div>
             {% else %}
-              <div class="h-[250px] md:h-[350px] bg-gray-100 rounded-xl"></div>
+              <div class="h-[250px] md:h-[350px]"></div>
             {% endif %}
           </div>
 
           <!-- Details column -->
-          <div class="mt-6 md:mt-0 md:pl-10">
+          <div class="mt-6 md:mt-0 md:pl-14">
             {% if block.settings.caption_small != blank %}
               <p class="text-[16px] uppercase tracking-widest text-amber-900 mb-3">{{ block.settings.caption_small }}</p>
             {% endif %}
@@ -90,7 +90,7 @@ box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
             <h3 class="ctm-h3-p6">{{ block.settings.heading }}</h3>
 
             {% if block.settings.summary_text != blank %}
-              <p class="text-gray-500 mb-6 max-w-[540px]">{{ block.settings.summary_text }}</p>
+              <p class="poppins-font mb-6 max-w-[540px]">{{ block.settings.summary_text }}</p>
             {% endif %}
 
             <!-- Two-column bullets list -->
@@ -120,7 +120,7 @@ box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
                           viewBox="0 0 24 24"
                           fill="none"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="#b59f70" /></svg>
                       {% endif %}
-                      <span class="text-gray-700">{{ text }}</span>
+                      <span class="poppins-font2">{{ text }}</span>
                     </li>
                   {% endif %}
                 {% endfor %}
@@ -148,7 +148,7 @@ box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
                           viewBox="0 0 24 24"
                           fill="none"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="#b59f70" /></svg>
                       {% endif %}
-                      <span class="text-gray-700">{{ text }}</span>
+                      <span class="poppins-font2">{{ text }}</span>
                     </li>
                   {% endif %}
                 {% endfor %}

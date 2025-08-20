@@ -3635,3 +3635,12 @@ details-disclosure > details {
   font-family: 'futura-pt';
   src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/futura-pt-heavy-589a6dd12187e.otf?v=1755520618');
 }
+@font-face {
+  font-family: 'teachers';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/Teachers-Regular.ttf?v=1755582332');
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/Poppins-Regular.ttf?v=1755588302');
+}
